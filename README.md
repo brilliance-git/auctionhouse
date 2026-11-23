@@ -82,9 +82,9 @@ updates the docs below; other chats should read them rather than redo the resear
 ### Current plan
 | Level | Farm | Why | Status |
 |---|---|---|---|
-| **42–59 (now)** | **Krol'dok Stronghold** | ~52 g/hr modelled: 6 bosses at ~8.3g/run (vendored BoP blues plus the Expert Campfire blueprint, 4.54%, ~27g) plus trash coin; also the Krol'dok Warplate tank set. Nothing else at 47 models above ~30 g/hr. See `docs/kroldok-model-2026-11-23.md` and `docs/dungeon-farms-prot-warrior-2026-11-23.md` | estimated; **needs test runs** |
-| 47 (backups) | The Drowned City, Zul'Farrak graveyard, Razorfen Downs | ~20–30 g/hr modelled; ZF graveyard is a big near-level pull | not tested on a warrior |
-| 60 | Stratholme Living, Scarlet side; then test Shaper's Terrace and Dire Maul East | Strat models at ~61–77 g/hr, mostly Righteous Orbs at the 2g vendor floor plus boss blues (the AH absorbs few orbs). Shaper's Terrace, Scholomance, Blackmaw Hold and DME model at ~45–85 g/hr depending on unknown level-60 blue vendor prices. **Krol'dok at 60 (~52 g/hr, safe) is the benchmark to beat.** See `docs/dungeon-farms-prot-warrior-2026-11-23.md` | **no documented prot warrior solo**, so test it |
+| **42–59 (now)** | **Krol'dok Stronghold** | ~50 g/hr modelled: **41.6 g/hr from 6 bosses at real prices** (~8.3g/run in vendored BoP blues plus the Expert Campfire blueprint, 4.54%, ~27g) **+ ~8 g/hr trash coin (estimate)**; also the Krol'dok Warplate tank set. Nothing else at 47 models above ~21 g/hr conservatively (~30 optimistically). See `docs/kroldok-model-2026-11-23.md` and `docs/dungeon-farms-prot-warrior-2026-11-23.md` | estimated; **needs test runs** |
+| 47 (backups) | Zul'Farrak graveyard, The Drowned City, Razorfen Downs | ~18–30 g/hr modelled; ZF graveyard is a big near-level pull | not tested on a warrior |
+| 60 | **Krol'dok likely stays competitive; test Strat Living, Shaper's Terrace and DME to beat it** | On conservative numbers only Strat Living (~62 g/hr, mostly Righteous Orbs at the 2g vendor floor) beats Krol'dok at 60 (~50 g/hr), at low confidence. Shaper's Terrace, Scholomance and Blackmaw Hold model at ~47–50 conservatively, 77–85 optimistically. SM Cathedral mass pulls model at ~21–28 (greys and greens not counted). See `docs/dungeon-farms-prot-warrior-2026-11-23.md` | **no documented prot warrior solo**, so test it |
 
 Rules: use normal pull-and-kill only. No pathing, leash or ledge tricks; Blizzard confiscated
 gold and suspended players for the Blackmaw Hold farm (Nov 16–17, 2026). Instances are capped
@@ -123,7 +123,7 @@ scripts/item_report.py    price check any item(s)
 scripts/dungeon_drops.py  price the researched drops for each instance
 scripts/fetch_snapshots.py download every snapshot, the catalog, vendor goods and recipes to data/ (~50 MB, git-ignored)
 scripts/farm_leaderboard.py rank farmable commodities by market gold per day, offline from data/
-scripts/dungeon_farm_model.py rough g/h model for every dungeon farm at 47 and 60 (--blue-scale 0.55 = conservative)
+scripts/dungeon_farm_model.py rough g/h model for every dungeon farm at 47 and 60 (conservative and Krol'dok-anchored columns)
 docs/                     dated analyses and research, plus the farm log
 ```
 
