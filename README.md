@@ -82,7 +82,7 @@ updates the docs below; other chats should read them rather than redo the resear
 ### Current plan
 | Level | Farm | Why | Status |
 |---|---|---|---|
-| **42–59 (now)** | **Krol'dok Stronghold** | ~38 g/hr from 6 bosses (vendored BoP blues plus the Expert Campfire blueprint, 4.54%, ~27g), plus coin and the Krol'dok Warplate tank set; see `docs/kroldok-model-2026-11-23.md` | estimated; **needs test runs** |
+| **42–59 (now)** | **Krol'dok Stronghold** | ~40 g/hr from 6 bosses (vendored BoP blues plus the Expert Campfire blueprint, 4.54%, ~27g), plus coin and the Krol'dok Warplate tank set; see `docs/kroldok-model-2026-11-23.md` | estimated; **needs test runs** |
 | 44+ (backup) | Zul'Farrak graveyard | coin and greys, plus XP; 40–50 g/hr reported for mages | not tested on a warrior |
 | 60 | Stratholme Living, Scarlet side | Righteous Orbs (84% from Galford, 7–11% from trash, ~9g on the AH, 2g vendor floor); ~38 g/hr vendoring everything | **no documented prot warrior solo**, so test it |
 
