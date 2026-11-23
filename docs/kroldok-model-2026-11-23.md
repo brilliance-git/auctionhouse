@@ -108,7 +108,7 @@ Moonshadow is also in the cultist area) → the bridge (Toof: "Hold da bridge!")
 | Item | Source | Vendor | AH | Verdict |
 |---|---|---|---|---|
 | Coin | every mob | — | — | group shares of 16c–1s 34c, so roughly **1–7s per mob solo** |
-| Thick Leather | Ashka's wolves | 3s | 6–8s | AH |
+| Thick Leather | Ashka's wolves (looted, not skinned) | 3s | 6–8s | AH |
 | Heavy Leather | Ashka's wolves | 1s 50c | 2–3s | AH |
 | Red Wolf Meat | Ashka's wolves | 87c | ~2s 60c–3s | AH |
 | Thick Furry Mane (grey) | Ashka's wolves | 8s 12c | ~8s | vendor |
@@ -137,8 +137,9 @@ Moonshadow is also in the cultist area) → the bridge (Toof: "Hold da bridge!")
    minute, and pushes the run over 12 minutes, should be cut.
 
 ## Still needed
+(The player has no Skinning, so only looted wolf drops count.)
+
 1. **A timed test run:** the time at each boss kill, the time to exit and reset, gold before
    and after (greys vendored, blues kept), and the repair bill. Log it in `docs/farm-log.md`.
 2. **Trash:** which packs block the paths between bosses and which you can skip.
 3. **Kroog:** how often he spawns, and his sell prices.
-4. **Professions:** Skinning, for Ashka's wolves. Thick Leather sells for 6–8s on the AH.
