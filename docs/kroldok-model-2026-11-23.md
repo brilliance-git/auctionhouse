@@ -50,23 +50,29 @@ The entrance is at the bottom left. Confirmed portraits:
 - **Slavecrusher Grox:** the first ogre, next to the entrance.
 - **Twilight Commander Zarmok:** the hooded figure beside Grox.
 - **Nar'gurk:** the ogre in the west-middle.
-- **Not yet identified:** the 4 eastern portraits (the green-skinned figure, the red-horned
-  ogre, the ogre with a "!" marker by the river, and the bald ogre at the top, probably
-  Overlord Mugg). They are War Handler Ashka, Bossman Toof, Overlord Mugg and the rare Kroog.
+- **War Handler Ashka:** the green-skinned figure, east-middle.
+- **Bossman Toof:** the red-horned ogre, just north of Ashka.
+- **Overlord Mugg:** the bald ogre at the top (northeast).
+- **The ogre with a "!" marker by the river:** by elimination, probably the rare Kroog or a
+  quest NPC. It's close to Ashka and Toof, so check whether it's up each time you pass.
 
 The leveling route (red line): entrance → loop north → Grox → Zarmok → east along the south →
-green-skinned boss → **west to Nar'gurk and back** → red-horned boss → loop → top boss.
+Ashka → **west to Nar'gurk and back** → Toof → loop → Mugg.
 
 What can be improved:
 1. **Nar'gurk costs a round trip.** If a path goes north from Zarmok to Nar'gurk and then
-   east over the bridge, the order Grox → Zarmok → Nar'gurk → bridge → east bosses → top
-   avoids walking back. Check in-game whether that path is open or gated.
+   east over the bridge, the order Grox → Zarmok → Nar'gurk → bridge → Ashka → Toof →
+   Mugg avoids walking back. Check in-game whether that path is open or gated.
 2. **The opening loop north** before Grox may be trash you can skip. It may also have been
    for quests while leveling.
 3. **The way out after the top boss is unknown.** It decides whether 6 bosses fit in 12
    minutes. Possibilities: the Krol'dok Ogre Key (from Mugg), the river, or a walk back.
 4. **Once you have the Warplate Helmet and Chest,** Nar'gurk is the lowest-value boss
    (1g 01s) and the longest detour, so he's the first to skip if a run runs long.
+
+Value along the proposed route: Grox 2g 19s → Zarmok 1g 11s → Nar'gurk 1g 01s → Ashka 1g 41s
+→ Toof 1g 12s → Mugg 1g 47s. The bosses nearest the entrance (Grox and Zarmok) are 3g 30s,
+or 40% of the run's boss value.
 
 ## Route rules
 1. **The cap sets the target.** 5 instances an hour means a run can take up to 12 minutes,
