@@ -42,6 +42,32 @@ trash (not yet confirmed).
 The 4-piece healing is doubled in Krol'dok itself, so the set directly supports bigger pulls
 there. Equip pieces as they drop rather than vendoring them.
 
+## Map and route
+![Boss map](img/kroldok-map.webp)
+![Route used while leveling](img/kroldok-route-leveling.webp)
+
+The entrance is at the bottom left. Confirmed portraits:
+- **Slavecrusher Grox:** the first ogre, next to the entrance.
+- **Twilight Commander Zarmok:** the hooded figure beside Grox.
+- **Nar'gurk:** the ogre in the west-middle.
+- **Not yet identified:** the 4 eastern portraits (the green-skinned figure, the red-horned
+  ogre, the ogre with a "!" marker by the river, and the bald ogre at the top, probably
+  Overlord Mugg). They are War Handler Ashka, Bossman Toof, Overlord Mugg and the rare Kroog.
+
+The leveling route (red line): entrance → loop north → Grox → Zarmok → east along the south →
+green-skinned boss → **west to Nar'gurk and back** → red-horned boss → loop → top boss.
+
+What can be improved:
+1. **Nar'gurk costs a round trip.** If a path goes north from Zarmok to Nar'gurk and then
+   east over the bridge, the order Grox → Zarmok → Nar'gurk → bridge → east bosses → top
+   avoids walking back. Check in-game whether that path is open or gated.
+2. **The opening loop north** before Grox may be trash you can skip. It may also have been
+   for quests while leveling.
+3. **The way out after the top boss is unknown.** It decides whether 6 bosses fit in 12
+   minutes. Possibilities: the Krol'dok Ogre Key (from Mugg), the river, or a walk back.
+4. **Once you have the Warplate Helmet and Chest,** Nar'gurk is the lowest-value boss
+   (1g 01s) and the longest detour, so he's the first to skip if a run runs long.
+
 ## Route rules
 1. **The cap sets the target.** 5 instances an hour means a run can take up to 12 minutes,
    leaving ~10 minutes of killing after ~2 for exit and reset. Finishing faster than that
