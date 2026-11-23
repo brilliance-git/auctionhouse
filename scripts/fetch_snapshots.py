@@ -1,4 +1,4 @@
-"""Download every snapshot's price table into data/snapshots/<epoch>.json.
+"""Download every home (Horde) snapshot's item table into data/snapshots/<epoch>.json.
 
     python3 scripts/fetch_snapshots.py           # skips files already present
 Roughly 45 MB for ~5 days of hourly snapshots. data/ is git-ignored.
@@ -19,6 +19,6 @@ for i, s in enumerate(snaps, 1):
     f = out / f"{s['epoch']}.json"
     if f.exists():
         continue
-    f.write_text(json.dumps(w.snapshot_prices(s["epoch"])))
+    f.write_text(json.dumps(w.snapshot_items(s["epoch"])))
     print(f"[{i}/{len(snaps)}] {s['modified']}")
 print(f"{len(snaps)} snapshots in {out}")
