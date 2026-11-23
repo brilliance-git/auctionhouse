@@ -53,16 +53,19 @@ The entrance is at the bottom left. Confirmed portraits:
 - **War Handler Ashka:** the green-skinned figure, east-middle.
 - **Bossman Toof:** the red-horned ogre, just north of Ashka.
 - **Overlord Mugg:** the bald ogre at the top (northeast).
-- **The ogre with a "!" marker by the river:** Thunk, who can be skipped. The rare Kroog
-  isn't on this map; note where he spawns if you see him.
+- **The ogre with a "!" marker by the river:** Tunk the Blacksmith (written "Thunk" earlier).
+  See the guide-video notes below before skipping him: he drops the Krol'dok Moulding, which
+  appears to lead to the Battlegear set. The rare Kroog isn't on this map; note where he spawns
+  if you see him.
 
 The leveling route (red line): entrance → loop north → Grox → Zarmok → east along the south →
 Ashka → **west to Nar'gurk and back** → Toof → loop → Mugg.
 
 What can be improved:
-1. **Nar'gurk costs a round trip.** If a path goes north from Zarmok to Nar'gurk and then
-   east over the bridge, the order Grox → Zarmok → Nar'gurk → bridge → Ashka → Toof →
-   Mugg avoids walking back. Check in-game whether that path is open or gated.
+1. **Nar'gurk costs a round trip, but it may be the intended path.** The guide video (below)
+   uses the same order as the leveling route: Ashka, then Nar'gurk through the cultist area,
+   then the bridge. Taking Nar'gurk right after Zarmok is unverified; only try it if a path is
+   clearly open.
 2. **The opening loop north** before Grox may be trash you can skip. It may also have been
    for quests while leveling.
 3. **There's no shortcut out after Mugg: you run back from the top northeast to the entrance
@@ -76,6 +79,49 @@ What can be improved:
 Value along the proposed route: Grox 2g 19s → Zarmok 1g 11s → Nar'gurk 1g 01s → Ashka 1g 41s
 → Toof 1g 12s → Mugg 1g 47s. The bosses nearest the entrance (Grox and Zarmok) are 3g 30s,
 or 40% of the run's boss value.
+
+## Notes from a dungeon guide video (2026-11-23)
+Source: an edited 2½-minute **group** guide (supplied via Google Drive). It's not a solo run
+and it's cut, so it gives **no timings**. Map overlay credited to Santiago Reyes.
+
+**Boss order shown:** Grox → Zarmok → the cultist area → Ashka → Tunk → Nar'gurk (Zalfan
+Moonshadow is also in the cultist area) → the bridge (Toof: "Hold da bridge!") → Mugg.
+
+**Tunk the Blacksmith matters for the tank set:**
+- He drops the **Krol'dok Moulding** (51.48%, BoP, starts a quest): "The moulding appears to
+  be for a key." The quest is to find someone in Farholde Keep who knows about the mould.
+  Reward: 55s and 3,399 XP.
+- The video lists the Moulding under "Krol'dok Battlegear (0/5)", so this chain is probably
+  how you get the set pieces that don't drop from Nar'gurk (Pauldrons, Legplates, Gauntlets).
+  **Kill Tunk until you have the Moulding, and do the chain.** After that, he's skippable.
+
+**Mechanics that matter solo:**
+| Where | Threat | Why it matters for a prot warrior |
+|---|---|---|
+| Grox | Force Compliance (pulls nearby Redridge Prisoners into the fight), Bloodlust, Knockdown | Pull him clear of the prisoners, or expect adds |
+| Zarmok | Charge, Enrage, Rending Whirl (AoE bleed) | Manageable |
+| Cultist area | **Twilight Peons run to alert other mobs**; Warlocks (Immolate, Rain of Fire); Shadowhide Curseweaver (Shadow Bolt, Curse of Tongues); Shadowhide Bully (Knockdown) | Casters give no rage from blocking. Kill or stun Peons first, or the pack grows. |
+| Ashka | Two wolves: **Terrorhowl, 60-yard AoE fear**; Snarlfang (Rend); "Command: Kill" | A fear while holding a pack is the biggest solo risk; plan a fear break (Berserker Rage, or Will of the Forsaken if Undead) |
+| Nar'gurk | Shadowbolt Volley, **Convert (mind control)** | Effect on a solo player is unknown; watch it in the test run |
+| Bridge trash | Krol'dok Centurions (**Mortal Strike**, Thunderclap, Demoralizing Roar), Shamans, Brutes | Mortal Strike cuts healing, including the Battlegear heal on block |
+| Mugg | Crushing Slam (jumps 3 times), Set of Maces / Set of Mauls (+20% / +50% melee), Mugg's Fury (stacking attack speed, resets when he swaps weapons) | Biggest burst; save cooldowns for the Mauls phase |
+
+**Trash loot seen** (Horde AH prices, 2026-11-23):
+| Item | Source | Vendor | AH | Verdict |
+|---|---|---|---|---|
+| Coin | every mob | — | — | group shares of 16c–1s 34c, so roughly **1–7s per mob solo** |
+| Thick Leather | Ashka's wolves | 3s | 6–8s | AH |
+| Heavy Leather | Ashka's wolves | 1s 50c | 2–3s | AH |
+| Red Wolf Meat | Ashka's wolves | 87c | ~2s 60c–3s | AH |
+| Thick Furry Mane (grey) | Ashka's wolves | 8s 12c | ~8s | vendor |
+| Mageweave Cloth | Shadowhide Bully | 3s | 4s | either |
+| Overlinked Chain Belt / Shoulderpads (grey) | trash | 18–24s | 37–65s, ~6 listed | vendor (thin market) |
+
+**One-time Horde quests** (XP and gold, not repeatable farm income):
+- Eye of Mugg: Krom'rosh, Riverglades (59.4, 45.6)
+- Tome of Twilight: Tran'gul, Riverglades (59.6, 44.0)
+- A Token of Vengeance: Da'grosh, Riverglades (33.4, 38.0)
+- Prerequisite chain: "A Message in Blood" and "Food for the Taking", from Krom'rosh
 
 ## Route rules
 1. **The cap sets the target.** 5 instances an hour means a run can take up to 12 minutes,
@@ -96,8 +142,9 @@ or 40% of the run's boss value.
 1. **A timed test run:** the time at each boss kill, the time to exit and reset, gold before
    and after (greys vendored, blues kept), and the repair bill. Log it in `docs/farm-log.md`.
 2. **Trash:** which packs block the paths between bosses and which you can skip.
-3. **Quest items:** what Tome of Twilight, Eye of Mugg, Cultist Ear and Twilight Bangle start
-   or turn in for (gold, XP, rep), and whether any can be repeated.
+3. **Quest items:** Eye of Mugg and Tome of Twilight are one-time Horde quests (see the
+   guide-video notes). Still unknown: Cultist Ear, Twilight Bangle, and what the Moulding
+   chain rewards.
 4. **Krol'dok Ogre Key (14% from Mugg):** what it opens (the exit is a run back, so probably not a shortcut out).
 5. **Kroog:** how often he spawns, and his sell prices.
-6. **Professions:** Skinning, for the wolves and worgs.
+6. **Professions:** Skinning, for Ashka's wolves. Thick Leather sells for 6–8s on the AH.
