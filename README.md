@@ -82,7 +82,7 @@ updates the docs below; other chats should read them rather than redo the resear
 ### Current plan
 | Level | Farm | Why | Status |
 |---|---|---|---|
-| **42–59 (now)** | **Krol'dok Stronghold** | ~30 g/hr from vendored BoP blues and the Expert Campfire blueprint (4.54%, ~27g), plus coin and the Krol'dok Warplate tank set | estimated; **needs test runs** |
+| **42–59 (now)** | **Krol'dok Stronghold** | ~38 g/hr from 6 bosses (vendored BoP blues plus the Expert Campfire blueprint, 4.54%, ~27g), plus coin and the Krol'dok Warplate tank set; see `docs/kroldok-model-2026-11-23.md` | estimated; **needs test runs** |
 | 44+ (backup) | Zul'Farrak graveyard | coin and greys, plus XP; 40–50 g/hr reported for mages | not tested on a warrior |
 | 60 | Stratholme Living, Scarlet side | Righteous Orbs (84% from Galford, 7–11% from trash, ~9g on the AH, 2g vendor floor); ~38 g/hr vendoring everything | **no documented prot warrior solo**, so test it |
 
@@ -93,6 +93,7 @@ at 5 per hour, so any run under 12 minutes uses the full cap.
 ### Docs
 | File | What it holds |
 |---|---|
+| `docs/kroldok-model-2026-11-23.md` | Krol'dok boss-by-boss expected value, route rules, open questions |
 | `docs/instance-loot-values-2026-11-23.md` | The analysis: BoP check, AH and vendor value per instance, g/hr estimates, ranking, and data still needed |
 | `docs/research-prot-warrior-solo-farms-2026-11-23.md` | The original web-research brief (routes, loot tables, sources, exploit warnings) |
 | `docs/farm-log.md` | Measured runs: fill this in after every test session |
