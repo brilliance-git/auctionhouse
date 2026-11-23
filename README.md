@@ -32,7 +32,13 @@ python3 scripts/dungeon_drops.py Krol                             # every resear
 - the median AH price, the latest price, and the trend from the first third of the history
   to the last third;
 - what the AH pays after the 5% cut;
-- how many are usually listed, and how many are posted, leave the AH or sell per day.
+- how many are usually listed, and how many are posted, leave the AH or sell per day
+  (estimated sales = `sold_qty + taken_qty`);
+- what is listed right now, and the cheapest listing.
+
+**Horde AH only.** Every price check uses the home (Horde) auction house. Never check the
+neutral house (`/v1/neutral/...`, Booty Bay etc.); `wowapi` deliberately has no functions
+for it.
 
 ### How to read the answer (rules of thumb)
 - **Compare the AH price after the 5% cut with the vendor price**, not the listed price.
@@ -42,8 +48,10 @@ python3 scripts/dungeon_drops.py Krol                             # every resear
   the floor.
 - **Check the trend.** "Posted per day" far above "leave the AH per day" means the market is
   oversupplied, and the price is probably falling (as with Righteous Orbs in Nov 2026).
-- **Never seen on the AH (dungeon gear)** almost certainly means bind-on-pickup: vendor it.
-  This held for every boss item checked on Wowhead.
+- **Never listed on the AH (dungeon gear)** almost certainly means bind-on-pickup: vendor it.
+  This held for every boss item checked on Wowhead. Since 2026-11-23 the catalog also holds
+  recipe items, so an item can be in the catalog with no listings: `item_report.py` then says
+  "no listings in history".
 - **Items with a vendor price floor** (Righteous Orb has a 2g vendor price) are low-risk to
   hold or list: the worst case is the vendor.
 - Prices are in **copper** (1g = 100s = 10,000c). `wowapi.gold(c)` formats them.
@@ -56,8 +64,8 @@ it changes the advice. If the item comes from a farm, add it to the farming docs
 ### Things the API can't tell you
 - Bind type, drop rates and boss loot tables. Wowhead has these, but it blocks automated
   requests, so ask the user for a screenshot of the tooltip or the "Dropped by" tab.
-- Items that have never been listed on this server: the item catalog only holds items seen
-  on the AH.
+- Prices for items that have never been listed on this server. The catalog holds items
+  seen on the AH plus items that appear in recipes, but only listed items have prices.
 
 ---
 
@@ -115,34 +123,48 @@ docs/                     dated analyses and research, plus the farm log
 ```
 
 ### API reference
-All requests are GET with the key in the `X-API-Key` header.
+All requests are GET with the key in the `X-API-Key` header. The schema is at
+`/openapi.json` (no key needed); check it when something looks off. Updated 2026-11-23.
 
 | Endpoint | `wowapi` function | Returns |
 |---|---|---|
-| `/v1/status` | `status()` | namespace, house ids (home 114, neutral 117), snapshot count, first and latest epoch |
+| `/v1/status` | `status()` | namespace, house ids (`house` = home/Horde 114), snapshot count, first and latest epoch |
 | `/v1/snapshots?since&until` | `snapshots()` | `[{epoch, modified, diffed}]`, oldest first, about hourly |
-| `/v1/snapshots/{epoch\|latest}/prices` | `snapshot_prices()` | `{columns, rows}`, one row per item |
-| `/v1/snapshots/{epoch\|latest}/archive` | `snapshot_archive()` | the raw auction files, as zip bytes |
-| `/v1/items` | `items()` | `{id: {name, sell_price, purchase_price, quality, level, is_stackable, item_class, …}}`, only items seen on the AH |
+| `/v1/snapshots/{epoch\|latest}/items` | `snapshot_items()` | `{epoch, columns, rows}`, one row per item |
+| `/v1/snapshots/{epoch\|latest}/archive` | `snapshot_archive()` | the raw auction files, as zip bytes (kept 30 days; counts as 20 requests) |
+| `/v1/items` | `items()` | `{id: {name, sell_price, purchase_price, quality, level, is_stackable, item_class, …}}`: items seen on the AH or in a recipe |
 | `/v1/items/{id}` | `item()` | one item |
-| `/v1/items/{id}/prices?since&until` | `item_prices()` | the item's row in every snapshot |
-| `/v1/items/{id}/book` | `item_book()` | current listings: `{home: [[unit_price, qty]…], neutral: […]}` |
-| `/v1/tooltips` | `tooltips()` | tooltip lines, only for items the dashboard has looked up |
+| `/v1/items/{id}/history?since&until` | `item_history()` | `{item_id, columns, rows}`: the item's row in every snapshot |
+| `/v1/items/{id}/listings` | `item_listings()` | `{item_id, epoch, listings: [[unit_price, qty]…]}`, cheapest first; bid-only listings left out |
+| `/v1/tooltips` | `tooltips()` | tooltip lines (binding, stats…), only for items the server has looked up |
 | `/v1/vendor-goods` | `vendor_goods()` | ids of items vendors sell without limit |
 | `/v1/recipes` | `recipes()` | crafting recipes and their reagents |
 | `/v1/buyouts` | `buyouts()` | the service's study of past buyouts and price jumps |
 
-Price row columns: `epoch` (or `item_id`), `min_price`, `qty`, `lots`, `fill_price`,
+**Deprecated upstream, will be removed:** `/v1/snapshots/{s}/prices`, `/v1/items/{id}/prices`
+and `/v1/items/{id}/book`. The old function names `snapshot_prices()`, `item_prices()` and
+`item_book()` still work: they call the new routes (`item_book()` returns Horde listings only).
+
+**Not used:** the `/v1/neutral/...` routes (neutral house). Price checks are Horde only.
+
+**Limits and errors:** 300 requests at once, refilled at 1 a second. HTTP 429 (rate limit) and
+503 (snapshot being replaced) carry a wait time; `wowapi` retries both up to 3 times.
+
+Row columns: `epoch` (or `item_id`), `min_price`, `qty`, `lots`, `fill_price`,
 `sold_qty`, `gone_qty`, `gone_value`, `new_qty`, `taken_qty`.
-- `gone_qty` counts everything that left the AH: sales, expiries and cancellations.
-- `sold_qty` is the service's estimate of actual sales, and is mostly 0 for non-stackable
-  items.
+- `fill_price` is the unit price paid when spending 2 gold on the cheapest listings.
+- `gone_qty` counts listings that vanished with hours left: bought or cancelled, the data
+  can't tell which.
+- `sold_qty` counts certain sales out of listings still up; `taken_qty` estimates whole
+  listings bought. **Estimated sales = `sold_qty + taken_qty`** (`wowapi.est_sold(row)`).
+  Both are commodity-only, so gear shows sales only through `gone_qty`.
+- The sales columns are null when the previous snapshot is more than 75 minutes older.
 
 ### Data quirks
 - `sell_price` in `/v1/items` is the **vendor** price. `purchase_price` is what a vendor
   charges, when a vendor sells it.
-- AH cut is 5%, and listing also costs a deposit. Neutral AH (Booty Bay etc.) is a separate,
-  thinner market.
+- AH cut is 5%, and listing also costs a deposit. All prices here are the Horde AH; the
+  neutral AH (Booty Bay etc.) is a separate, thinner market that this repo ignores.
 - History starts 17 Nov 2026. Forever launched on 4 Nov, so prices are still settling: re-check
   before acting on any number in `docs/`.
 

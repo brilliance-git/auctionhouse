@@ -3,8 +3,11 @@
     python3 scripts/item_report.py "Flask of Mojo" "Righteous Orb"
     python3 scripts/item_report.py --file names.txt      # one name per line
 
-Exact name match first, falls back to substring match. Items never seen on the
-AH are reported as missing (for dungeon gear this usually means bind-on-pickup).
+Exact name match first, falls back to substring match. Only the home (Horde)
+auction house is checked, never the neutral one. Items with no listings in the
+history are reported as such (for dungeon gear this usually means bind-on-pickup).
+The item catalog also holds recipe items that were never listed, so "not in the
+catalog" and "never listed" are different answers.
 """
 import statistics as st
 import sys
@@ -15,7 +18,7 @@ import wowapi as w
 
 
 def summarize(item_id):
-    rows = w.rows_as_dicts(w.item_prices(item_id))
+    rows = w.rows_as_dicts(w.item_history(item_id))
     if not rows:
         return None
     days = max((rows[-1]["epoch"] - rows[0]["epoch"]) / 86400, 1e-9)
@@ -28,7 +31,8 @@ def summarize(item_id):
         "early": st.median(mp[:third]) if mp else None,
         "late": st.median(mp[-third:]) if mp else None,
         "avg_qty": st.mean(r["qty"] or 0 for r in rows),
-        "sold_d": tot("sold_qty") / days, "gone_d": tot("gone_qty") / days,
+        # estimated sales = sold_qty + taken_qty (commodities only)
+        "sold_d": sum(w.est_sold(r) for r in rows) / days, "gone_d": tot("gone_qty") / days,
         "new_d": tot("new_qty") / days,
     }
 
@@ -38,7 +42,7 @@ def main(names):
     for name in names:
         hits = w.find_items(name, cat, exact=True) or w.find_items(name, cat)[:5]
         if not hits:
-            print(f"{name}: never seen on the AH")
+            print(f"{name}: not in the item catalog (never listed, not in any recipe)")
             continue
         for iid, v in hits:
             s = summarize(iid)
@@ -50,7 +54,13 @@ def main(names):
                   f"early→late {w.gold(s['early'])} → {w.gold(s['late'])}")
             print(f"  AH net after 5% cut {w.gold(s['last'] * 0.95)}  vs vendor {w.gold(v['sell_price'])}")
             print(f"  listed in {s['listed']}/{s['snaps']} snapshots, avg qty {s['avg_qty']:.0f}, "
-                  f"per day: sold {s['sold_d']:.1f}, gone {s['gone_d']:.0f}, new {s['new_d']:.0f}")
+                  f"per day: est. sold {s['sold_d']:.1f}, gone {s['gone_d']:.0f}, new {s['new_d']:.0f}")
+            now = w.item_listings(iid).get("listings") or []
+            if now:
+                print(f"  listed right now (Horde AH): {sum(q for _, q in now)} in {len(now)} listings, "
+                      f"cheapest {w.gold(now[0][0])}")
+            else:
+                print("  listed right now (Horde AH): none")
 
 
 if __name__ == "__main__":
