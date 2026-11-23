@@ -54,18 +54,16 @@ The entrance is at the bottom left. Confirmed portraits:
 - **Bossman Toof:** the red-horned ogre, just north of Ashka.
 - **Overlord Mugg:** the bald ogre at the top (northeast).
 - **The ogre with a "!" marker by the river:** Tunk the Blacksmith (written "Thunk" earlier).
-  See the guide-video notes below before skipping him: he drops the Krol'dok Moulding, which
-  appears to lead to the Battlegear set. The rare Kroog isn't on this map; note where he spawns
+  Skippable: his Moulding leads to the Krol'dok Ogre Key, which the player already has. The rare Kroog isn't on this map; note where he spawns
   if you see him.
 
 The leveling route (red line): entrance → loop north → Grox → Zarmok → east along the south →
 Ashka → **west to Nar'gurk and back** → Toof → loop → Mugg.
 
 What can be improved:
-1. **Nar'gurk costs a round trip, but it may be the intended path.** The guide video (below)
-   uses the same order as the leveling route: Ashka, then Nar'gurk through the cultist area,
-   then the bridge. Taking Nar'gurk right after Zarmok is unverified; only try it if a path is
-   clearly open.
+1. **The Krol'dok Ogre Key opens a shortcut to Toof** (the player has the key). With it, the
+   route reaches Toof directly and then backtracks to Nar'gurk. Exact order and timing to be
+   confirmed on the timed run.
 2. **The opening loop north** before Grox may be trash you can skip. It may also have been
    for quests while leveling.
 3. **There's no shortcut out after Mugg: you run back from the top northeast to the entrance
@@ -91,9 +89,9 @@ Moonshadow is also in the cultist area) → the bridge (Toof: "Hold da bridge!")
 - He drops the **Krol'dok Moulding** (51.48%, BoP, starts a quest): "The moulding appears to
   be for a key." The quest is to find someone in Farholde Keep who knows about the mould.
   Reward: 55s and 3,399 XP.
-- The video lists the Moulding under "Krol'dok Battlegear (0/5)", so this chain is probably
-  how you get the set pieces that don't drop from Nar'gurk (Pauldrons, Legplates, Gauntlets).
-  **Kill Tunk until you have the Moulding, and do the chain.** After that, he's skippable.
+- The Moulding chain gives the **Krol'dok Ogre Key**, which the player already has, so
+  **Tunk is skippable.** The video listed the Moulding near the Battlegear set, but where the
+  Pauldrons, Legplates and Gauntlets come from is still unconfirmed.
 
 **Mechanics that matter solo:**
 | Where | Threat | Why it matters for a prot warrior |
@@ -145,6 +143,6 @@ Moonshadow is also in the cultist area) → the bridge (Toof: "Hold da bridge!")
 3. **Quest items:** Eye of Mugg and Tome of Twilight are one-time Horde quests (see the
    guide-video notes). Still unknown: Cultist Ear, Twilight Bangle, and what the Moulding
    chain rewards.
-4. **Krol'dok Ogre Key (14% from Mugg):** what it opens (the exit is a run back, so probably not a shortcut out).
+4. **Krol'dok Ogre Key:** confirmed to open a shortcut to Toof (also from the Moulding chain; Mugg drops it 14%).
 5. **Kroog:** how often he spawns, and his sell prices.
 6. **Professions:** Skinning, for Ashka's wolves. Thick Leather sells for 6–8s on the AH.
