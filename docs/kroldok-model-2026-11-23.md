@@ -5,10 +5,8 @@ Theorycraft for a solo Protection Warrior at level 47. Drop rates come from Wowh
 bind-on-pickup, so it's vendor income.
 
 ## Vendor prices
-Real sell prices for every boss except Nar'gurk were read from Wowhead tooltips (a screen
-recording supplied by the user, 2026-11-23). Nar'gurk's items are still estimates: the median
-vendor price of Classic blues in the AH catalog with the same slot and type, at a similar
-item level. That method was within ~15% on the items checked.
+All sell prices and drop rates come from Wowhead tooltips (screen recordings supplied by the
+user, 2026-11-23). No estimates are left in the boss table.
 
 ## Expected value per boss kill
 | Boss | Drops: sell price (drop %) | EV per kill |
@@ -18,33 +16,45 @@ item level. That method was within ~15% on the items checked.
 | War Handler Ashka | Bloodied Gutslicer 2g 38s 30c (36.44%), Worgbinder's Treads 1g 00s 64c (29.20%), War Handler's Gaze 71s 94c (34.37%) | 1g 41s |
 | Bossman Toof | Toofbreaker 2g 03s 18c (36.21%), Band of Bossman 80s 70c (31.58%), Big-Belly Belt 40s 49c (32.21%) | 1g 12s |
 | Twilight Commander Zarmok | Shadowlight Athame 1g 88s 48c (32.38%), Zarmok's Plated Signet 75s 97c (34.30%), Shadecaster's Leggings 75s 68c (31.69%) | 1g 11s |
-| Nar'gurk | Krol'dok Warplate Chest ~1g 09s est. (26%), Warplate Helmet ~80s est. (28%), Chain of the Corruptor ~53s est. (36%); Tome of Twilight (quest item) 42% | ~70s (estimate) |
+| Nar'gurk | Krol'dok Warplate Chest 1g 50s 18c (26.14%), Krol'dok Warplate Helmet 1g 12s 81c (28.10%), Chain of the Corruptor 83s 28c (35.84%); Tome of Twilight (quest item) 42% | 1g 01s |
 | Kroog (rare) | Black Horn Necklace, Kroog's Backscratcher | not counted: spawn rate unknown |
-| **All 6 bosses** | | **~8g 00s per run** |
+| **All 6 bosses** | | **~8g 31s per run** |
 
 Zone-wide quest drops: Cultist Ear 4%, Twilight Bangle 2%. Very rare: Sturdy Junkbox and
 Aquamarine (0.06% each).
 
 ## Per hour
-- Bosses only: 5 runs × ~8.0g ≈ **~40 g/hr** (the blueprint is ~5.8 g/hr of that, and comes in
+- Bosses only: 5 runs × ~8.3g ≈ **~41.5 g/hr** (the blueprint is ~5.8 g/hr of that, and comes in
   ~25g lumps about every 4.4 hours).
 - Plus elite trash coin and greys: **not yet measured.**
 - Over half the expected value comes from 6 weapons worth 1g 72s–2g 38s each (Scepter,
   Gutslicer, Athame, Toofbreaker, Jabber, Crosser), so single hours will vary widely.
 
+## Krol'dok Battlegear set: farming value
+The full 5-piece set: Helmet and Chest from Nar'gurk; Pauldrons, Legplates and Gauntlets from
+trash (not yet confirmed).
+- (2) +100 armor
+- (3) +5 Defense
+- (4) Chance on block to heal for 14–23. **Healing is doubled in Strongholds and Cities**, and
+  Krol'dok is a Stronghold.
+- (5) Taking damage has a high chance to add 1 Stamina for 30 seconds, stacking up to 20 times.
+
+The 4-piece healing is doubled in Krol'dok itself, so the set directly supports bigger pulls
+there. Equip pieces as they drop rather than vendoring them.
+
 ## Route rules
 1. **The cap sets the target.** 5 instances an hour means a run can take up to 12 minutes,
    leaving ~10 minutes of killing after ~2 for exit and reset. Finishing faster than that
    earns nothing extra in the dungeon. Use leftover minutes for fishing instead.
-2. **Kill all 6 bosses if the route fits in about 12 minutes.** Even the lowest-value bosses
-   (Nar'gurk, ~0.7g) are worth killing when the time would otherwise go unused.
+2. **Kill all 6 bosses if the route fits in about 12 minutes.** Every boss is worth 1g 01s–2g 19s
+   per kill, so none is an obvious skip.
 3. **If a full route runs over 12 minutes, cut the low-value parts.** Drop the lowest gold per
-   minute first. That's Nar'gurk, unless his quest item (Tome of Twilight, 42%) or the
-   Warplate tank pieces change his value. Mugg is now the second-best boss, so keep him. Never cut Grox.
+   minute first. With every boss at 1–2.2g, the decision comes down to the minutes each
+   one costs. Measure those in a timed run. Never cut Grox.
 4. **Trash:** clear what's in the way. Take extra melee packs only if they fit in the 12
    minutes. Avoid caster packs (Twilight cultists), because you get no rage from blocking.
    Measured coin per pull will decide whether optional packs are worth it.
-5. The average run earns ~0.8g per minute. Any optional section that pays less than that per
+5. The average run earns ~0.85g per minute. Any optional section that pays less than that per
    minute, and pushes the run over 12 minutes, should be cut.
 
 ## Still needed
@@ -52,10 +62,8 @@ Aquamarine (0.06% each).
    and after (greys vendored, blues kept), and the repair bill. Log it in `docs/farm-log.md`.
 2. **Boss order and layout:** which bosses are on the main path and which need a detour, and
    which trash you can skip.
-3. **Nar'gurk's sell prices:** Chain of the Corruptor, Krol'dok Warplate Helmet and
-   Krol'dok Warplate Chest. These are the last estimated prices.
-4. **Quest items:** what Tome of Twilight, Eye of Mugg, Cultist Ear and Twilight Bangle start
+3. **Quest items:** what Tome of Twilight, Eye of Mugg, Cultist Ear and Twilight Bangle start
    or turn in for (gold, XP, rep), and whether any can be repeated.
-5. **Krol'dok Ogre Key (14% from Mugg):** what it opens.
-6. **Kroog:** how often he spawns, and his sell prices.
-7. **Professions:** Skinning, for the wolves and worgs.
+4. **Krol'dok Ogre Key (14% from Mugg):** what it opens.
+5. **Kroog:** how often he spawns, and his sell prices.
+6. **Professions:** Skinning, for the wolves and worgs.
