@@ -98,6 +98,6 @@ or 40% of the run's boss value.
 2. **Trash:** which packs block the paths between bosses and which you can skip.
 3. **Quest items:** what Tome of Twilight, Eye of Mugg, Cultist Ear and Twilight Bangle start
    or turn in for (gold, XP, rep), and whether any can be repeated.
-4. **Krol'dok Ogre Key (14% from Mugg):** what it opens. It isn't a shortcut out.
+4. **Krol'dok Ogre Key (14% from Mugg):** what it opens (the exit is a run back, so probably not a shortcut out).
 5. **Kroog:** how often he spawns, and his sell prices.
 6. **Professions:** Skinning, for the wolves and worgs.
