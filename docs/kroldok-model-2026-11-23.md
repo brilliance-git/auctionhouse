@@ -115,7 +115,7 @@ Moonshadow is also in the cultist area) → the bridge (Toof: "Hold da bridge!")
 | Mageweave Cloth | Shadowhide Bully | 3s | 4s | either |
 | Overlinked Chain Belt / Shoulderpads (grey) | trash | 18–24s | 37–65s, ~6 listed | vendor (thin market) |
 
-**One-time Horde quests** (XP and gold, not repeatable farm income):
+**One-time Horde quests** (all already completed by the player; quest drops have no farm value):
 - Eye of Mugg: Krom'rosh, Riverglades (59.4, 45.6)
 - Tome of Twilight: Tran'gul, Riverglades (59.6, 44.0)
 - A Token of Vengeance: Da'grosh, Riverglades (33.4, 38.0)
@@ -140,9 +140,6 @@ Moonshadow is also in the cultist area) → the bridge (Toof: "Hold da bridge!")
 1. **A timed test run:** the time at each boss kill, the time to exit and reset, gold before
    and after (greys vendored, blues kept), and the repair bill. Log it in `docs/farm-log.md`.
 2. **Trash:** which packs block the paths between bosses and which you can skip.
-3. **Quest items:** Eye of Mugg and Tome of Twilight are one-time Horde quests (see the
-   guide-video notes). Still unknown: Cultist Ear, Twilight Bangle, and what the Moulding
-   chain rewards.
-4. **Krol'dok Ogre Key:** confirmed to open a shortcut to Toof (also from the Moulding chain; Mugg drops it 14%).
-5. **Kroog:** how often he spawns, and his sell prices.
-6. **Professions:** Skinning, for Ashka's wolves. Thick Leather sells for 6–8s on the AH.
+3. **Krol'dok Ogre Key:** confirmed to open a shortcut to Toof (also from the Moulding chain; Mugg drops it 14%).
+4. **Kroog:** how often he spawns, and his sell prices.
+5. **Professions:** Skinning, for Ashka's wolves. Thick Leather sells for 6–8s on the AH.
