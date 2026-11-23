@@ -53,8 +53,8 @@ The entrance is at the bottom left. Confirmed portraits:
 - **War Handler Ashka:** the green-skinned figure, east-middle.
 - **Bossman Toof:** the red-horned ogre, just north of Ashka.
 - **Overlord Mugg:** the bald ogre at the top (northeast).
-- **The ogre with a "!" marker by the river:** by elimination, probably the rare Kroog or a
-  quest NPC. It's close to Ashka and Toof, so check whether it's up each time you pass.
+- **The ogre with a "!" marker by the river:** Thunk, who can be skipped. The rare Kroog
+  isn't on this map; note where he spawns if you see him.
 
 The leveling route (red line): entrance → loop north → Grox → Zarmok → east along the south →
 Ashka → **west to Nar'gurk and back** → Toof → loop → Mugg.
@@ -65,8 +65,11 @@ What can be improved:
    Mugg avoids walking back. Check in-game whether that path is open or gated.
 2. **The opening loop north** before Grox may be trash you can skip. It may also have been
    for quests while leveling.
-3. **The way out after the top boss is unknown.** It decides whether 6 bosses fit in 12
-   minutes. Possibilities: the Krol'dok Ogre Key (from Mugg), the river, or a walk back.
+3. **There's no shortcut out after Mugg: you run back from the top northeast to the entrance
+   at the bottom left** (mounted). That return trip is fixed time with no loot, so it counts
+   against Mugg's part of the route. Time it: if the full route goes over 12 minutes, the
+   decision is whether Ashka + Toof + Mugg (4g 00s together) are worth the trip east plus the
+   run back.
 4. **Once you have the Warplate Helmet and Chest,** Nar'gurk is the lowest-value boss
    (1g 01s) and the longest detour, so he's the first to skip if a run runs long.
 
@@ -92,10 +95,9 @@ or 40% of the run's boss value.
 ## Still needed
 1. **A timed test run:** the time at each boss kill, the time to exit and reset, gold before
    and after (greys vendored, blues kept), and the repair bill. Log it in `docs/farm-log.md`.
-2. **Boss order and layout:** which bosses are on the main path and which need a detour, and
-   which trash you can skip.
+2. **Trash:** which packs block the paths between bosses and which you can skip.
 3. **Quest items:** what Tome of Twilight, Eye of Mugg, Cultist Ear and Twilight Bangle start
    or turn in for (gold, XP, rep), and whether any can be repeated.
-4. **Krol'dok Ogre Key (14% from Mugg):** what it opens.
+4. **Krol'dok Ogre Key (14% from Mugg):** what it opens. It isn't a shortcut out.
 5. **Kroog:** how often he spawns, and his sell prices.
 6. **Professions:** Skinning, for the wolves and worgs.
