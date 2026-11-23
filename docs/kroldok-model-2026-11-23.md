@@ -140,6 +140,5 @@ Moonshadow is also in the cultist area) → the bridge (Toof: "Hold da bridge!")
 1. **A timed test run:** the time at each boss kill, the time to exit and reset, gold before
    and after (greys vendored, blues kept), and the repair bill. Log it in `docs/farm-log.md`.
 2. **Trash:** which packs block the paths between bosses and which you can skip.
-3. **Krol'dok Ogre Key:** confirmed to open a shortcut to Toof (also from the Moulding chain; Mugg drops it 14%).
-4. **Kroog:** how often he spawns, and his sell prices.
-5. **Professions:** Skinning, for Ashka's wolves. Thick Leather sells for 6–8s on the AH.
+3. **Kroog:** how often he spawns, and his sell prices.
+4. **Professions:** Skinning, for Ashka's wolves. Thick Leather sells for 6–8s on the AH.
