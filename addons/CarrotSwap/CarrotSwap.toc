@@ -1,4 +1,4 @@
-## Interface: 11507
+## Interface: 16001
 ## Title: CarrotSwap
 ## Notes: Equips Carrot on a Stick when you mount and puts your old trinket back when you dismount.
 ## Author: brilliance-git
