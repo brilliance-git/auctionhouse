@@ -5,6 +5,7 @@ local CARROT_ID = 11122
 local TRINKET_SLOTS = { [13] = true, [14] = true }
 
 local f = CreateFrame("Frame")
+local warned = false    -- already said the old trinket is missing; don't repeat it
 local pending = false   -- a swap is waiting for combat to end
 
 local function Print(msg)
@@ -24,42 +25,62 @@ local function CarrotSlot()
   end
 end
 
-local function HaveCarrot()
-  return CarrotSlot() or GetItemCount(CARROT_ID) > 0
-end
-
 local function CanSwap()
   return not InCombatLockdown() and not UnitIsDeadOrGhost("player")
 end
 
+-- Remember the last trinket (not the carrot) seen in each trinket slot, so we
+-- always know what to put back, even if the carrot went on some other way
+-- (by hand, or before a /reload or logout).
+local function RememberTrinkets()
+  local db = DB()
+  db.last = db.last or {}
+  for slot in pairs(TRINKET_SLOTS) do
+    local id = GetInventoryItemID("player", slot)
+    if id and id ~= CARROT_ID then db.last[slot] = id end
+  end
+end
+
+local function Debug(msg)
+  if DB().debug then Print("|cff999999" .. msg .. "|r") end
+end
+
 local function PutCarrotOn()
   local db = DB()
-  if CarrotSlot() or not HaveCarrot() then return end
-  -- Remember what was in the slot so we can put it back. Don't overwrite an
-  -- older memory (e.g. you logged out mounted with the carrot on).
-  if not db.previous then
-    db.previous = GetInventoryItemID("player", db.slot) or false
-  end
+  if CarrotSlot() or IsInventoryItemLocked(db.slot) then return end
+  if GetItemCount(CARROT_ID) == 0 then Debug("no carrot in bags"); return end
+  RememberTrinkets()
+  warned = false
+  db.wasEmpty = GetInventoryItemID("player", db.slot) == nil
+  Debug("mounted: equipping carrot in slot " .. db.slot)
   EquipItemByName(CARROT_ID, db.slot)
 end
 
 local function TakeCarrotOff()
   local db = DB()
   local slot = CarrotSlot()
-  if not slot then db.previous = nil; return end  -- you took it off yourself
-  if db.previous == nil then return end           -- you put it on yourself; leave it
-  if db.previous and GetItemCount(db.previous) > 0 then
-    EquipItemByName(db.previous, slot)
-  elseif db.previous == false then
-    -- slot was empty before: move the carrot back to the bags
+  if not slot or IsInventoryItemLocked(slot) then return end  -- locked: a swap is already moving
+  local old = (db.last and db.last[slot]) or db.previous  -- previous: saved by v1.0
+  if db.wasEmpty or db.previous == false or not old then
+    Debug("dismounted: slot was empty before, moving carrot to bags")
     PickupInventoryItem(slot)
     if CursorHasItem() then
       PutItemInBackpack()
+      for bag = 1, 4 do
+        if not CursorHasItem() then break end
+        PutItemInBag(19 + bag)   -- bag slots are inventory slots 20-23
+      end
       if CursorHasItem() then ClearCursor(); Print("bags full, carrot left on.") end
     end
+  elseif GetItemCount(old) > 0 then
+    Debug("dismounted: putting item " .. old .. " back in slot " .. slot)
+    EquipItemByName(old, slot)
   else
-    Print("couldn't find your old trinket in your bags, carrot left on.")
+    if not warned then Print("your old trinket isn't in your bags, carrot left on.") end
+    warned = true
+    return
   end
+  db.wasEmpty = nil
   db.previous = nil
 end
 
@@ -68,16 +89,19 @@ local function Update()
   if not db.enabled then return end
   local mounted = IsMounted() and not UnitOnTaxi("player")
   if not CanSwap() then
+    Debug("in combat or dead, swap waits")
     pending = true
     return
   end
   pending = false
+  RememberTrinkets()
   if mounted then PutCarrotOn() else TakeCarrotOff() end
 end
 
 f:SetScript("OnEvent", function(_, event, unit)
   if event == "UNIT_AURA" and unit ~= "player" then return end
   if event == "PLAYER_REGEN_ENABLED" and not pending then return end
+  if event == "PLAYER_EQUIPMENT_CHANGED" then RememberTrinkets(); return end
   -- small delay: the mount aura and IsMounted() don't always update on the same frame
   C_Timer.After(0.1, Update)
 end)
@@ -86,6 +110,7 @@ f:RegisterEvent("PLAYER_ENTERING_WORLD")
 f:RegisterEvent("PLAYER_REGEN_ENABLED")
 f:RegisterEvent("PLAYER_UNGHOST")
 f:RegisterEvent("PLAYER_ALIVE")
+f:RegisterEvent("PLAYER_EQUIPMENT_CHANGED")
 f:RegisterUnitEvent("UNIT_AURA", "player")
 if C_EventUtils == nil or C_EventUtils.IsEventValid("PLAYER_MOUNT_DISPLAY_CHANGED") then
   pcall(f.RegisterEvent, f, "PLAYER_MOUNT_DISPLAY_CHANGED")
@@ -100,11 +125,14 @@ SlashCmdList.CARROTSWAP = function(msg)
     db.enabled = (msg == "on")
     Print(db.enabled and "enabled." or "disabled.")
     if db.enabled then Update() end
+  elseif msg == "debug" then
+    db.debug = not db.debug
+    Print("debug " .. (db.debug and "on." or "off."))
   elseif msg == "13" or msg == "14" then
     db.slot = tonumber(msg)
     Print("carrot goes in " .. (db.slot == 13 and "top (13)" or "bottom (14)") .. " trinket slot.")
   else
-    Print(("%s, slot %d. Commands: /carrot on | off | 13 | 14"):format(
+    Print(("%s, slot %d. Commands: /carrot on | off | 13 | 14 | debug"):format(
       db.enabled and "enabled" or "disabled", db.slot))
   end
 end
