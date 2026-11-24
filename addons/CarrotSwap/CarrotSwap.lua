@@ -106,6 +106,17 @@ f:SetScript("OnEvent", function(_, event, unit)
   C_Timer.After(0.1, Update)
 end)
 
+-- Backup check twice a second. Events alone missed some dismounts: if
+-- IsMounted() hasn't caught up when the last aura event fires, no later event
+-- comes. Only acts when the carrot doesn't match the mount state.
+C_Timer.NewTicker(0.5, function()
+  local db = DB()
+  if not db.enabled or InCombatLockdown() then return end
+  local mounted = IsMounted() and not UnitOnTaxi("player")
+  local wearing = CarrotSlot() ~= nil
+  if mounted ~= wearing and (wearing or GetItemCount(CARROT_ID) > 0) then Update() end
+end)
+
 f:RegisterEvent("PLAYER_ENTERING_WORLD")
 f:RegisterEvent("PLAYER_REGEN_ENABLED")
 f:RegisterEvent("PLAYER_UNGHOST")
@@ -132,7 +143,7 @@ SlashCmdList.CARROTSWAP = function(msg)
     db.slot = tonumber(msg)
     Print("carrot goes in " .. (db.slot == 13 and "top (13)" or "bottom (14)") .. " trinket slot.")
   else
-    Print(("%s, slot %d. Commands: /carrot on | off | 13 | 14 | debug"):format(
+    Print(("v1.2, %s, slot %d. Commands: /carrot on | off | 13 | 14 | debug"):format(
       db.enabled and "enabled" or "disabled", db.slot))
   end
 end
