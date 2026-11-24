@@ -82,9 +82,9 @@ updates the docs below; other chats should read them rather than redo the resear
 ### Current plan
 | Level | Farm | Why | Status |
 |---|---|---|---|
-| **42–59 (now)** | **Krol'dok Stronghold** | ~50 g/hr modelled: **41.6 g/hr from 6 bosses at real prices** (~8.3g/run in vendored BoP blues plus the Expert Campfire blueprint, 4.54%, ~27g) **+ ~8 g/hr trash coin (estimate)**; also the Krol'dok Warplate tank set. Nothing else at 47 models above ~21 g/hr conservatively (~30 optimistically). See `docs/kroldok-model-2026-11-23.md` and `docs/dungeon-farms-prot-warrior-2026-11-23.md` | estimated; **needs test runs** |
+| **42–59 (now)** | **Krol'dok Stronghold** | ~50 g/hr modelled: **41.6 g/hr from 6 bosses at real prices** (~8.3g/run in vendored BoP blues plus the Expert Campfire blueprint, 4.54%, ~27g) **+ ~8 g/hr trash coin (estimate)**; also the Krol'dok Warplate tank set. Nothing else at 47 models above ~21 g/hr conservatively (~30 optimistically). See `docs/kroldok-model-2026-11-23.md` and `docs/dungeon-farms-prot-warrior-2026-11-23.md` | estimated; solo viability **"maybe"** at 47 (elites 42–45, casters, fear), so **test one pack first** |
 | 47 (backups) | Zul'Farrak graveyard, The Drowned City, Razorfen Downs | ~18–30 g/hr modelled; ZF graveyard is a big near-level pull | not tested on a warrior |
-| 60 | **Krol'dok likely stays competitive; test Strat Living, Shaper's Terrace and DME to beat it** | On conservative numbers only Strat Living (~62 g/hr, mostly Righteous Orbs at the 2g vendor floor) beats Krol'dok at 60 (~50 g/hr), at low confidence. Shaper's Terrace, Scholomance and Blackmaw Hold model at ~47–50 conservatively, 77–85 optimistically. SM Cathedral mass pulls model at ~21–28 (greys and greens not counted). See `docs/dungeon-farms-prot-warrior-2026-11-23.md` | **no documented prot warrior solo**, so test it |
+| 60 | **Krol'dok at 60 (~50 g/hr, reliable solo)**; test Dire Maul East and Alcaz Prison | Ranked by solo viability first (`docs/dungeon-farms-viability-2026-11-23.md`): Krol'dok at 60 is the best farm a pre-raid prot warrior can count on. Then Maraudon ~30, ZF ~29 and SM Cathedral ~21. DME lashers (~37–63) and Alcaz Prison (~36–59) are "maybe". Strat Living, Shaper's Terrace, Scholomance and Blackmaw Hold model higher but are **unlikely solo** (level 58–60 elite casters, no documented prot solo): try them only after a test pack passes, or with raid gear after 9 Dec | tiers use Classic-era mechanics; Forever's prot rework may differ |
 
 Rules: use normal pull-and-kill only. No pathing, leash or ledge tricks; Blizzard confiscated
 gold and suspended players for the Blackmaw Hold farm (Nov 16–17, 2026). Instances are capped
@@ -93,6 +93,7 @@ at 5 per hour, so any run under 12 minutes uses the full cap.
 ### Docs
 | File | What it holds |
 |---|---|
+| `docs/dungeon-farms-viability-2026-11-23.md` | Which of those farms a solo prot warrior in pre-raid gear can actually clear: reliable / maybe / unlikely tiers, re-ranked tables at 47 and 60, a one-pack test checklist, what improves the odds (`dungeon_farm_model.py --reasons`) |
 | `docs/dungeon-farms-prot-warrior-2026-11-23.md` | Every Forever instance re-evaluated for a solo prot warrior at 47 and 60 (model: `scripts/dungeon_farm_model.py`) |
 | `docs/kroldok-model-2026-11-23.md` | Krol'dok boss-by-boss expected value, route rules, open questions |
 | `docs/instance-loot-values-2026-11-23.md` | The analysis: BoP check, AH and vendor value per instance, g/hr estimates, ranking, and data still needed |
@@ -123,7 +124,7 @@ scripts/item_report.py    price check any item(s)
 scripts/dungeon_drops.py  price the researched drops for each instance
 scripts/fetch_snapshots.py download every snapshot, the catalog, vendor goods and recipes to data/ (~50 MB, git-ignored)
 scripts/farm_leaderboard.py rank farmable commodities by market gold per day, offline from data/
-scripts/dungeon_farm_model.py rough g/h model for every dungeon farm at 47 and 60 (conservative and Krol'dok-anchored columns)
+scripts/dungeon_farm_model.py rough g/h model for every dungeon farm at 47 and 60, ranked by solo viability tier (--reasons)
 docs/                     dated analyses and research, plus the farm log
 ```
 
