@@ -2,6 +2,10 @@
 
     python3 scripts/dungeon_farm_model.py            # both level bands
     python3 scripts/dungeon_farm_model.py --band 60
+    python3 scripts/dungeon_farm_model.py --reasons   # with the solo-viability reason per farm
+
+Farms are ranked by solo viability tier (reliable > maybe > unlikely), then by g/h. The
+tiers follow Classic-era mechanics; WoW: Forever's prot rework may change them.
 
 Every number is an ESTIMATE. Nothing has been timed in-game yet (docs/farm-log.md).
 Only Krol'dok's boss value uses real sell prices and drop rates (Wowhead tooltips, see
@@ -130,6 +134,74 @@ FARMS = [
 ]
 
 
+# ---- Solo viability for a Protection Warrior in pre-raid gear (Classic-era mechanics) ----
+# reliable: out-levelled by ~10+, mobs barely hurt;
+# maybe:    mobs a few levels under, or non-elite / melee-only packs; costs consumables;
+# unlikely: elite packs at or near your level with casters, or huge near-level pulls.
+# Rule of thumb (auto_tier) from the level gap; the explicit TIERS below override it with a reason.
+TIER_ORDER = {"reliable": 0, "maybe": 1, "unlikely": 2}
+# Consumables per hour for "maybe"/"unlikely" farms (ESTIMATE): ~10 healing potions + ~10 bandages
+# + one elixir. Horde AH 2026-11-23: Greater/Superior Healing Potion ~4s, Heavy Mageweave
+# Bandage ~6s, Heavy Runecloth Bandage ~14s, Elixir of Fortitude ~30s.
+CONSUMABLES = {47: 1.0, 60: 2.5}
+
+
+def auto_tier(player, mob, elite=True):
+    gap = player - mob
+    if gap >= 10:
+        return "reliable"
+    if gap >= 3 or not elite:
+        return "maybe"
+    return "unlikely"
+
+
+TIERS = {
+    # level 47
+    "Krol'dok Stronghold (full, Ogre Key)": ("maybe",
+        "Elites 42-45 (gap 2-5); caster cultists, Terrorhowl fear, Mortal Strike; Battlegear "
+        "4-piece heal is doubled there. Done while levelling, solo not yet timed"),
+    "The Drowned City (full)": ("maybe", "Elites 35-40 (gap 7-12); boss mechanics unknown"),
+    "Zul'Farrak (graveyard + 2 bosses)": ("unlikely",
+        "Graveyard event pulls dozens of level 43-44 elites at once (gap 3)"),
+    "Razorfen Downs (full)": ("maybe", "Elites 37-46; quilboar casters"),
+    "Uldaman (partial, 3 bosses)": ("maybe", "Elites 41-47, mostly melee"),
+    "Scarlet Monastery Cathedral": ("reliable", "Humanoids 34-40 (gap 7-13), small packs"),
+    "Maraudon (Orange/Purple wing)": ("unlikely", "Elites 44-48 at your level; satyr casters"),
+    "City of Dalaran (full)": ("reliable", "Mobs ~28-33 (gap 14+)"),
+    "Razorfen Kraul (full)": ("reliable", "Mobs 29-38"),
+    "Ruins of Lordaeron (full)": ("reliable", "Mobs 15-20"),
+    "Scarlet Monastery Armory": ("reliable", "Humanoids 34-40"),
+    # level 60
+    "Krol'dok Stronghold at 60": ("reliable", "Elites 42-45 (gap 15+)"),
+    "Zul'Farrak at 60 (graveyard + 4 bosses)": ("reliable", "Elites 43-48 (gap 12+)"),
+    "Uldaman at 60 (6 bosses)": ("reliable", "Elites 41-47"),
+    "Maraudon (Princess run)": ("reliable", "Elites 44-52 (gap 8-16); Princess hits hard"),
+    "SM Cathedral at 60 (mass pull, 3 bosses)": ("reliable", "Humanoids 34-40 (gap 20+)"),
+    "SM Armory at 60 (full clear, Herod)": ("reliable", "Humanoids 34-40"),
+    "SM Library at 60 (2 bosses)": ("reliable", "Humanoids 33-39"),
+    "SM Graveyard at 60": ("reliable", "Undead 26-36"),
+    "Alcaz Prison (full)": ("maybe",
+        "Elites 48-53 (gap 7-12); Tidemistress is a caster, Zarla Ober's dragon phase unknown"),
+    "Dire Maul East (Lashers + 4 bosses)": ("maybe",
+        "Lashers are non-elite melee 54 (ideal for rage); Alzzin and Lethtendris cast"),
+    "Blackrock Depths (chunk, 4 bosses)": ("maybe",
+        "Pick the lower-level wings (mobs ~50-54); many caster packs elsewhere"),
+    "Stratholme Living, Scarlet side (chunked)": ("unlikely",
+        "Elites 57-60 with Sorcerers, Battle Mages, Priests; no documented prot solo"),
+    "Stratholme Undead (chunk, 3 bosses)": ("unlikely", "Elites 57-60; Maleki and acolytes cast"),
+    "Scholomance (partial, 4 bosses)": ("unlikely", "Elites 58-60, caster-heavy necromancers"),
+    "Shaper's Terrace (4 bosses, teleport exit)": ("unlikely",
+        "Elites 58-60; no solo boss data (the mining route skips mobs)"),
+    "Blackmaw Hold (partial, 4 bosses)": ("unlikely", "Elites 55-60; no solo reports"),
+    "Lower Blackrock Spire (chunk, 3 bosses)": ("unlikely", "Elites 55-60 orc packs with casters"),
+}
+
+
+def tier(f):
+    t = TIERS.get(f["name"])
+    return t if t else (auto_tier(f["band"], f["mob"], f["elite"]), "level-gap rule")
+
+
 def ah_values():
     """{(item, rate): g/h}, live from data/ when cached, else FALLBACK."""
     wanted = {pair for f in FARMS for pair in f["ah"]}
@@ -151,13 +223,15 @@ def evaluate(f, scale, ah):
     boss = f["real_boss"] if f["real_boss"] is not None else f["bosses"] * blue(f["ilvl"], scale)
     trash = f["kills"] * coin(f["mob"], f["elite"])
     ahg = sum(ah[p] for p in f["ah"])
-    return dict(total=runs * (boss + trash + f["extra"]) + ahg, boss_h=runs * boss,
-                trash_h=runs * trash, other_h=runs * f["extra"] + ahg, runs=runs)
+    cons = CONSUMABLES[f["band"]] if tier(f)[0] != "reliable" else 0.0
+    return dict(total=runs * (boss + trash + f["extra"]) + ahg - cons, boss_h=runs * boss,
+                trash_h=runs * trash, other_h=runs * f["extra"] + ahg, cons=cons, runs=runs)
 
 
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--band", type=int, choices=(47, 60))
+    ap.add_argument("--reasons", action="store_true", help="print the viability reason per farm")
     a = ap.parse_args()
     ah, src = ah_values()
     print(f"AH drops: {src}. Conservative = blues at catalog median (x{CONSERVATIVE:.2f}); "
@@ -166,15 +240,22 @@ def main():
         if a.band and a.band != band:
             continue
         rows = [f for f in FARMS if f["band"] == band]
-        rows.sort(key=lambda f: -evaluate(f, CONSERVATIVE, ah)["total"])
-        print(f"\n== Level {band} ==")
-        print(f"{'farm':44} {'conserv':>7} {'anchored':>8} | {'boss/h':>6} {'trash/h':>7} "
+        rows.sort(key=lambda f: (TIER_ORDER[tier(f)[0]], -evaluate(f, CONSERVATIVE, ah)["total"]))
+        print(f"\n== Level {band} (ranked by solo viability, then conservative g/h; "
+              f"consumables -{CONSUMABLES[band]} g/h on maybe/unlikely) ==")
+        print(f"{'tier':9} {'farm':44} {'conserv':>7} {'anchored':>8} | {'boss/h':>6} {'trash/h':>7} "
               f"{'AH+other':>8}  {'blues':8} conf")
+        last = None
         for f in rows:
+            t, why = tier(f)
+            if a.reasons and t != last:
+                print(f"--- {t} ---")
+            last = t
             c, h = evaluate(f, CONSERVATIVE, ah), evaluate(f, 1.0, ah)
-            print(f"{f['name']:44} {c['total']:7.0f} {h['total']:8.0f} | {c['boss_h']:6.1f} "
+            print(f"{t:9} {f['name']:44} {c['total']:7.0f} {h['total']:8.0f} | {c['boss_h']:6.1f} "
                   f"{c['trash_h']:7.1f} {c['other_h']:8.1f}  {f['basis']:8} {f['conf']}")
-
+            if a.reasons:
+                print(f"{'':9}   why: {why}")
 
 if __name__ == "__main__":
     main()
