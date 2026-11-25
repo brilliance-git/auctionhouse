@@ -97,6 +97,7 @@ at 5 per hour, so any run under 12 minutes uses the full cap.
 ### Docs
 | File | What it holds |
 |---|---|
+| `docs/farming-gear-2026-11-25.md` | Gear plan for farming at 60 as a solo prot warrior: heal-on-hit and damage-on-block/reflect items, Icy Veins' pre-raid lists adapted for solo farming, buying order, and Horde AH prices for the BoE items (Recovery enchant ~3g in materials, Shield Spike ~9.50g, Valor pieces ~35g for three, Skullflame Shield ~515g, Force Reactive Disk never listed) |
 | `docs/uldaman-zf-sm-real-drops-2026-11-25.md` | Uldaman, Zul'Farrak, all of SM, Razorfen Downs and Razorfen Kraul at 60 from real Wowhead Forever drop tables: ZF graveyard + pyramid ~39 g/hr (third reliable farm), SM Cathedral ~26, RFD ~24, Uldaman ~23, RFK ~14, Ruins of Lordaeron ~8; all boss blues BoP. Every farm is real-data except City of Dalaran (no Wowhead data) |
 | `docs/wowhead-drops-classic-4-2026-11-25.md` | Raw Wowhead Forever drop tables for the rest of SM, Razorfen Downs and Razorfen Kraul |
 | `docs/wowhead-drops-classic-5-2026-11-25.md` | Raw Wowhead Forever drop tables for Roogug (RFK) and Ruins of Lordaeron; notes that City of Dalaran has no Wowhead data |
@@ -119,10 +120,12 @@ at 5 per hour, so any run under 12 minutes uses the full cap.
 | `docs/findings-2026-11-22.md` | Fishing comparison and market-cornering scan (Waylaid Crates etc.) |
 
 ### Next steps
-1. Do 1–2 timed Krol'dok runs at 60 and record them in `docs/farm-log.md`.
-2. Time one Dire Maul East loop. Switch if it beats Krol'dok's measured g/hr.
-3. Try one Stratholme pack to see whether the "unlikely" tier is too pessimistic.
-4. Replace the estimates with measured g/hr.
+1. **Gear:** weapon sustain enchant (Recovery, ~3g in materials) + Thorium Shield Spike (~9.50g)
+   first; Skullflame Shield (~515g) later. See `docs/farming-gear-2026-11-25.md`.
+2. Do 1–2 timed Krol'dok runs at 60 and record them in `docs/farm-log.md`.
+3. Time one Dire Maul East loop. Switch if it beats Krol'dok's measured g/hr.
+4. Try one Stratholme pack to see whether the "unlikely" tier is too pessimistic.
+5. Replace the estimates with measured g/hr.
 
 ### Open ideas
 - A price watcher: alert when Waylaid Crates or Greater Shadow Protection Potions drop below

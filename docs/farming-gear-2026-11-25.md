@@ -25,7 +25,8 @@ the neutral house.
    every time you block. In big pulls you block a lot, and in Forever every block also gives
    5 rage.
 3. **Skullflame Shield** is the one item that does both: it steals 270 life when struck (3%)
-   and deals 90–140 Fire damage to everything around you (2%). It's BoE, so it's a purchase.
+   and deals 90–140 Fire damage to everything around you (2%). It's BoE, so it's a purchase,
+   but at ~515g on the Horde AH it's a later buy (section 6).
 4. **Stamina and Armor next.** Icy Veins' defensive priority is Stamina > Armor > Agility >
    Avoidance > Defense. The hit, expertise and defense caps are set against level-63 bosses.
    Against our out-levelled farms (mobs 42–52) they don't matter, so don't pay for them yet.
@@ -143,24 +144,53 @@ farming, use **Survivability** as the target and **Affordable** as the path.
 
 ## 5. Buying and farming order
 1. **Weapon enchant: Recovery or Lifestealing.** Cheapest sustain.
-2. **Thorium Shield Spike** on your current shield.
-3. **Skullflame Shield** if the Horde AH price is reasonable (section 6).
-4. **Pix Xizzix pieces and Defender's Grip Stabilizer:** Krol'dok benefits most.
+2. **Thorium Shield Spike** on your current shield (~9.50g).
+3. **Pix Xizzix pieces and Defender's Grip Stabilizer:** Krol'dok benefits most.
+4. **Valor BoE pieces** now that they're cheap: Gauntlets ~23g, Bracers ~7g, Belt ~5g on the
+   Horde AH (section 6).
 5. **Farm your own upgrades while you farm gold:**
    - Blackstone Ring on the Princess loop.
    - Fist of the Damned from Ogom.
    - Girdle of Extracted Answers from Alcaz.
    - Razor Gauntlets and Satyr's Bow on the DME test runs.
-6. **Valor BoE pieces,** then the Heroism questline, over time.
+6. **Skullflame Shield only later,** once gold allows: ~515g on the Horde AH, about 10 hours of
+   Krol'dok for one proc item. **Force Reactive Disk** has never been listed, so it needs an
+   engineer. Then the Heroism questline, over time.
 7. Consumables for the DME and Strat tests (from the viability doc): Free Action Potions,
    Troll's Blood potions, and engineering explosives.
 
 ## 6. Horde AH prices for the BoE items
-*To be filled in from the live Horde AH:* Skullflame Shield, Thorium Shield Spike, Force
-Reactive Disk, Demon Forged Breastplate, Lion Horn of Stormwind, Gauntlets of Valor (~45g on
-22–25 Nov), Belt of Valor, Bracers of Valor, Myrmidon's Signet, Julie's Dagger, Formula:
-Enchant Weapon – Lifestealing (~50g, thin), and the Recovery enchant's mats (Soul Dust, Large
-Glimmering Shard, Greater Astral Essence, Pyrite, Silver Ore).
+Horde AH only (house 114), from `scripts/item_report.py`, 25 Nov 2026 (history from 17 Nov).
+"Lowest now" is the cheapest current listing; "after cut" is what you'd get selling at that
+price (×0.95). The trend is shown only where it matters.
+
+| Item | Lowest now | After cut | Listings now | Note |
+|---|---|---|---|---|
+| **Skullflame Shield** | **515g** | 489g | 8 | Median ~576g over the week. **Far too expensive for the gain at our farm rates** (~10 h of Krol'dok) |
+| Thorium Shield Spike | **9.50g** | 9.03g | 8 (24 items) | Liquid: ~33 sold a day. Cheap |
+| Force Reactive Disk | — | — | **none** | **Never listed** on the Horde AH. You'd need an engineer to craft it |
+| Demon Forged Breastplate | 85g | 81g | 2 | Falling (median ~130g, from ~176g → ~85g) |
+| The Lion Horn of Stormwind | 750g | 713g | 2 | Very thin; asking prices swing (up to 10,000g) |
+| Gauntlets of Valor | **23g** | 22g | 18 | Falling (60g → ~33g); was ~45g on 22–24 Nov |
+| Belt of Valor | **5.01g** | 4.76g | 62 | Falling (20g → ~5g) |
+| Bracers of Valor | **6.88g** | 6.54g | 10 | Falling (12.5g → ~6.5g) |
+| Myrmidon's Signet | 50g | 47.5g | 20 | Easing (75g → 59g) |
+| Julie's Dagger | 6.00g | 5.70g | 11 | |
+| Formula: Enchant Weapon – Lifestealing | **49.40g** | 46.93g | 6 | Down from ~199g at the start of the week |
+| Invulnerable Mail | 85g | 81g | 5 | Falling (150g → ~99g) |
+| Soul Dust | 4.2s | | 1,615 items | Recovery needs 6: **~0.25g** |
+| Large Glimmering Shard | 36.8s | | 1,807 items | Recovery needs 4: **~1.47g** |
+| Greater Astral Essence | 15.0s | | 1,189 items | Recovery needs 6: **~0.90g** |
+| Pyrite | 2.6s | | 3,013 items | Recovery needs 4: **~0.10g** |
+| Silver Ore | 7.3s | | 708 items | Recovery needs 4: **~0.29g** |
+
+- **No listings:** Force Reactive Disk only. Everything else is on the Horde AH, though The Lion
+  Horn of Stormwind and Demon Forged Breastplate have only 2 listings each.
+- **Enchant Weapon – Recovery costs ~3.0g in materials** (plus 45 Merchant's Favor and an
+  enchanter). That's far cheaper than the Lifestealing formula (~49g, and you'd still need an
+  enchanter to apply it).
+- **The Valor pieces are cheap and getting cheaper:** Gauntlets ~23g, Bracers ~7g, Belt ~5g,
+  about 35g for all three.
 
 ## 7. Real vs judgement
 | Part | Status |
@@ -170,3 +200,4 @@ Glimmering Shard, Greater Astral Essence, Pyrite, Silver Ore).
 | Sources and drop rates on our loops | **real** (this repo's Wowhead drop tables) |
 | Reflect and on-block damage per second | **rough estimate** (hits per second and block rate assumed) |
 | Recovery proccing less against low-level mobs | **reported** (Icy Veins), not measured |
+| Horde AH prices (section 6) | **real** (`scripts/item_report.py`, Horde AH, 25 Nov 2026) |
