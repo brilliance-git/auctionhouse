@@ -1,5 +1,14 @@
 # ~15-minute dungeon loops: gold per minute instead of full clears (2026-11-25)
 
+> **Correction (2026-11-25, `classic-dungeons-real-drops-2026-11-25.md`):** Sunken Temple, LBRS, BRD, Scholomance and Stratholme now use real Wowhead Forever drop tables.
+> - **Sunken Temple falls to ~20–22 g/h:** the balcony trolls drop no blues.
+> - **BRD stays at ~34.**
+> - **Strat Undead (ziggurats + Ramstein ~105), Strat Living (~103), LBRS (~77) and Scholomance (~58) jump:** boss greens and BoE set pieces. All are "unlikely" solo.
+> - **Krol'dok (~50) is still the best reliable farm,** and DME (~40) is the best "maybe".
+>
+> Run `python3 scripts/dungeon_farm_model.py` for current numbers; the tables below are as first written.
+
+
 **Question:** for every dungeon the model treated as too long (a generic "N-boss chunk",
 "partial" or "long"), what's the best concrete loop of about 15 minutes, from zone-in to reset?
 And does it beat Krol'dok?

@@ -1,5 +1,8 @@
 # Sunken Temple (Temple of Atal'Hakkar): the "Sons of Hakkar" farm (2026-11-25)
 
+> **Correction (2026-11-25, `classic-dungeons-real-drops-2026-11-25.md`):** real Wowhead Forever data shows the **six balcony trolls drop no blues**. They aren't in the list of mobs that drop one. The "guaranteed blue per boss" claim below doesn't hold for them. The real route value is Jammal'an (1.00 blues per kill) + Ogom (0.98) + Spawn of Hakkar (0.48 blues + Wingveil + greens): **~20–22 g/h conservative**, not ~40. Spawn of Hakkar alone stays ~5–8 g/h. Sunken Temple is no longer the best "maybe" at 60; Dire Maul East (~40, estimated) is. The sections below are kept as written.
+
+
 **Question:** you used to farm the "Sons of Hakkar" in Sunken Temple. Is that, or a normal
 Sunken Temple boss route, a good solo farm for a Protection Warrior in WoW: Forever, and how
 does it compare with Krol'dok?
