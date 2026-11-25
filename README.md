@@ -97,7 +97,7 @@ at 5 per hour, so any run under 12 minutes uses the full cap.
 ### Docs
 | File | What it holds |
 |---|---|
-| `docs/farming-gear-2026-11-25.md` | Gear plan for farming at 60 as a solo prot warrior: heal-on-hit and damage-on-block/reflect items, Icy Veins' pre-raid lists adapted for solo farming, buying order, and Horde AH prices for the BoE items (Recovery enchant ~3g in materials, Shield Spike ~9.50g, Valor pieces ~35g for three, Skullflame Shield ~515g, Force Reactive Disk never listed) |
+| `docs/farming-gear-2026-11-25.md` | Gear plan for farming at 60 as a solo prot warrior: heal-on-hit and damage-on-block/reflect items, Icy Veins' pre-raid lists adapted for solo farming, buying order, and Horde AH prices for the BoE items (Recovery enchant ~3g in materials, Shield Spike ~9.50g, Valor pieces ~35g for three, Skullflame Shield ~515g, Force Reactive Disk not in the game until Molten Core) |
 | `docs/uldaman-zf-sm-real-drops-2026-11-25.md` | Uldaman, Zul'Farrak, all of SM, Razorfen Downs and Razorfen Kraul at 60 from real Wowhead Forever drop tables: ZF graveyard + pyramid ~39 g/hr (third reliable farm), SM Cathedral ~26, RFD ~24, Uldaman ~23, RFK ~14, Ruins of Lordaeron ~8; all boss blues BoP. Every farm is real-data except City of Dalaran (no Wowhead data) |
 | `docs/wowhead-drops-classic-4-2026-11-25.md` | Raw Wowhead Forever drop tables for the rest of SM, Razorfen Downs and Razorfen Kraul |
 | `docs/wowhead-drops-classic-5-2026-11-25.md` | Raw Wowhead Forever drop tables for Roogug (RFK) and Ruins of Lordaeron; notes that City of Dalaran has no Wowhead data |

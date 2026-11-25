@@ -68,14 +68,14 @@ the neutral house.
 | Julie's Dagger | Chance on hit: heals 78 over 12 s | 50 | BoE | World drop | Small |
 | Truesilver Breastplate | When struck: 3% chance to heal 60–100 | 44 | BoE | Crafted, Blacksmithing | Too small at 60 |
 | Maw of Min'loth | When struck in melee: 10% chance to steal 40 life (3 s cooldown) | 37 | BoP | Min'loth, The Drowned City | Too low-level |
-| Lifegiving Gem | Use: heal 15% and +15% max health for 20 s (5 min cooldown) | 60 | BoP | Broodlord, Blackwing Lair | Raid, later |
+| Lifegiving Gem | Use: heal 15% and +15% max health for 20 s (5 min cooldown) | 60 | BoP | Broodlord, Blackwing Lair | **Not in the game yet** (raid not released) |
 
 ## 3. Damage back to attackers (reflect and on-block)
 | Item | Effect (Wowhead Forever tooltip) | Req | Bind | Source | For farming |
 |---|---|---|---|---|---|
 | **Girdle of Extracted Answers** | **20–30 Physical damage every time you block** (plate waist) | 48 | BoP | The Questioner, Alcaz Prison | **Strongest on-block item you can farm.** Alcaz is a "maybe" (~29 g/h) |
 | **Thorium Shield Spike** | Attaches to your shield; deals damage every time you block | Blacksmithing 250 | BoE | Crafted | Cheap, and works on any shield |
-| **Force Reactive Disk** | On block: an electrical charge damages **all nearby enemies** (1 s cooldown; can damage the shield) | 60 | BoE | Crafted, Engineering | The only AoE-on-block shield. Needs an engineer |
+| Force Reactive Disk | On block: an electrical charge damages **all nearby enemies** (1 s cooldown; can damage the shield) | 60 | BoE | Crafted, Engineering; the schematic comes from Molten Core | **Not in the game yet:** Molten Core isn't out. The only AoE-on-block shield once it is |
 | **Razor Gauntlets** | When struck in combat: 7 Nature damage to the attacker | 54 | BoP | Alzzin the Wildshaper, Dire Maul East | **On the DME loop.** Hits every time you're struck |
 | Crest of Retribution | +1.2% block chance; 6–39 Physical every block | 55 | BoP | Ramstein the Gorger, Stratholme | "Unlikely" tier dungeon |
 | Aegis of the Scarlet Commander | 13–15 Holy every block | 39 | BoP | Scarlet Commander Mograine, SM Cathedral | From our filler farm, but low-level shield stats |
@@ -84,7 +84,7 @@ the neutral house.
 | Vile Protector | When struck: 5% chance of 105–175 Shadow to the attacker | ~28 | BoP | Quest (Compendium) | Too low-level |
 | Freezing Band, Girdle of Reprisal, The Green Tower | 1% "when struck" procs | 36–47 | mixed | Various | Too rare to matter |
 | Bramblebark Barrier, Bristlecone Cloak, Razorsteel Shoulders, Flame Seared Signet | 2–3 damage to the attacker when struck | 52–59 | mixed | Mount Hyjal quests (Bramblebark, Bristlecone), a quest reward (Razorsteel), Terrorspark in Burning Steppes (Signet) | Negligible |
-| Fetish of Chitinous Spikes | Use: 25 Nature damage to attackers for 30 s (3 min cooldown) | 60 | BoP | Buru the Gorger, Ruins of Ahn'Qiraj | Raid, later |
+| Fetish of Chitinous Spikes | Use: 25 Nature damage to attackers for 30 s (3 min cooldown) | 60 | BoP | Buru the Gorger, Ruins of Ahn'Qiraj | **Not in the game yet** (raid not released) |
 
 **How much is it worth?** A rough estimate, not measured: holding 10–15 mobs that each swing
 about every 2 s means ~5–7 hits a second.
@@ -154,8 +154,8 @@ farming, use **Survivability** as the target and **Affordable** as the path.
    - Girdle of Extracted Answers from Alcaz.
    - Razor Gauntlets and Satyr's Bow on the DME test runs.
 6. **Skullflame Shield only later,** once gold allows: ~515g on the Horde AH, about 10 hours of
-   Krol'dok for one proc item. **Force Reactive Disk** has never been listed, so it needs an
-   engineer. Then the Heroism questline, over time.
+   Krol'dok for one proc item. Then the Heroism questline, over time. (The **Force Reactive
+   Disk** isn't in the game until Molten Core is released.)
 7. Consumables for the DME and Strat tests (from the viability doc): Free Action Potions,
    Troll's Blood potions, and engineering explosives.
 
@@ -168,7 +168,7 @@ price (×0.95). The trend is shown only where it matters.
 |---|---|---|---|---|
 | **Skullflame Shield** | **515g** | 489g | 8 | Median ~576g over the week. **Far too expensive for the gain at our farm rates** (~10 h of Krol'dok) |
 | Thorium Shield Spike | **9.50g** | 9.03g | 8 (24 items) | Liquid: ~33 sold a day. Cheap |
-| Force Reactive Disk | — | — | **none** | **Never listed** on the Horde AH. You'd need an engineer to craft it |
+| Force Reactive Disk | — | — | **none** | **Never listed:** it isn't in the game yet (the schematic comes from Molten Core, which isn't out) |
 | Demon Forged Breastplate | 85g | 81g | 2 | Falling (median ~130g, from ~176g → ~85g) |
 | The Lion Horn of Stormwind | 750g | 713g | 2 | Very thin; asking prices swing (up to 10,000g) |
 | Gauntlets of Valor | **23g** | 22g | 18 | Falling (60g → ~33g); was ~45g on 22–24 Nov |
@@ -184,7 +184,7 @@ price (×0.95). The trend is shown only where it matters.
 | Pyrite | 2.6s | | 3,013 items | Recovery needs 4: **~0.10g** |
 | Silver Ore | 7.3s | | 708 items | Recovery needs 4: **~0.29g** |
 
-- **No listings:** Force Reactive Disk only. Everything else is on the Horde AH, though The Lion
+- **No listings:** Force Reactive Disk only, because it isn't in the game yet. Everything else is on the Horde AH, though The Lion
   Horn of Stormwind and Demon Forged Breastplate have only 2 listings each.
 - **Enchant Weapon – Recovery costs ~3.0g in materials** (plus 45 Merchant's Favor and an
   enchanter). That's far cheaper than the Lifestealing formula (~49g, and you'd still need an
