@@ -68,15 +68,14 @@ all trash drops:
 | DMN | King Gordok / Captain Kromcrush / Stomper Kreeg | 2.19 / 1.00 / 0.72 | 60–63 | 5% / 19% / 16% |
 
 ## 3. Updated loops (conservative / anchored g/h)
-| Band | Loop | Before | Now | Tier |
-|---|---|---|---|---|
-| 60 | Krol'dok at 60 | 50 | **50** (real sell prices) | reliable |
-| 60 | **Maraudon: Princess loop (12 min)**: Noxxion > Landslide > Rotgrip > Princess | 32 / 50 | **41 / 64** | reliable |
-| 60 | **Dire Maul East (12 min)**: Pusillin > Zevrim > Hydrospawn > lashers > Alzzin | 40 / 66 | **56 / 86** | maybe |
-| 60 | Dire Maul East (15 min, + Lethtendris) | 40 / 66 | 53 / 82 | maybe |
-| 60 | **Dire Maul North: to King Gordok (~20 min)**: guards > Kreeg > Kromcrush > Gordok + Cho'Rush | 33 / 54 (old guard route) | **63 / 100** | unlikely |
-| 60 | Dire Maul West: Warpwood loop (15 min) | 26 / 42 | 33 / 52 | unlikely |
-| Levelling | Maraudon: Orange wing (15 min) | 16 / 25 | 18 / 28 | unlikely |
+| Loop | Before | Now | Tier |
+|---|---|---|---|
+| Krol'dok at 60 | 50 | **50** (real sell prices) | reliable |
+| **Maraudon: Princess loop (12 min)**: Noxxion > Landslide > Rotgrip > Princess | 32 / 50 | **41 / 64** | reliable |
+| **Dire Maul East (12 min)**: Pusillin > Zevrim > Hydrospawn > lashers > Alzzin | 40 / 66 | **56 / 86** | maybe |
+| Dire Maul East (15 min, + Lethtendris) | 40 / 66 | 53 / 82 | maybe |
+| **Dire Maul North: to King Gordok (~20 min)**: guards > Kreeg > Kromcrush > Gordok + Cho'Rush | 33 / 54 (old guard route) | **63 / 100** | unlikely |
+| Dire Maul West: Warpwood loop (15 min) | 26 / 42 | 33 / 52 | unlikely |
 
 The 12-minute DME loop wins over 15 minutes: Lethtendris adds less than the extra slot costs.
 

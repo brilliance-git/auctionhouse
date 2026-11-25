@@ -183,7 +183,7 @@
 ## 4. Other Forever gold notes found (not warrior-specific)
 
 - Booty Bay weekly gold quest pays 10–100 g/week.
-- Fishing farm video claims ~50 g/hr while leveling; another "raw gold" video claims 60 g/hr (methods not read).
+- Fishing farm video claims ~50 g/hr; another "raw gold" video claims 60 g/hr (methods not read).
 - Mage Krol'dok ledge farm ~109 g/hr (exploit-adjacent).
 - Warlock Maraudon 10-min runs (vendor everything, hope for weapons).
 - Rogue boss farms: SM GY rares, Gnomeregan Viscous Fallout (Toxic Revenger 18%, Acidic Walkers 59%), RFK Aggem.
@@ -225,7 +225,7 @@
 - wowclassicdb — ZF Zombie / Whip Lasher / Crimson Monk: https://wowclassicdb.com/tbc/npc/7286 , https://wowclassicdb.com/tbc/npc/13022 , https://wowclassicdb.com/tbc/npc/11043
 - GameRant — Krol'dok 100 g/hr: https://gamerant.com/world-of-warcraft-wow-forever-gold-farm-kroldok-stronghold/
 - foreverwisp / technobezz — Blackmaw enforcement: https://www.foreverwisp.com/guides/wow-forever-blackmaw-hold-gold-farm-nerf , https://www.technobezz.com/news/world-warcraft-gold-exploit-confiscations-suspensions
-- Icy Veins — Forever prot leveling / builds: https://www.icy-veins.com/wow-forever/protection-warrior-leveling , https://www.icy-veins.com/wow-forever/protection-warrior-tank-pve-spec-builds-talents
+- Icy Veins — Forever prot guides / builds: https://www.icy-veins.com/wow-forever/protection-warrior-leveling , https://www.icy-veins.com/wow-forever/protection-warrior-tank-pve-spec-builds-talents
 - Icy Veins — Classic warrior goldmaking: https://www.icy-veins.com/wow-classic/classic-warrior-goldmaking-guide-the-best-ways-to-make-gold
 - Twitch — KallTorak prot warrior RFK solo: https://www.twitch.tv/videos/2892318497
 - YouTube — Solo ZF Farm (mage, Forever): https://www.youtube.com/watch?v=JZ0f71_mMSw

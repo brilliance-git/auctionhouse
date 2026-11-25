@@ -29,8 +29,7 @@ in it, so they're still estimates.
   per kill, valued here at the vendor floor) and **BoE dungeon-set pieces** (Gauntlets of
   Valor ~45g, Shadowcraft Gloves ~27g, Devout Gloves ~26g). All are level 57–62 elite caster
   content with no documented prot-warrior solo.
-- **Krol'dok (~50, real sell prices) is still the best farm you can count on,** while levelling
-  and at 60. **Strat is now clearly the prize to test** at 60, or with raid gear after 9 Dec.
+- **Krol'dok (~50, real sell prices) is still the best farm you can count on** at 60. **Strat is now clearly the prize to test** at 60, or with raid gear after 9 Dec.
 - **"Reliable" and "maybe" loops that changed:**
   - **Sunken Temple falls from ~41 to ~20 g/h.** The six balcony troll minibosses are **not in
     Wowhead's list of mobs that drop a blue**, so they drop none. The loop's real value is
@@ -83,7 +82,7 @@ Firelands, Ironfel and Invader's Scourgestone.
 probably hide more BoE dungeon-set pieces, so BoE value is under-counted.
 
 ## 3. How greens are valued
-- **Boss greens are counted at the median vendor price for their level band:** ilvl 48–55 →
+- **Boss greens are counted at the median vendor price for their item-level range:** ilvl 48–55 →
   0.85g, ilvl 56–63 → 1.37g (511 / 487 greens in the catalog).
   - Selling on the AH pays more: lower quartile ~1.00g / ~2.00g, so ~0.95g / ~1.90g after
     the cut.
@@ -94,20 +93,18 @@ probably hide more BoE dungeon-set pieces, so BoE value is under-counted.
 - **Trash greens are still not counted**, so all dungeons are compared the same way.
 
 ## 4. Updated loops (conservative / anchored g/h)
-| Band | Loop | Before | Now | Tier |
-|---|---|---|---|---|
-| Levelling | Sunken Temple: trolls > Jammal'an + Ogom (+ Spawn) (15 min) | 39 / 64 | **22 / 32** | unlikely |
-| Levelling | Sunken Temple: Spawn of Hakkar only | 5 / 8 | 5 / 7 (0.48 BoP blues + Wingveil + greens) | maybe |
-| 60 | Krol'dok at 60 | 50 | **50** | reliable |
-| 60 | Dire Maul East (estimated) | 40 / 66 | 40 / 66 | maybe |
-| 60 | Blackrock Depths: entrance loop (12 min) | 34 / 57 | 34 / 54 | maybe |
-| 60 | Sunken Temple at 60: trolls > Jammal'an + Ogom (12 min) | 41 / 69 | **20 / 30** | maybe |
-| 60 | **Stratholme Undead: ziggurats + Ramstein (15 min)**, new | — | **105 / 135** | unlikely |
-| 60 | **Stratholme Living: Willey + Galford (15 min)** | 71 / 96 | **103 / 130** | unlikely |
-| 60 | LBRS: front loop (12 min) | 33 / 53 | **77 / 96** | unlikely |
-| 60 | Stratholme Undead: side gate (15 min) | 38 / 63 | 75 / 105 | unlikely |
-| 60 | Shaper's Terrace: Titanosaur + Nanaya (15 min) | 72 / 113 | 70 / 111 | unlikely |
-| 60 | Scholomance: Rattlegore + Jandice + Ras (15 min) | 29 / 48 | 58 / 83 | unlikely |
+| Loop | Before | Now | Tier |
+|---|---|---|---|
+| Krol'dok at 60 | 50 | **50** | reliable |
+| Dire Maul East (estimated) | 40 / 66 | 40 / 66 | maybe |
+| Blackrock Depths: entrance loop (12 min) | 34 / 57 | 34 / 54 | maybe |
+| Sunken Temple at 60: trolls > Jammal'an + Ogom (12 min) | 41 / 69 | **20 / 30** | maybe |
+| **Stratholme Undead: ziggurats + Ramstein (15 min)**, new | — | **105 / 135** | unlikely |
+| **Stratholme Living: Willey + Galford (15 min)** | 71 / 96 | **103 / 130** | unlikely |
+| LBRS: front loop (12 min) | 33 / 53 | **77 / 96** | unlikely |
+| Stratholme Undead: side gate (15 min) | 38 / 63 | 75 / 105 | unlikely |
+| Shaper's Terrace: Titanosaur + Nanaya (15 min) | 72 / 113 | 70 / 111 | unlikely |
+| Scholomance: Rattlegore + Jandice + Ras (15 min) | 29 / 48 | 58 / 83 | unlikely |
 
 **Routes:**
 - **Strat Undead, ziggurats + Ramstein:** side gate > Baroness Anastari > Nerub'enkan > Maleki
@@ -123,7 +120,7 @@ probably hide more BoE dungeon-set pieces, so BoE value is under-counted.
   - The 12-minute variant (without Smolderweb) wins.
 
 ## 5. Verdict
-- **Plan unchanged: Krol'dok,** while levelling and at 60.
+- **Plan unchanged: Krol'dok** at 60.
 - **At 60, the test order changes:**
   1. **Stratholme** (Undead ziggurats + Ramstein, or Living Willey + Galford): ~100 g/h if a
      prot warrior can handle it, so test one pack first.
