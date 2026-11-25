@@ -37,6 +37,10 @@ KROL_BLUE = 1.24              # mean real vendor price of a Krol'dok boss blue (
 CONSERVATIVE = 1.94 / 3.47    # catalog median at ilvl 60 / anchored curve at ilvl 60 = 0.56
 NON_ELITE = 0.4               # non-elite coin as a share of elite coin (a third to a half)
 SHARE = 0.10
+# Spawn of Hakkar's world-drop BoE greens: ~22% per kill (122 items at 0.2-1% each, Wowhead Forever)
+# x ~1.04g net (median Horde AH min price 1.09g of 163 level 45-54 greens from the same name
+# families, 17-23 Nov 2026; vendor median 0.74g). Rugged/Thick Leather (3% each) ignored.
+SPAWN_GREENS = 0.22 * 1.04
 
 # Fallback demand-capped g/h per item at the given rate, from
 #   python3 scripts/farm_leaderboard.py --top 0 --rate "Item=N" ...
@@ -91,15 +95,17 @@ FARMS = [
       "Mirror of Rath'mael 18s real; Fermenter 7% x 6g", extra=0.4),
     F("Scarlet Monastery Armory", "levelling", 1, 40, 40, 38, 8, "low", "verified", "Herod only"),
     # Sunken Temple (Temple of Atal'Hakkar, ~50-55). Forever: every boss drops a guaranteed blue
-    # (Warcraft Tavern). Spawn of Hakkar: level 49 elite beast in the basement, optional; Classic/TBC
-    # DB drop rates Slitherscale Boots ~47%, Wingveil Cloak ~26% (BoP), so ~0.73 blues per kill.
-    F("Sunken Temple: Spawn of Hakkar only", "levelling", 0.73, 51, 5, 49, 7, "low", "assumed",
-      "One elite in the basement, then exit and reset; Wingveil Cloak BoP, boots never on the AH"),
+    # (Warcraft Tavern). Spawn of Hakkar (the user's old farm, confirmed): level 50-51 elite beast in
+    # the basement. Wowhead Forever NPC 5708, 1,265 kills: Slitherscale Boots 48%, Wingveil Cloak 25%
+    # (ilvl 52, BoP) = ~0.73 blues per kill; plus ~20-25% chance of a world-drop BoE green.
+    F("Sunken Temple: Spawn of Hakkar only", "levelling", 0.73, 52, 5, 50, 7, "low", "assumed",
+      "One elite in the basement, then exit and reset; Wingveil Cloak BoP, boots never on the AH",
+      extra=SPAWN_GREENS),
     F("Sunken Temple: 6 balcony trolls (chunk)", "levelling", 6, 53, 25, 52, 12, "low", "assumed",
       "Six troll minibosses on the balconies plus the trash between them"),
     # ---- level 60 ----
-    F("Sunken Temple at 60: Spawn of Hakkar only", "60", 0.73, 51, 5, 49, 6, "low", "assumed",
-      "One elite in the basement, then exit and reset"),
+    F("Sunken Temple at 60: Spawn of Hakkar only", "60", 0.73, 52, 5, 50, 6, "low", "assumed",
+      "One elite in the basement, then exit and reset", extra=SPAWN_GREENS),
     F("Sunken Temple at 60: 6 balcony trolls (chunk)", "60", 6, 53, 25, 52, 12, "low", "assumed",
       "Six troll minibosses, guaranteed blue each in Forever"),
     F("Stratholme Living, Scarlet side (chunked)", "60", 2, 60, 25, 58, 12, "low", "assumed",
@@ -186,13 +192,13 @@ TIERS = {
     "Ruins of Lordaeron (full)": ("reliable", "Mobs 15-20"),
     "Scarlet Monastery Armory": ("reliable", "Humanoids 34-40"),
     "Sunken Temple: Spawn of Hakkar only": ("maybe",
-        "One level-49 elite beast, no packs, but at or above a levelling character's level; Acid of "
-        "Hakkar. The user farmed it before (class and era not confirmed)"),
+        "One level 50-51 elite beast, no packs, but above a mid-40s character; Acid of Hakkar. "
+        "The user farmed it before (class and era not confirmed)"),
     "Sunken Temple: 6 balcony trolls (chunk)": ("unlikely",
         "Elite trolls 49-55 with priests and witch doctors (casters), plus Nightmare dragonkin elites"),
     # level 60
     "Sunken Temple at 60: Spawn of Hakkar only": ("reliable",
-        "One level-49 elite (gap 11); the user farmed it before (class not confirmed)"),
+        "One level 50-51 elite (gap 9-10); the user farmed it before (class not confirmed)"),
     "Sunken Temple at 60: 6 balcony trolls (chunk)": ("maybe",
         "Elite trolls 49-55 (gap 5-11) with casters; dragonkin elites are hard solo"),
     "Krol'dok Stronghold at 60": ("reliable", "Elites 42-45 (gap 15+)"),
@@ -220,6 +226,129 @@ TIERS = {
 }
 
 
+
+# ---- Named ~15-minute loops (docs/dungeon-loops-15min-2026-11-25.md) ----
+# Each route replaces the old generic "chunk"/"partial" entry for its dungeon and is modelled
+# twice: the 15-minute loop (4 runs/h) and a trimmed 12-minute variant (5 runs/h, the cap).
+# Routes follow Classic-era layouts unless the dungeon is Forever-only; boss order, kill counts
+# and minutes are ESTIMATES. Forever bosses drop a guaranteed blue (Warcraft Tavern).
+# drops: (item, units per trash kill, units per run) -> priced on the Horde AH, demand-capped.
+REPLACED = {
+    "The Drowned City (full)", "Uldaman (partial, 3 bosses)", "Maraudon (Orange/Purple wing)",
+    "Sunken Temple: 6 balcony trolls (chunk)", "Sunken Temple at 60: 6 balcony trolls (chunk)",
+    "Stratholme Living, Scarlet side (chunked)", "Shaper's Terrace (4 bosses, teleport exit)",
+    "Scholomance (partial, 4 bosses)", "Blackmaw Hold (partial, 4 bosses)",
+    "Dire Maul East (Lashers + 4 bosses)", "Stratholme Undead (chunk, 3 bosses)",
+    "Alcaz Prison (full)", "Blackrock Depths (chunk, 4 bosses)",
+    "Lower Blackrock Spire (chunk, 3 bosses)", "Maraudon (Princess run)", "Uldaman at 60 (6 bosses)",
+}
+RUNECLOTH = ("Runecloth", 0.35, 0)
+MAGEWEAVE = ("Mageweave Cloth", 0.35, 0)
+
+
+def R(name, band, tier_, why, ilvl, mob, v15, v12, elite=True, drops=(), basis="assumed",
+      conf="low", notes="", extra15=0.0, extra12=0.0):
+    """v15 / v12 = (bosses, trash kills, minutes, route text); v12 may be None."""
+    out = []
+    for tag, v, extra in (("15 min", v15, extra15), ("12 min", v12, extra12)):
+        if not v:
+            continue
+        bosses, kills, minutes, route = v
+        runs = min(CAP, 60 / minutes)
+        ah = tuple((item, round(runs * (kills * pk + pr))) for item, pk, pr in drops
+                   if round(runs * (kills * pk + pr)) > 0)
+        f = F(f"{name} ({tag})", band, bosses, ilvl, kills, mob, minutes, conf, basis,
+              f"{route}. {notes}".strip(), elite=elite, ah=ah, extra=extra)
+        f["route"] = route
+        out.append(f)
+        TIERS[f["name"]] = (tier_, why)
+    return out
+
+
+ROUTES = [
+    # ---- levelling band ----
+    R("The Drowned City: full clear", "levelling", "maybe",
+      "Elites 35-40, well below a mid-40s character; boss mechanics unknown", 40, 38,
+      (6, 40, 15, "Zul'Alai > Var'Taka > Captain Dreadrise > Deathless Marrow > Gill > Min'loth, all trash"),
+      (5, 30, 12, "Same, skipping Min'loth at the end")),
+    R("Uldaman: back-door loop", "levelling", "maybe", "Elites 41-47, mostly melee troggs and dwarves",
+      44, 44, (4, 30, 15, "Back (Badlands) entrance > Ironaya > Obsidian Sentinel > Ancient Stone Keeper > Galgann Firehammer"),
+      (3, 25, 12, "Ironaya > Obsidian Sentinel > Ancient Stone Keeper")),
+    R("Maraudon: Orange wing", "levelling", "unlikely",
+      "Elites 44-48, near a levelling character's level; satyr casters", 49, 47,
+      (3, 30, 15, "Orange crystal side > Noxxion > Razorlash > Lord Vyletongue"),
+      (2, 25, 12, "Noxxion > Razorlash"), drops=(MAGEWEAVE,)),
+    R("Sunken Temple: balcony trolls + Spawn of Hakkar", "levelling", "unlikely",
+      "Elite trolls 49-55 with priests and witch doctors (casters), Nightmare dragonkin elites",
+      53, 52, (6.73, 30, 15, "Six balcony troll minibosses > down to the basement for Spawn of Hakkar > exit"),
+      (6, 25, 12, "Six balcony trolls only"), drops=(MAGEWEAVE,), extra15=SPAWN_GREENS,
+      notes="Spawn of Hakkar (confirmed as the old farm): ~0.73 blues + ~22% BoE green per kill"),
+    R("Alcaz Prison: first four bosses", "levelling", "unlikely",
+      "Elites 48-53, above a mid-40s character; Tidemistress is a caster", 53, 51,
+      (4, 35, 15, "Overseer Wrex > The Questioner > Tidemistress Ca'zass > Katerina the Cleaner"),
+      (3, 30, 12, "Overseer Wrex > The Questioner > Tidemistress Ca'zass")),
+    # ---- level 60 ----
+    R("Uldaman at 60: back-door loop", "60", "reliable", "Elites 41-47", 44, 44,
+      (6, 30, 15, "Back entrance > Ironaya > Obsidian Sentinel > Ancient Stone Keeper > Galgann > Grimlok > Revelosh"),
+      (5, 25, 12, "Same without Revelosh")),
+    R("Maraudon at 60: Princess loop", "60", "reliable",
+      "Elites 44-52 (gap 8-16); Princess Theradras hits hard", 52, 50,
+      (5, 30, 15, "Orange side > Noxxion > Razorlash > Landslide > Rotgrip > Princess Theradras"),
+      (4, 25, 12, "Noxxion > Landslide > Rotgrip > Princess Theradras"),
+      drops=(("Essence of Earth", 0, 1), RUNECLOTH)),
+    R("Sunken Temple at 60: balcony trolls + Spawn of Hakkar", "60", "maybe",
+      "Elite trolls 49-55 (gap 5-11) with casters; dragonkin elites are hard solo", 53, 52,
+      (6.73, 30, 15, "Six balcony trolls > Spawn of Hakkar in the basement > exit"),
+      (6, 25, 12, "Six balcony trolls only"), drops=(MAGEWEAVE,), extra15=SPAWN_GREENS),
+    R("Alcaz Prison at 60: full clear", "60", "maybe",
+      "Elites 48-53 (gap 7-12); Tidemistress casts, Zarla Ober's dragon phase unknown", 53, 51,
+      (5, 45, 15, "Wrex > The Questioner > Tidemistress Ca'zass > Katerina the Cleaner > Zarla Ober (Blazeroar)"),
+      (4, 35, 12, "Same without Zarla Ober")),
+    R("Dire Maul East: Pusillin + lashers + Alzzin", "60", "maybe",
+      "Lashers are non-elite melee 54 (ideal for rage); Alzzin and Lethtendris cast", 58, 54,
+      (5, 50, 15, "Pusillin chase (key) > Zevrim Thornhoof > Hydrospawn > Lethtendris > Conservatory lashers > Alzzin"),
+      (4, 40, 12, "Pusillin > Zevrim > Hydrospawn > lashers > Alzzin (skip Lethtendris)"),
+      elite=False, drops=(("Living Essence", 0.2, 0), ("Heart of the Wild", 0.27, 0))),
+    R("Blackrock Depths: entrance loop", "60", "maybe",
+      "Lower-level front wings (mobs ~50-54); Dark Iron casters in some packs", 56, 53,
+      (5, 35, 15, "Lord Roccor > Houndmaster Grebmar > High Interrogator Gerstahn > Ring of Law > Pyromancer Loregrain"),
+      (4, 30, 12, "Same without Pyromancer Loregrain")),
+    R("Dire Maul North: kill-everything", "60", "unlikely",
+      "Ogre packs 56-60 with ogre mages; killing guards forfeits most of the tribute", 58, 57,
+      (4, 30, 15, "Guard Mol'dar > Stomper Kreeg > Guard Fengus > Guard Slip'kik (no King Gordok in 15 min)"),
+      (3, 25, 12, "Mol'dar > Kreeg > Fengus"), drops=(RUNECLOTH,)),
+    R("Dire Maul West: Warpwood loop", "60", "unlikely",
+      "Highborne casters and arcane aberrations 56-60", 58, 57,
+      (3, 30, 15, "Tendris Warpwood > Illyanna Ravenoak > Magister Kalendris"),
+      (2, 25, 12, "Tendris Warpwood > Illyanna Ravenoak"), drops=(RUNECLOTH,)),
+    R("Stratholme Living: Willey + Galford orb loop", "60", "unlikely",
+      "Elites 57-60 with Sorcerers, Battle Mages, Priests; no documented prot solo", 60, 58,
+      (4, 32, 15, "Festival Lane > Malor the Zealous > Cannon Master Willey > Archivist Galford (orbs 84%) > The Unforgiven"),
+      (2, 25, 12, "Cannon Master Willey > Archivist Galford"),
+      drops=(("Righteous Orb", 0.095, 0.84), RUNECLOTH)),
+    R("Stratholme Undead: side-gate loop", "60", "unlikely", "Elites 57-60; Maleki and acolytes cast",
+      60, 58, (4, 35, 15, "Magistrate Barthilas > Baroness Anastari > Nerub'enkan > Maleki the Pallid"),
+      (3, 30, 12, "Barthilas > Anastari > Nerub'enkan"), drops=(RUNECLOTH,)),
+    R("Scholomance: Rattlegore + Jandice loop", "60", "unlikely",
+      "Elites 58-60, caster-heavy necromancers", 60, 59,
+      (3, 30, 15, "Viewing Room trash > Rattlegore > Jandice Barov > Ras Frostwhisper"),
+      (2, 25, 12, "Rattlegore > Jandice Barov"), drops=(RUNECLOTH,)),
+    R("Lower Blackrock Spire: front loop", "60", "unlikely", "Elites 55-60 orc packs with casters",
+      58, 57, (4, 35, 15, "Highlord Omokk > Shadow Hunter Vosh'gajin > War Master Voone > Mother Smolderweb"),
+      (3, 30, 12, "Omokk > Vosh'gajin > Voone"), drops=(RUNECLOTH,)),
+    R("Blackmaw Hold: first bosses", "60", "unlikely",
+      "Elites 55-60; no solo reports; avoid the old Devotee room farm", 60, 58,
+      (4, 30, 15, "Withermaw > Impaan the Imprisoner > Elder Shaman Bloodmane > Bonesnout (order unconfirmed)"),
+      (3, 25, 12, "First three bosses")),
+    R("Shaper's Terrace: dinosaur loop", "60", "unlikely",
+      "Elites 58-60; the bosses on this route are melee beasts, which suit rage better than casters, "
+      "but no solo data", 62, 59,
+      (5, 20, 15, "Mount in > Titanosaur > Venomridge > Thunderhoof > Direhorn Matriarch > Izha'Rel and Tor'Rel > teleport out"),
+      (4, 15, 12, "Same without Izha'Rel and Tor'Rel"),
+      notes="+ ~5.8 g/h Thorium only with Mining"),
+]
+FARMS = [f for f in FARMS if f["name"] not in REPLACED] + [f for r in ROUTES for f in r]
+
 def tier(f):
     t = TIERS.get(f["name"])
     return t if t else (auto_tier(BAND_REF[f["band"]], f["mob"], f["elite"]), "level-gap rule")
@@ -229,7 +358,12 @@ def ah_values():
     """{(item, rate): g/h}, live from data/ when cached, else FALLBACK."""
     wanted = {pair for f in FARMS for pair in f["ah"]}
     if not (ROOT / "data" / "snapshots").exists():
-        return dict(FALLBACK), "fallback values from 2026-11-23"
+        out = {}
+        for item, rate in wanted:
+            known = [(r, g) for (i, r), g in FALLBACK.items() if i == item]
+            out[(item, rate)] = FALLBACK.get((item, rate)) or (
+                known[0][1] / known[0][0] * rate if known else 0.0)   # linear, ignores the cap
+        return out, "fallback values from 2026-11-23 (scaled linearly for other rates)"
     sys.path.insert(0, str(ROOT / "scripts"))
     import farm_leaderboard as fl
     table, _, _ = fl.build(argparse.Namespace(include_crafted=False))
@@ -269,7 +403,7 @@ def main():
         label = "Levelling band (pre-60)" if band == "levelling" else "Level 60"
         print(f"\n== {label} (ranked by solo viability, then conservative g/h; "
               f"consumables -{CONSUMABLES[band]} g/h on maybe/unlikely) ==")
-        print(f"{'tier':9} {'farm':44} {'conserv':>7} {'anchored':>8} | {'boss/h':>6} {'trash/h':>7} "
+        print(f"{'tier':9} {'farm':62} {'conserv':>7} {'anchored':>8} | {'boss/h':>6} {'trash/h':>7} "
               f"{'AH+other':>8}  {'blues':8} conf")
         last = None
         for f in rows:
@@ -278,7 +412,7 @@ def main():
                 print(f"--- {t} ---")
             last = t
             c, h = evaluate(f, CONSERVATIVE, ah), evaluate(f, 1.0, ah)
-            print(f"{t:9} {f['name']:44} {c['total']:7.0f} {h['total']:8.0f} | {c['boss_h']:6.1f} "
+            print(f"{t:9} {f['name']:62} {c['total']:7.0f} {h['total']:8.0f} | {c['boss_h']:6.1f} "
                   f"{c['trash_h']:7.1f} {c['other_h']:8.1f}  {f['basis']:8} {f['conf']}")
             if a.reasons:
                 print(f"{'':9}   why: {why}")

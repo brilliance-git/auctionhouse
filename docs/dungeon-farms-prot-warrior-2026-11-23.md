@@ -71,7 +71,7 @@ Scholomance, and Stratholme (Living and Undead).
     are possible but long.
   - Check Forever-specific changes before trying.
 - **DM West.**
-- **Sunken Temple:** long and caster-heavy. *(Since modelled in `sunken-temple-2026-11-25.md`: the six balcony trolls make ~39–40 g/h conservatively, "maybe" solo at 60; Spawn of Hakkar alone makes ~4–8 g/h.)*
+- **Sunken Temple:** long and caster-heavy. *(Since modelled in `sunken-temple-2026-11-25.md`: the six balcony trolls make ~39–40 g/h conservatively, "maybe" solo at 60; Spawn of Hakkar alone makes ~5–9 g/h.)*
 - **Dungeons under level 30:** their blues sell for under ~40s.
 
 **Raids:** Barrow Deeps (10-player), Hyjal Summit (20) and Onyxia's Lair (40) open on
