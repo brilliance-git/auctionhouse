@@ -128,6 +128,21 @@ CLASSIC_BOSSES = {
     # Scholomance
     "Rattlegore": (1.05, 61, 0.09 * G63), "Jandice Barov": (0.92, 61, 1.76 * G63),
     "Ras Frostwhisper": (1.86, 61, 1.84 * G63),
+    # Maraudon (docs/wowhead-drops-classic-2-2026-11-25.md); all boss blues BoP
+    "Princess Theradras": (1.89, 54, 0.03 * G55), "Noxxion": (1.01, 51, 0.02 * G55),
+    "Razorlash": (1.07, 51, 0.02 * G55), "Landslide": (1.07, 53, 0.10 * G55 + 0.18 * 0.036 + 0.14 * 0.054),
+    "Rotgrip": (1.04, 53, 0.02 * G55 + 0.15 * 0.03), "Lord Vyletongue": (0.99, 50, 0.02 * G55),
+    "Celebras the Cursed": (1.07, 52, 0.03 * G55), "Tinkerer Gizlock": (1.03, 53, 0.02 * G55),
+    # Dire Maul; all boss blues BoP. The DM North guards (Mol'dar, Fengus, Slip'kik) drop no blues.
+    "Pusillin": (0.42, 58, 1.35 * G63), "Zevrim Thornhoof": (0.99, 58, 0.13 * G63),
+    "Hydrospawn": (1.02, 58, 0.24 * G63), "Lethtendris": (0.98, 58, 0.06 * G63),
+    "Alzzin the Wildshaper": (1.94, 59, 0.10 * G63),
+    "Tendris Warpwood": (0.99, 61, 0.18 * G63), "Illyanna Ravenoak": (0.90, 61, 0.07 * G63),
+    "Magister Kalendris": (0.99, 61, 0.29 * G63), "Immol'thar": (1.94, 62, 0.10 * G63),
+    "Prince Tortheldrin": (2.12, 62, 0.08 * G63),
+    "Stomper Kreeg": (0.72, 60, 0.16 * G63), "Captain Kromcrush": (1.00, 62, 0.19 * G63),
+    "King Gordok": (2.19, 63, 0.05 * G63),
+    "Cho'Rush the Observer": (3.32, 61, 1.64 * G63 + 0.42 * 0.211 + 0.42 * 0.76),
 }
 FOREVER_BOSSES.update(CLASSIC_BOSSES)
 # LBRS Firebrand Pyromancer (trash): Pattern: Robe of the Archmage 19% (vendor 1.50g; ~26g on the AH but
@@ -346,7 +361,7 @@ def R(name, band, tier_, why, ilvl, mob, v15, v12, elite=True, drops=(), basis="
         runs = min(CAP, 60 / minutes)
         ah = tuple((item, round(runs * (kills * pk + pr))) for item, pk, pr in drops
                    if round(runs * (kills * pk + pr)) > 0)
-        f = F(f"{name} ({tag})", band, bosses, ilvl, kills, mob, minutes, conf, basis,
+        f = F(f"{name} ({minutes} min)", band, bosses, ilvl, kills, mob, minutes, conf, basis,
               f"{route}. {notes}".strip(), elite=elite, ah=ah, extra=extra)
         f["route"] = route
         f["boss_list"] = boss_list
@@ -369,8 +384,8 @@ ROUTES = [
       (3, 25, 12, "Ironaya > Obsidian Sentinel > Ancient Stone Keeper")),
     R("Maraudon: Orange wing", "levelling", "unlikely",
       "Elites 44-48, near a levelling character's level; satyr casters", 49, 47,
-      (3, 30, 15, "Orange crystal side > Noxxion > Razorlash > Lord Vyletongue"),
-      (2, 25, 12, "Noxxion > Razorlash"), drops=(MAGEWEAVE,)),
+      (["Noxxion", "Razorlash", "Lord Vyletongue"], 30, 15, "Orange crystal side > Noxxion > Razorlash > Lord Vyletongue"),
+      (["Noxxion", "Razorlash"], 25, 12, "Noxxion > Razorlash"), drops=(MAGEWEAVE,)),
     R("Sunken Temple: trolls > Jammal'an + Ogom (+ Spawn)", "levelling", "unlikely",
       "Elite trolls 49-55 with priests and witch doctors (casters), Nightmare dragonkin elites",
       55, 52, (["Jammal'an the Prophet", "Ogom the Wretched", "Spawn of Hakkar"], 35, 15,
@@ -390,8 +405,10 @@ ROUTES = [
       (5, 25, 12, "Same without Revelosh")),
     R("Maraudon at 60: Princess loop", "60", "reliable",
       "Elites 44-52 (gap 8-16); Princess Theradras hits hard", 52, 50,
-      (5, 30, 15, "Orange side > Noxxion > Razorlash > Landslide > Rotgrip > Princess Theradras"),
-      (4, 25, 12, "Noxxion > Landslide > Rotgrip > Princess Theradras"),
+      (["Noxxion", "Razorlash", "Landslide", "Rotgrip", "Princess Theradras"], 30, 15,
+       "Orange side > Noxxion > Razorlash > Landslide > Rotgrip > Princess Theradras"),
+      (["Noxxion", "Landslide", "Rotgrip", "Princess Theradras"], 25, 12,
+       "Noxxion > Landslide > Rotgrip > Princess Theradras"),
       drops=(("Essence of Earth", 0, 1), RUNECLOTH)),
     R("Sunken Temple at 60: trolls > Jammal'an + Ogom (+ Spawn)", "60", "maybe",
       "Elite trolls 49-55 (gap 5-11) with casters; dragonkin elites are hard solo", 53, 52,
@@ -407,8 +424,10 @@ ROUTES = [
        "Same without Zarla Ober")),
     R("Dire Maul East: Pusillin + lashers + Alzzin", "60", "maybe",
       "Lashers are non-elite melee 54 (ideal for rage); Alzzin and Lethtendris cast", 58, 54,
-      (5, 50, 15, "Pusillin chase (key) > Zevrim Thornhoof > Hydrospawn > Lethtendris > Conservatory lashers > Alzzin"),
-      (4, 40, 12, "Pusillin > Zevrim > Hydrospawn > lashers > Alzzin (skip Lethtendris)"),
+      (["Pusillin", "Zevrim Thornhoof", "Hydrospawn", "Lethtendris", "Alzzin the Wildshaper"], 50, 15,
+       "Pusillin chase (key) > Zevrim Thornhoof > Hydrospawn > Lethtendris > Conservatory lashers > Alzzin"),
+      (["Pusillin", "Zevrim Thornhoof", "Hydrospawn", "Alzzin the Wildshaper"], 40, 12,
+       "Pusillin > Zevrim > Hydrospawn > lashers > Alzzin (skip Lethtendris)"),
       elite=False, drops=(("Living Essence", 0.2, 0), ("Heart of the Wild", 0.27, 0))),
     R("Blackrock Depths: entrance loop", "60", "maybe",
       "Lower-level front wings (mobs ~50-54); Dark Iron casters in some packs", 56, 53,
@@ -419,12 +438,16 @@ ROUTES = [
        "Same without Pyromancer Loregrain"), drops=(("Runecloth", 0.24, 0),)),
     R("Dire Maul North: kill-everything", "60", "unlikely",
       "Ogre packs 56-60 with ogre mages; killing guards forfeits most of the tribute", 58, 57,
-      (4, 30, 15, "Guard Mol'dar > Stomper Kreeg > Guard Fengus > Guard Slip'kik (no King Gordok in 15 min)"),
-      (3, 25, 12, "Mol'dar > Kreeg > Fengus"), drops=(RUNECLOTH,)),
+      (["Stomper Kreeg", "Captain Kromcrush", "King Gordok", "Cho'Rush the Observer"], 40, 20,
+       "Guards Mol'dar, Fengus, Slip'kik (no blues) > Stomper Kreeg > Captain Kromcrush > King Gordok + Cho'Rush"),
+      (["Stomper Kreeg"], 25, 12, "Guards (no blues) > Stomper Kreeg"), drops=(RUNECLOTH,),
+      notes="Real Wowhead data: the guards drop no blues; Gordok and Cho'Rush need a ~20-minute run"),
     R("Dire Maul West: Warpwood loop", "60", "unlikely",
       "Highborne casters and arcane aberrations 56-60", 58, 57,
-      (3, 30, 15, "Tendris Warpwood > Illyanna Ravenoak > Magister Kalendris"),
-      (2, 25, 12, "Tendris Warpwood > Illyanna Ravenoak"), drops=(RUNECLOTH,)),
+      (["Tendris Warpwood", "Illyanna Ravenoak", "Magister Kalendris"], 30, 15,
+       "Tendris Warpwood > Illyanna Ravenoak > Magister Kalendris"),
+      (["Tendris Warpwood", "Illyanna Ravenoak"], 25, 12, "Tendris Warpwood > Illyanna Ravenoak"),
+      drops=(RUNECLOTH,)),
     R("Stratholme Living: Willey + Galford orb loop", "60", "unlikely",
       "Elites 57-60 with Sorcerers, Battle Mages, Priests; no documented prot solo", 60, 58,
       (["Malor the Zealous", "Cannon Master Willey", "Archivist Galford", "The Unforgiven"], 32, 15,
