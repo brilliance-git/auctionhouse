@@ -192,8 +192,8 @@ Row columns: `epoch` (or `item_id`), `min_price`, `qty`, `lots`, `fill_price`,
 ### Security and privacy
 - The API key lives only in `.env` (git-ignored) or the cloud environment's network secrets.
   **Never commit it or paste it into chat.**
-- Commit as `brilliance-git <brilliance-git@users.noreply.github.com>`. Keep personal email
-  addresses and names out of commits and docs.
+- Commit as `Claude <noreply@anthropic.com>`, SSH-signed, so GitHub shows the commit as
+  Verified. Keep personal email addresses and names out of commits and docs.
 
 ### Conventions
 - Analyses are dated docs (`docs/<topic>-YYYY-MM-DD.md`). Write a new dated file rather than
