@@ -30,6 +30,9 @@ And does it beat Krol'dok?
   - **DME and Shaper's Terrace tie.** In DME, 4 runs × 5 bosses and 5 runs × 4 bosses come to
     the same 20 boss kills an hour.
 
+> **Updated 2026-11-25 with real Wowhead Forever boss tables** (`forever-dungeons-real-drops-2026-11-25.md`):
+> the Drowned City, Alcaz Prison, Blackmaw Hold and Shaper's Terrace rows now use real blues per kill. The new Shaper's Terrace Nanaya loop (72 / 113, "unlikely") is the highest-value loop.
+
 Reproduce with `python3 scripts/dungeon_farm_model.py --reasons`. Each loop appears twice, as
 `(15 min)` and `(12 min)`.
 
@@ -72,10 +75,10 @@ Ranked by viability tier, then conservative g/h. "Win" is the better variant.
 | Tier | Loop | 15 min | 12 min | Win | Route (15 min) | Why this tier |
 |---|---|---|---|---|---|---|
 | maybe | *Krol'dok Stronghold (benchmark)* | — | **49** / 49 | — | Grox > Zarmok > Ashka > key door > Toof > Nar'gurk > Mugg | Elites 42–45, a few levels below a mid-40s character; casters, fear |
-| maybe | The Drowned City | 16 / 25 | 16 / 25 | 12 | Zul'Alai > Var'Taka > Captain Dreadrise > Deathless Marrow > Gill > Min'loth, with all trash (12 min skips Min'loth) | Elites 35–40, well below a mid-40s character |
+| maybe | The Drowned City | 16 / 25 | 16 / 25 | tie | Zul'Alai > Var'Taka > Captain Dreadrise > Deathless Marrow > Primeval Elemental > Min'loth, with all trash (12 min skips Min'loth) | Elites 35–40, well below a mid-40s character |
 | maybe | Uldaman: back-door loop | 14 / 22 | 13 / 21 | 15 | Badlands back entrance > Ironaya > Obsidian Sentinel > Ancient Stone Keeper > Galgann Firehammer | Elites 41–47, mostly melee |
 | unlikely | **Sunken Temple: balcony trolls (+ Spawn of Hakkar)** | 39 / 64 | **42** / 70 | 12 | Six balcony troll minibosses > basement for Spawn of Hakkar > exit (12 min: trolls only) | Elite trolls 49–55 with caster priests and witch doctors |
-| unlikely | Alcaz Prison: first four bosses | 24 / 39 | 24 / 38 | 15 | Overseer Wrex > The Questioner > Tidemistress Ca'zass > Katerina the Cleaner | Elites 48–53, above a mid-40s character |
+| unlikely | Alcaz Prison: first four bosses | 23 / 38 | 22 / 35 | 15 | Overseer Wrex > The Questioner > Tidemistress Ca'zass > Katerina the Cleaner | Elites 48–53, above a mid-40s character |
 | unlikely | Maraudon: Orange wing | 16 / 25 | 15 / 22 | 15 | Orange side > Noxxion > Razorlash > Lord Vyletongue | Elites 44–48 near your level; satyr casters |
 
 **Levelling verdict:** stay on **Krol'dok**. The only loop that comes close (Sunken Temple's
@@ -91,11 +94,12 @@ trolls) is "unlikely" solo before 60.
 | maybe | **Sunken Temple: balcony trolls (+ Spawn)** | 38 / 63 | **41** / 69 | 12 | Six balcony trolls > Spawn of Hakkar > exit | Elite trolls 49–55 (gap 5–11) with casters |
 | maybe | **Dire Maul East: Pusillin + lashers + Alzzin** | 40 / 66 | 40 / 66 | tie | Pusillin chase (key) > Zevrim Thornhoof > Hydrospawn > Lethtendris > Conservatory lashers > Alzzin (12 min skips Lethtendris) | Non-elite melee lashers suit rage; Alzzin and Lethtendris cast |
 | maybe | Blackrock Depths: entrance loop | 33 / 56 | 34 / 57 | 12 | Lord Roccor > Houndmaster Grebmar > High Interrogator Gerstahn > Ring of Law > Pyromancer Loregrain (12 min skips Loregrain) | Front wings ~50–54; some Dark Iron casters |
-| maybe | Alcaz Prison: full clear | 29 / 48 | 29 / 48 | 15 | Wrex > The Questioner > Tidemistress > Katerina > Zarla Ober (Blazeroar) | Elites 48–53; Tidemistress casts; dragon phase unknown |
+| maybe | Alcaz Prison: full clear | 29 / 48 | 28 / 46 | 15 | Wrex > The Questioner > Tidemistress > Katerina > Zarla Ober (Blazeroar) | Elites 48–53; Tidemistress casts; dragon phase unknown |
 | unlikely | **Stratholme Living: Willey + Galford orb loop** | **71** / 96 | 59 / 75 | 15 | Festival Lane > Malor the Zealous > Cannon Master Willey > Archivist Galford (orbs 84%) > The Unforgiven | Elites 57–60 with Sorcerers, Battle Mages, Priests |
-| unlikely | Shaper's Terrace: dinosaur loop | 46 / 82 | 46 / 82 | tie | Mount in > Titanosaur > Venomridge > Thunderhoof > Direhorn Matriarch > Izha'Rel and Tor'Rel > teleport out | Elites 58–60. Melee beasts suit rage better than casters, but no solo data. +~5.8 g/h Thorium only with Mining |
+| unlikely | **Shaper's Terrace: Titanosaur + Nanaya loop** (added by the real-drops update) | **72** / 113 | 67 / 100 | 15 | Mount in > Titanosaur > Venomridge > Thunderhoof > Direhorn Matriarch > Nanaya > teleport out | Elites 58–60; Nanaya's position unconfirmed |
+| unlikely | Shaper's Terrace: dinosaur loop | 53 / 93 | 54 / 95 | 12 | Mount in > Titanosaur > Venomridge > Thunderhoof > Direhorn Matriarch > Izha'Rel and Tor'Rel > teleport out | Elites 58–60. Melee beasts suit rage better than casters, but no solo data. +~5.8 g/h Thorium only with Mining |
 | unlikely | Stratholme Undead: side-gate loop | 38 / 63 | 37 / 60 | 15 | Magistrate Barthilas > Baroness Anastari > Nerub'enkan > Maleki the Pallid | Elites 57–60; Maleki and acolytes cast |
-| unlikely | Blackmaw Hold: first bosses | 35 / 59 | 33 / 56 | 15 | Withermaw > Impaan the Imprisoner > Elder Shaman Bloodmane > Bonesnout (order unconfirmed) | Elites 55–60; no solo reports; not the old Devotee room |
+| unlikely | Blackmaw Hold: first bosses | 33 / 55 | 32 / 53 | 15 | Withermaw > Impaan the Imprisoner > Elder Shaman Bloodmane > Bonesnout (order unconfirmed) | Elites 55–60; no solo reports; not the old Devotee room |
 | unlikely | LBRS: front loop | 34 / 55 | 33 / 53 | 15 | Highlord Omokk > Shadow Hunter Vosh'gajin > War Master Voone > Mother Smolderweb | Orc packs 55–60 with casters |
 | unlikely | Dire Maul North: kill-everything | 33 / 54 | 31 / 51 | 15 | Guard Mol'dar > Stomper Kreeg > Guard Fengus > Guard Slip'kik (no King Gordok in 15 min) | Ogre packs 56–60 with ogre mages; killing the guards forfeits most of the tribute |
 | unlikely | Scholomance: Rattlegore + Jandice | 29 / 48 | 26 / 41 | 15 | Viewing Room trash > Rattlegore > Jandice Barov > Ras Frostwhisper | Caster-heavy, 58–60 |
