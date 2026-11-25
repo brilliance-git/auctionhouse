@@ -1,0 +1,172 @@
+# Gear for farming at 60: solo Protection Warrior (2026-11-25)
+
+**Question:** what gear should a level-60 prot warrior pick up to farm the loops in this repo
+(Krol'dok, Maraudon Princess, ZF, then testing Dire Maul East and harder)? Includes every
+item in WoW: Forever that **damages attackers** (when struck or on block) or **heals you** (on
+hit, when struck or on block).
+
+**Sources:**
+- Icy Veins, Forever Protection Warrior gear (updated 24 Nov 2026) and stat priority pages.
+- Icy Veins news on Enchant Weapon – Recovery (19 Nov 2026).
+- Wowhead Forever item database: "Effect text" and "Struck in combat effect" filters, and item
+  tooltips (25 Nov 2026).
+- This repo's real drop tables and Horde AH prices.
+
+Horde AH prices for the BoE items are in section 6. They come from the live Horde AH, never
+the neutral house.
+
+## Short answer
+1. **Sustain first.** Put a healing enchant on your weapon:
+   - **Enchant Weapon – Recovery** is a new Forever enchant. You buy it with Merchant's Favor.
+   - **Enchant Weapon – Lifestealing** is the formula that lists at ~50g on the Horde AH.
+   - Either one cuts the downtime between pulls, which is where solo farming time goes.
+2. **Damage on block.** Add a **Thorium Shield Spike** to your shield, and pick up the
+   **Girdle of Extracted Answers**, a plate belt from Alcaz Prison that deals 20–30 damage
+   every time you block. In big pulls you block a lot, and in Forever every block also gives
+   5 rage.
+3. **Skullflame Shield** is the one item that does both: it steals 270 life when struck (3%)
+   and deals 90–140 Fire damage to everything around you (2%). It's BoE, so it's a purchase.
+4. **Stamina and Armor next.** Icy Veins' defensive priority is Stamina > Armor > Agility >
+   Avoidance > Defense. The hit, expertise and defense caps are set against level-63 bosses.
+   Against our out-levelled farms (mobs 42–52) they don't matter, so don't pay for them yet.
+5. **Pick up what drops on your own loops:**
+   - Blackstone Ring from the Maraudon Princess (44%).
+   - Razor Gauntlets from Alzzin and Satyr's Bow from Zevrim, both on the Dire Maul East loop.
+   - Fist of the Damned from Ogom in Sunken Temple: a life-stealing weapon with +2 Defense.
+
+## 1. Forever mechanics that decide what's worth having
+- **Rage from defence:**
+  - Shield Specialization 5/5 gives +5% block chance and **5 rage per block**.
+  - Master of Defense 2/2 gives **5 rage per dodge or parry** while you have a shield equipped.
+  - So in a 10–15 mob pull, block chance and avoidance are rage, not only mitigation.
+- **Block Value** raises damage stopped and Shield Slam damage. Strength gives 1 Block Value
+  per 20.
+- **Thunder Clap and Revenge scale with Attack Power,** and Sunder Armor threat scales with AP
+  in Forever. AP and Strength speed up AoE clears.
+- **Caps are for bosses:**
+  - 8% hit, 6.5% / 14% expertise and 440 defense are all set against level-63 bosses.
+  - Shield Block already covers crits, which is why Icy Veins ranks Defense last.
+- **Zone-doubled effects:** some Forever items double in Strongholds and Cities. **Krol'dok is
+  a Stronghold**, so these are worth more there.
+  - Krol'dok Battlegear's 4-piece heal on block.
+  - The Lion Horn of Stormwind.
+  - Defender's Grip Stabilizer.
+
+## 2. Heal on hit, when struck, or on block
+| Item | Effect (Wowhead Forever tooltip) | Req | Bind | Source | For farming |
+|---|---|---|---|---|---|
+| **Enchant Weapon – Recovery** | Heals 5% of max health when your melee attack is dodged or parried; 10 s internal cooldown | Enchanting 140 | – | Recipe: 45 Merchant's Favor from Beneris, Durotar Supply and Logistics (just west of the Crossroads). Mats: 6 Soul Dust, 4 Large Glimmering Shard, 6 Greater Astral Essence, 4 Pyrite, 4 Silver Ore | **Best sustain per gold.** Procs less against lower-level mobs (they dodge and parry less), so it's weaker at Krol'dok and Maraudon, better at DME and up |
+| **Enchant Weapon – Lifestealing** | Chance on hit to steal life | Enchanting | – | Formula ~50g on the Horde AH (thin, ~6 listed) | Procs on your hits, so it works on any mob level |
+| **Skullflame Shield** | When struck in melee: 3% chance to steal 270 life. When struck: 2% chance of 90–140 Fire damage to all targets around you. 2256 armor, 40 block | 54 | **BoE** | World drop | **Best farming shield.** Heal and AoE together, and big pulls mean many procs |
+| Krol'dok Battlegear (4-piece) | Chance on block to heal; **doubled in Strongholds** | – | BoP | Krol'dok Stronghold | Built for the baseline farm (see `kroldok-model-2026-11-23.md`) |
+| **Fist of the Damned** | Chance on hit: steals 56 life. +2 Defense | 49 | BoP | Ogom the Wretch, Sunken Temple | **On the Sunken Temple "maybe" loop** (Jammal'an + Ogom) |
+| Wraith Scythe | Chance on hit: steals 49 life (×2 vs Undead) | 51 | BoP | Boss drop, Blackrock Depths | BRD isn't one of our loops |
+| The Cruel Hand of Timmy | Chance on hit: steals 85 life | 55 | BoP | Timmy the Cruel, Stratholme | "Unlikely" tier dungeon |
+| Eater of the Dead | Chance on hit: steals 21 life (×3 vs Undead), +16 AP | 49 | BoP | Ogom the Wretch, Sunken Temple | Weaker than Fist of the Damned |
+| Demon Forged Breastplate | When struck: 3% chance to steal 240 life over 4 s | 52 | BoE | Crafted, Blacksmithing | A chest with a heal proc; weaker stats than the set chests |
+| Julie's Dagger | Chance on hit: heals 78 over 12 s | 50 | BoE | World drop | Small |
+| Truesilver Breastplate | When struck: 3% chance to heal 60–100 | 44 | BoE | Crafted, Blacksmithing | Too small at 60 |
+| Maw of Min'loth | When struck in melee: 10% chance to steal 40 life (3 s cooldown) | 37 | BoP | Min'loth, The Drowned City | Too low-level |
+| Lifegiving Gem | Use: heal 15% and +15% max health for 20 s (5 min cooldown) | 60 | BoP | Broodlord, Blackwing Lair | Raid, later |
+
+## 3. Damage back to attackers (reflect and on-block)
+| Item | Effect (Wowhead Forever tooltip) | Req | Bind | Source | For farming |
+|---|---|---|---|---|---|
+| **Girdle of Extracted Answers** | **20–30 Physical damage every time you block** (plate waist) | 48 | BoP | The Questioner, Alcaz Prison | **Strongest on-block item you can farm.** Alcaz is a "maybe" (~29 g/h) |
+| **Thorium Shield Spike** | Attaches to your shield; deals damage every time you block | Blacksmithing 250 | BoE | Crafted | Cheap, and works on any shield |
+| **Force Reactive Disk** | On block: an electrical charge damages **all nearby enemies** (1 s cooldown; can damage the shield) | 60 | BoE | Crafted, Engineering | The only AoE-on-block shield. Needs an engineer |
+| **Razor Gauntlets** | When struck in combat: 7 Nature damage to the attacker | 54 | BoP | Alzzin the Wildshaper, Dire Maul East | **On the DME loop.** Hits every time you're struck |
+| Crest of Retribution | +1.2% block chance; 6–39 Physical every block | 55 | BoP | Ramstein the Gorger, Stratholme | "Unlikely" tier dungeon |
+| Aegis of the Scarlet Commander | 13–15 Holy every block | 39 | BoP | Scarlet Commander Mograine, SM Cathedral | From our filler farm, but low-level shield stats |
+| Naglering | +5 Defense; 3 Arcane to the attacker when struck | 54 | BoP | Golem Lord Argelmach, Blackrock Depths | Small |
+| Skullflame Shield | See section 2: 2% chance of 90–140 Fire to everything around you when struck | 54 | BoE | World drop | |
+| Vile Protector | When struck: 5% chance of 105–175 Shadow to the attacker | ~28 | BoP | Quest (Compendium) | Too low-level |
+| Freezing Band, Girdle of Reprisal, The Green Tower | 1% "when struck" procs | 36–47 | mixed | Various | Too rare to matter |
+| Bramblebark Barrier, Bristlecone Cloak, Razorsteel Shoulders, Flame Seared Signet | 2–3 damage to the attacker when struck | 52–59 | mixed | Mount Hyjal quests (Bramblebark, Bristlecone), a quest reward (Razorsteel), Terrorspark in Burning Steppes (Signet) | Negligible |
+| Fetish of Chitinous Spikes | Use: 25 Nature damage to attackers for 30 s (3 min cooldown) | 60 | BoP | Buru the Gorger, Ruins of Ahn'Qiraj | Raid, later |
+
+**How much is it worth?** A rough estimate, not measured: holding 10–15 mobs that each swing
+about every 2 s means ~5–7 hits a second.
+- **Razor Gauntlets** at 7 damage per hit add roughly 35–50 damage per second to the whole pack.
+- **On-block items** add per block: the Girdle's 25 average, plus the Shield Spike and any
+  shield effect. With ~20–30% block chance and Shield Block up, that's roughly 1–2 blocks a
+  second. Each block also gives 5 rage.
+- These effects stack, and they're damage you don't spend rage or time on.
+
+## 4. Core pre-raid gear (Icy Veins, Forever)
+Icy Veins lists four pre-raid sets: Balanced, Threat, Survivability and Affordable. For solo
+farming, use **Survivability** as the target and **Affordable** as the path.
+
+| Slot | Survivability pick | Affordable pick | Source |
+|---|---|---|---|
+| Head | Faceguard of Heroism | Helm of the Executioner | Dungeon Set 2 / Baron Rivendare (Strat) |
+| Neck | Horn of Ve'han | Horn of Ve'han | Quest "Work Well Done" |
+| Shoulders | Pauldrons of Heroism | Spaulders of Valor | Dungeon Set 2 / Rend Blackhand (UBRS) |
+| Cloak | Shifting Cloak | Stalwart Cloak | Leatherworking / Pix Xizzix vendor (75) |
+| Chest | Breastplate of Heroism | Burnished Pridescales | Dungeon Set 2 / Unbound Spirit (Blackmaw Hold) |
+| Bracers | Vigorsteel Vambraces | Bracers of Valor | Darkmaster Gandling (Scholo) / **BoE** |
+| Hands | Handguards of Heroism | **Gauntlets of Valor** | Dungeon Set 2 / **BoE, ~45g on the Horde AH** |
+| Waist | Waistguard of Heroism | Belt of Valor | Dungeon Set 2 / **BoE** |
+| Legs | Warmaster Legguards | Handcrafted Mastersmith Leggings | Rend Blackhand / Goraluk Anvilcrack (UBRS) |
+| Feet | Sabatons of Heroism | Shalehusk Boots | Dungeon Set 2 / Panzor the Invincible (BRD) |
+| Rings | Cutthroat's Signet + Myrmidon's Signet | Cutthroat's Signet + **Blackstone Ring** | Pix Xizzix vendor (75) / **BoE** / **Princess Theradras, Maraudon (44%)** |
+| Trinkets | Adaptive Combat Assistant + Royal Seal of Eldre'Thalas | Adaptive Combat Assistant + Cleansed Vilebranch Medallion | Pix Xizzix vendor (125) / Quest "Codex of Defense" (Dire Maul) / **Alliance-only quest: skip on Horde** |
+| Main hand | Scaleguard Scimitar (12 Block Value) | Scaleguard Scimitar | Direhorn Matriarch, Shaper's Terrace |
+| Shield | The Immovable Object (27 Block Value) | Draconian Deflector | Alterac Valley Exalted / General Drakkisath (UBRS) |
+| Ranged | Carapace Spine Crossbow | Deep Jungle Rifle | Nerub'enkan (Strat) / Thunderhoof (Shaper's Terrace) |
+
+**Notes for this character:**
+- **Dungeon Set 2 (Heroism)** is a long questline. On Horde it starts with Mokvar in
+  Orgrimmar and needs the Valor pieces, Argent Dawn Honored and UBRS access. It's the long-term
+  goal; you don't need it for the reliable farms.
+- **Pix Xizzix**, the vendor in Stranglethorn, sells several useful pieces:
+  - Stalwart Cloak and Cutthroat's Signet (75 each), and Adaptive Combat Assistant (125).
+  - Valiant's Waistguard (100).
+  - **Defender's Grip Stabilizer:** +13 Defense, and on use +8% block chance for 15 s,
+    **doubled in Strongholds**, so it's strong at Krol'dok.
+  - Icy Veins shows the price without the currency. Check his currency in game.
+- **The Lion Horn of Stormwind** (BoE trinket, req 58): +8 Defense. When struck, a chance to
+  add 725 armor to the party for 30 s, **doubled in Strongholds and Cities**.
+- **Horde substitutes:**
+  - The Cleansed Vilebranch Medallion is Alliance-only. Use the Royal Seal of Eldre'Thalas, the
+    Lion Horn or Defender's Grip Stabilizer instead.
+  - Blackhand's Breadth comes from "For The Horde!" on Horde.
+- **For solo farming, swap two of Icy Veins' choices:**
+  - Use **Skullflame Shield** over The Immovable Object.
+  - Use **Recovery or Lifestealing** over Crusader on the weapon.
+  - Icy Veins' list is built for tanking groups, not for staying alive alone.
+- **Enchants** (Icy Veins' survivability set):
+  - Shield: Greater Stamina. Bracer: Superior Stamina. Chest: Greater Stats.
+  - Head and legs: Lesser Arcanum of Constitution.
+  - Neck: Deflection. Cloak and gloves: Agility. Boots: Speed.
+  - Shoulders: Chromatic Mantle of the Dawn.
+
+## 5. Buying and farming order
+1. **Weapon enchant: Recovery or Lifestealing.** Cheapest sustain.
+2. **Thorium Shield Spike** on your current shield.
+3. **Skullflame Shield** if the Horde AH price is reasonable (section 6).
+4. **Pix Xizzix pieces and Defender's Grip Stabilizer:** Krol'dok benefits most.
+5. **Farm your own upgrades while you farm gold:**
+   - Blackstone Ring on the Princess loop.
+   - Fist of the Damned from Ogom.
+   - Girdle of Extracted Answers from Alcaz.
+   - Razor Gauntlets and Satyr's Bow on the DME test runs.
+6. **Valor BoE pieces,** then the Heroism questline, over time.
+7. Consumables for the DME and Strat tests (from the viability doc): Free Action Potions,
+   Troll's Blood potions, and engineering explosives.
+
+## 6. Horde AH prices for the BoE items
+*To be filled in from the live Horde AH:* Skullflame Shield, Thorium Shield Spike, Force
+Reactive Disk, Demon Forged Breastplate, Lion Horn of Stormwind, Gauntlets of Valor (~45g on
+22–25 Nov), Belt of Valor, Bracers of Valor, Myrmidon's Signet, Julie's Dagger, Formula:
+Enchant Weapon – Lifestealing (~50g, thin), and the Recovery enchant's mats (Soul Dust, Large
+Glimmering Shard, Greater Astral Essence, Pyrite, Silver Ore).
+
+## 7. Real vs judgement
+| Part | Status |
+|---|---|
+| Item effects, required levels, bind types | **real** (Wowhead Forever tooltips, 25 Nov 2026) |
+| Pre-raid lists and stat priority | **Icy Veins** (24 Nov and 4 Nov 2026); built for group tanking |
+| Sources and drop rates on our loops | **real** (this repo's Wowhead drop tables) |
+| Reflect and on-block damage per second | **rough estimate** (hits per second and block rate assumed) |
+| Recovery proccing less against low-level mobs | **reported** (Icy Veins), not measured |
