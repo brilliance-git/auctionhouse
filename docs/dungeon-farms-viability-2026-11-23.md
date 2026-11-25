@@ -116,9 +116,9 @@ All are out-levelled at 60, so they're "reliable" and clear faster (~8–12 min,
 | Uldaman: back-door loop with Archaedas (15 min) | 23 / 37 | real drop tables |
 | Razorfen Downs (full) | 24 / 37 | real drop tables |
 | SM Armory / Library / Graveyard | 17 / 14 / 11 | real drop tables |
-| City of Dalaran (full) | 13 / 21 | |
-| Razorfen Kraul (full) | 14 / 22 | real except Roogug |
-| Ruins of Lordaeron (full) | 10 / 14 | |
+| City of Dalaran (full) | 13 / 21 | estimated: Wowhead has no data |
+| Razorfen Kraul (full) | 14 / 21 | real drop tables |
+| Ruins of Lordaeron (full) | 8 / 11 | real drop tables |
 | Sunken Temple: Spawn of Hakkar only | 6 / 8 | |
 
 None beats Krol'dok (~50). From City of Dalaran down, a run is worth less than ~15 g/h, so

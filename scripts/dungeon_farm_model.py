@@ -170,7 +170,12 @@ CLASSIC_BOSSES = {
     "Death Speaker Jargba": (1.06, 32, 0.08 * 0.21 + 0.10 * 0.016),
     "Overlord Ramtusk": (1.06, 34, 0.06 * 0.21 + 0.12 * 0.016),
     "Agathelos the Raging": (1.05, 35, 0.06 * 0.21), "Charlga Razorflank": (1.01, 35, 0.12 * 0.21),
-    "Roogug (est.)": (1.00, 33, 0),
+    "Roogug": (1.04, 30, 0.06 * 0.21),
+    # Ruins of Lordaeron (docs/wowhead-drops-classic-5-2026-11-25.md); all blues BoP (never on the AH).
+    # Quest items (Highly Toxic Strain, Abominable Head, Head of the Baron) not counted. Rath'mael's
+    # Blueprint: Fermenter 7% sells for ~6.6g on the AH (x0.95).
+    "The Abandoned": (1.00, 22, 0), "Viktor the Vile": (1.00, 22, 0), "Bjork": (1.00, 21, 0),
+    "Rath'mael": (0.99, 24, 0.07 * 6.57 * 0.95), "Witherfang": (0.92, 20, 0), "The Baron": (0.92, 20, 0),
 }
 FOREVER_BOSSES.update(CLASSIC_BOSSES)
 # LBRS Firebrand Pyromancer (trash): Pattern: Robe of the Archmage 19% (vendor 1.50g; ~26g on the AH but
@@ -250,7 +255,7 @@ FARMS = [
     F("Razorfen Kraul at 60 (full)", 5, 31, 30, 33, 10, "medium", "verified",
       "Out-levelled full clear; Thornspike 65s real"),
     F("City of Dalaran at 60 (full)", 6, 34, 30, 31, 10, "low", "assumed",
-      "Quest-unlocked; bosses and loot ilvl unconfirmed"),
+      "Quest-unlocked; Wowhead has no NPC or drop data for it, so it can't be backed by real drops"),
     F("Ruins of Lordaeron at 60 (full)", 7, 24, 30, 18, 8, "medium", "verified",
       "Mirror of Rath'mael 18s real; Fermenter 7% x 6g", extra=0.4),
     F("Zul'Farrak at 60 (graveyard + 4 bosses)", 4, 47, 60, 44, 12, "medium", "assumed",
@@ -323,6 +328,7 @@ TIERS = {
 # and minutes are ESTIMATES. Forever bosses drop a guaranteed blue (Warcraft Tavern).
 # drops: (item, units per trash kill, units per run) -> priced on the Horde AH, demand-capped.
 REPLACED = {
+    "Ruins of Lordaeron at 60 (full)",
     "SM Cathedral at 60 (mass pull, 3 bosses)", "SM Armory at 60 (full clear, Herod)",
     "Razorfen Downs at 60 (full)", "Razorfen Kraul at 60 (full)",
     "Zul'Farrak at 60 (graveyard + 4 bosses)", "SM Library at 60 (2 bosses)", "SM Graveyard at 60",
@@ -395,10 +401,14 @@ ROUTES = [
        "Tuten'kash (gong) > Mordresh Fire Eye > Glutton > Plaguemaw > Amnennar the Coldbringer"), None,
       notes="Ragglesnout (rare, 1.06 blues) not counted"),
     R("Razorfen Kraul at 60: full clear", "reliable", "Mobs 29-38", 34, 33,
-      (["Aggem Thorncurse", "Death Speaker Jargba", "Overlord Ramtusk", "Agathelos the Raging", "Roogug (est.)",
+      (["Aggem Thorncurse", "Death Speaker Jargba", "Overlord Ramtusk", "Agathelos the Raging", "Roogug",
         "Charlga Razorflank"], 30, 10,
        "Roogug > Aggem > Jargba > Ramtusk > Agathelos > Charlga"), None,
-      notes="Only Roogug is estimated; Blind Hunter and Earthcaller Halmgar (rares) not counted"),
+      notes="Blind Hunter and Earthcaller Halmgar (rares) not counted"),
+    R("Ruins of Lordaeron at 60: full clear", "reliable", "Mobs 15-20", 21, 18,
+      (["Witherfang", "The Baron", "The Abandoned", "Bjork", "Viktor the Vile", "Rath'mael"], 30, 8,
+       "Witherfang > The Baron > The Abandoned > Bjork > Viktor the Vile > Rath'mael (order assumed)"), None,
+      notes="Mirror of Rath'mael sells to a vendor for 18s (real); Lordaeron Captain (rare, Horde) not counted"),
     R("SM Library at 60: Loksey + Doan", "reliable", "Humanoids 33-39", 38, 36,
       (["Houndmaster Loksey", "Arcanist Doan"], 40, 10, "Library: Houndmaster Loksey > Arcanist Doan"), None,
       drops=(("Silk Cloth", 0.4, 0),)),

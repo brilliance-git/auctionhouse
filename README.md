@@ -97,8 +97,9 @@ at 5 per hour, so any run under 12 minutes uses the full cap.
 ### Docs
 | File | What it holds |
 |---|---|
-| `docs/uldaman-zf-sm-real-drops-2026-11-25.md` | Uldaman, Zul'Farrak, all of SM, Razorfen Downs and Razorfen Kraul at 60 from real Wowhead Forever drop tables: ZF graveyard + pyramid ~39 g/hr (third reliable farm), SM Cathedral ~26, RFD ~24, Uldaman ~23, the rest under ~17; all boss blues BoP |
+| `docs/uldaman-zf-sm-real-drops-2026-11-25.md` | Uldaman, Zul'Farrak, all of SM, Razorfen Downs and Razorfen Kraul at 60 from real Wowhead Forever drop tables: ZF graveyard + pyramid ~39 g/hr (third reliable farm), SM Cathedral ~26, RFD ~24, Uldaman ~23, RFK ~14, Ruins of Lordaeron ~8; all boss blues BoP. Every farm is real-data except City of Dalaran (no Wowhead data) |
 | `docs/wowhead-drops-classic-4-2026-11-25.md` | Raw Wowhead Forever drop tables for the rest of SM, Razorfen Downs and Razorfen Kraul |
+| `docs/wowhead-drops-classic-5-2026-11-25.md` | Raw Wowhead Forever drop tables for Roogug (RFK) and Ruins of Lordaeron; notes that City of Dalaran has no Wowhead data |
 | `docs/wowhead-drops-classic-3-2026-11-25.md` | Raw Wowhead Forever drop tables for Uldaman, Zul'Farrak and SM (Loksey, Vishas) |
 | `docs/dire-maul-maraudon-real-drops-2026-11-25.md` | Dire Maul and Maraudon from real Wowhead Forever drop tables (`docs/wowhead-drops-classic-2-2026-11-25.md`): DME loop ~56 g/hr (passes Krol'dok conservatively, "maybe"), Maraudon Princess ~41 (best reliable after Krol'dok), DM North to Gordok ~63 ("unlikely") |
 | `docs/wowhead-drops-classic-2-2026-11-25.md` | Raw Wowhead Forever drop tables for Dire Maul and Maraudon |

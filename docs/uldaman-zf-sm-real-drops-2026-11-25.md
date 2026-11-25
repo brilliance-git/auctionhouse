@@ -95,7 +95,7 @@ BoP.**
 | Blues and greens per kill, ilvls (Uldaman, ZF, Loksey, Vishas) | **real** (Wowhead Forever, 2026-11-25) |
 | BoE vs BoP | **real** (Horde AH) |
 | Vendor value of BoP blues | **estimated** (item-level curve) |
-| Roogug (RFK), City of Dalaran, Ruins of Lordaeron | **estimated, not yet backed by real drops** (SM, RFD and the rest of RFK: real, see section 5) |
+| City of Dalaran | **estimated: Wowhead has no data for it** (everything else in this doc is real, see sections 5 and 6) |
 | Routes, minutes, trash counts | **estimated** |
 
 ## 5. Update: all of Scarlet Monastery, Razorfen Downs and Razorfen Kraul
@@ -128,7 +128,7 @@ Heart (Charlga 40%), Small Scroll. None has ever been listed.
 - **RFK:**
   - Aggem 1.07; Jargba 1.06; Ramtusk 1.06; Agathelos 1.05; Charlga 1.01 (ilvl 31–35).
   - Blind Hunter 1.03 and Earthcaller Halmgar 1.02 are rares, not counted.
-  - **Only Roogug is estimated** (1 blue per kill).
+  - Roogug: 1.04 blues per kill (ilvl 30), added in section 6.
 
 **Results at 60 (conservative / anchored g/h):**
 
@@ -141,7 +141,7 @@ Heart (Charlga 40%), Small Scroll. None has ever been listed.
 | **SM Cathedral: mass pull (12 min)** | **26 / 33** | 21 / 28 | real tables |
 | **Razorfen Downs: full clear (12 min)** | **24 / 37** | 18 / 27 | real tables |
 | SM Armory: full clear + Herod (12 min) | 17 / 19 | 16 / 18 | real tables |
-| Razorfen Kraul: full clear (10 min) | 14 / 22 | 11 / 16 | real except Roogug |
+| Razorfen Kraul: full clear (10 min) | 14 / 21 | 11 / 16 | real tables (Roogug added, section 6) |
 | SM Library: Loksey + Doan (10 min) | 14 / 17 | 13 / 16 (partial) | real tables |
 | SM Graveyard: Vishas + Thalnos (8 min) | 11 / 13 | 10 / 13 (partial) | real tables |
 
@@ -160,5 +160,41 @@ Heart (Charlga 40%), Small Scroll. None has ever been listed.
   BoE and sell for ~35g and ~5.8g on the AH, if those thin markets take them.
 - RFK, SM Library and SM Graveyard (11–14) aren't worth a lockout slot while Krol'dok is
   available.
-- **Still not backed by real drops:** Roogug, City of Dalaran and Ruins of Lordaeron.
+- **Still not backed by real drops:** City of Dalaran only (see section 6).
+
+## 6. Update: Roogug and Ruins of Lordaeron
+Source: `docs/wowhead-drops-classic-5-2026-11-25.md`.
+- **Razorfen Kraul is now fully real-data.** Roogug drops 1.04 blues per kill (ilvl 30).
+- **Ruins of Lordaeron has all 6 bosses:** 0.92–1.00 blues per kill at ilvl 20–24, with
+  6,000–7,700 kills sampled each.
+
+**BoE check:** none of the 21 IDs (Roogug's 2741xx items and the Ruins' 2712xx items) has ever
+been listed on the Horde AH, so **all are BoP**, at vendor value.
+- **Not counted (quest items, never listed):** Highly Toxic Strain (Witherfang 26%), Abominable
+  Head (The Baron 36%), Head of the Baron (18%).
+- **Counted:** Rath'mael's Blueprint: Fermenter (7%) sells for ~6.6g on the AH, ~0.44g per kill.
+
+**City of Dalaran has no data on Wowhead.** Its zone page (16560) has no NPC list and no drops
+list, only quests and guides, so it can't be backed by real drops. It stays on estimates.
+
+**Results at 60 (conservative / anchored g/h, all "reliable"):**
+
+| Farm | Now | Before | Data |
+|---|---|---|---|
+| *Krol'dok Stronghold (baseline)* | *50 / 50* | | real sell prices |
+| *Dire Maul East (12 min, "maybe")* | *56 / 86* | | real tables |
+| *Maraudon: Princess loop (12 min)* | *41 / 64* | | real tables |
+| *Zul'Farrak: graveyard + pyramid (15 min)* | *39 / 55* | | real tables |
+| *SM Cathedral: mass pull (12 min)* | *26 / 33* | | real tables |
+| *Razorfen Downs: full clear (12 min)* | *24 / 37* | | real tables |
+| **Razorfen Kraul: full clear (10 min)** | **14 / 21** | 14 / 22 (Roogug estimated) | **real tables** |
+| City of Dalaran: full clear (10 min) | 13 / 21 | unchanged | **estimated (no Wowhead data)** |
+| **Ruins of Lordaeron: full clear (8 min)** | **8 / 11** | 10 / 14 (7 bosses estimated) | **real tables** |
+
+- **Ruins route:** Witherfang > The Baron > The Abandoned > Bjork > Viktor the Vile >
+  Rath'mael (order assumed). It's 6 bosses, not the 7 the estimate assumed, and their ilvl 20–24
+  blues sell for a few silver.
+- **Verdict:** neither comes close to the farms above, and neither is worth a lockout slot while
+  Krol'dok is available. Every farm in the model is now backed by real drop data **except City of
+  Dalaran**.
 
