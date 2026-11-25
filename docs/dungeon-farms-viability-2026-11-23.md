@@ -11,9 +11,9 @@ actually do?
   **Ranked by viability first, Krol'dok at 60 (~50 g/h) is the best farm you can count on.**
   Next come Maraudon (~30), ZF (~29) and SM Cathedral (~21). Of the "maybe" farms, Dire Maul
   East's lasher route (~37) is the best to test.
-- **At 47:** Krol'dok is still by far the best value (~49 g/h after consumables), but it's a
+- **Levelling (pre-60):** Krol'dok is still by far the best value (~49 g/h after consumables), but it's a
   **"maybe", not a sure thing.** It's elites 2–5 levels below you, with caster cultists and a
-  60-yard fear. The only farms that are certain at 47 pay 9–16 g/h (SM Cathedral, City of
+  60-yard fear. The only farms that are certain while levelling pay 9–16 g/h (SM Cathedral, City of
   Dalaran, RFK).
 - **So the next step hasn't changed:** a timed solo Krol'dok run. If it works, nothing at 60
   needs to replace it unless a test beats it.
@@ -46,26 +46,28 @@ Reproduce with `python3 scripts/dungeon_farm_model.py --reasons`. Every g/h is a
   ~10 healing potions, ~10 bandages and one elixir an hour.
   - **Prices (Horde AH, 2026-11-23):** Greater or Superior Healing Potion ~4s, Heavy
     Mageweave Bandage ~6s, Heavy Runecloth Bandage ~14s, Elixir of Fortitude ~30s.
-  - **That's ~1 g/h at 47 and ~2.5 g/h at 60.** Small next to the deaths and repairs a farm
+  - **That's ~1 g/h while levelling and ~2.5 g/h at 60.** Small next to the deaths and repairs a farm
     that's too hard would cost.
 
-## 2. Level 47, ranked by viability, then g/h
+## 2. Levelling band (pre-60), ranked by viability, then g/h
+
+Tiers in this band assume you farm these dungeons in your mid-40s, where Krol'dok (40–45) is current content.
 
 | Tier | Farm | g/h (conservative / anchored) | Why this tier |
 |---|---|---|---|
-| reliable | SM Cathedral | 16 / 22 | Humanoids 34–40 (gap 7–13), small packs |
+| reliable | SM Cathedral | 16 / 22 | Humanoids 34–40, well below a mid-40s character; small packs |
 | reliable | City of Dalaran | 13 / 21 | Mobs ~28–33; quest-unlocked |
 | reliable | Razorfen Kraul | 11 / 16 | Mobs 29–38 |
 | reliable | Ruins of Lordaeron | 10 / 14 | Mobs 15–20 |
 | reliable | SM Armory | 9 / 11 | Humanoids 34–40 |
-| **maybe** | **Krol'dok Stronghold** (Ogre Key) | **49** (41.6 boss, real prices + ~7.9 trash, estimate − 1 consumables) | Elites 42–45 (gap 2–5), caster cultists, Terrorhowl's fear, Mortal Strike Centurions. Battlegear 4-piece heal is doubled there. You ran it while levelling; solo not yet timed |
-| maybe | The Drowned City | 18 / 29 | Elites 35–40 (gap 7–12); boss mechanics unknown |
+| **maybe** | **Krol'dok Stronghold** (Ogre Key) | **49** (41.6 boss, real prices + ~7.9 trash, estimate − 1 consumables) | Elites 42–45, a few levels below a mid-40s character; caster cultists, Terrorhowl's fear, Mortal Strike Centurions. Battlegear 4-piece heal is doubled there. You ran it while levelling; solo not yet timed |
+| maybe | The Drowned City | 18 / 29 | Elites 35–40, well below a mid-40s character; boss mechanics unknown |
 | maybe | Razorfen Downs | 17 / 26 | Elites 37–46; quilboar casters |
 | maybe | Uldaman (3-boss chunk) | 14 / 22 | Elites 41–47, mostly melee |
 | unlikely | Zul'Farrak (graveyard + 2 bosses) | 20 / 26 | The graveyard event pulls dozens of level 43–44 elites at once |
-| unlikely | Maraudon (Orange or Purple wing) | 14 / 21 | Elites 44–48 at your level; satyr casters |
+| unlikely | Maraudon (Orange or Purple wing) | 14 / 21 | Elites 44–48, near a levelling character's level; satyr casters |
 
-**At 47:** Krol'dok is worth testing even though it's a "maybe". It pays about three times
+**While levelling:** Krol'dok is worth testing even though it's a "maybe". It pays about three times
 more than any reliable farm. If one test pack goes badly, fall back to SM Cathedral (~16–22 g/h)
 or keep levelling.
 
@@ -128,7 +130,7 @@ or keep levelling.
   tricks.
 
 ## 6. Changes to the plan
-- **Level 47:** Krol'dok remains the farm, now marked "maybe". Test it before relying on it.
+- **Levelling:** Krol'dok remains the farm, now marked "maybe". Test it before relying on it.
 - **Level 60:** Krol'dok at 60 is the plan. Test Dire Maul East and Alcaz Prison first.
   Strat Living, Shaper's Terrace, Scholomance and Blackmaw Hold come only after a test pack
   passes, or with raid gear after 9 Dec.

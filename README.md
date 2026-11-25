@@ -75,16 +75,15 @@ This repo is the home of the **gold farming analysis**. One chat owns that threa
 updates the docs below; other chats should read them rather than redo the research.
 
 ### Character
-- **Protection Warrior, level 47** (as of 2026-11-23). Update this when it changes; it
-  decides which farm is best.
+- **Protection Warrior.** The plan below is split into levelling (pre-60) and level 60.
 - Passive income on the side: fishing (sell Spotted Yellowtail on the AH, vendor Rockscale Cod).
 
 ### Current plan
 | Level | Farm | Why | Status |
 |---|---|---|---|
-| **42–59 (now)** | **Krol'dok Stronghold** | ~50 g/hr modelled: **41.6 g/hr from 6 bosses at real prices** (~8.3g/run in vendored BoP blues plus the Expert Campfire blueprint, 4.54%, ~27g) **+ ~8 g/hr trash coin (estimate)**; also the Krol'dok Warplate tank set. Nothing else at 47 models above ~21 g/hr conservatively (~30 optimistically). See `docs/kroldok-model-2026-11-23.md` and `docs/dungeon-farms-prot-warrior-2026-11-23.md` | estimated; solo viability **"maybe"** at 47 (elites 42–45, casters, fear), so **test one pack first** |
-| 47 (backups) | Zul'Farrak graveyard, The Drowned City, Razorfen Downs | ~18–30 g/hr modelled; ZF graveyard is a big near-level pull | not tested on a warrior |
-| 60 | **Krol'dok at 60 (~50 g/hr, reliable solo)**; test Dire Maul East and Alcaz Prison | Ranked by solo viability first (`docs/dungeon-farms-viability-2026-11-23.md`): Krol'dok at 60 is the best farm a pre-raid prot warrior can count on. Then Maraudon ~30, ZF ~29 and SM Cathedral ~21. DME lashers (~37–63) and Alcaz Prison (~36–59) are "maybe". Strat Living, Shaper's Terrace, Scholomance and Blackmaw Hold model higher but are **unlikely solo** (level 58–60 elite casters, no documented prot solo): try them only after a test pack passes, or with raid gear after 9 Dec | tiers use Classic-era mechanics; Forever's prot rework may differ |
+| **Levelling (42–59)** | **Krol'dok Stronghold** | ~50 g/hr modelled: **41.6 g/hr from 6 bosses at real prices** (~8.3g/run in vendored BoP blues plus the Expert Campfire blueprint, 4.54%, ~27g) **+ ~8 g/hr trash coin (estimate)**; also the Krol'dok Warplate tank set. Nothing else in the levelling band models above ~21 g/hr conservatively (~30 optimistically). See `docs/kroldok-model-2026-11-23.md` and `docs/dungeon-farms-prot-warrior-2026-11-23.md` | estimated; solo viability **"maybe"** while levelling (elites 42–45, casters, fear), so **test one pack first** |
+| Levelling (backups) | Zul'Farrak graveyard, The Drowned City, Razorfen Downs | ~18–30 g/hr modelled; ZF graveyard is a big near-level pull | not tested on a warrior |
+| 60 | **Krol'dok at 60 (~50 g/hr, reliable solo)**; test the Sunken Temple balcony trolls, Dire Maul East and Alcaz Prison | Ranked by solo viability first (`docs/dungeon-farms-viability-2026-11-23.md`): Krol'dok at 60 is the best farm a pre-raid prot warrior can count on. Then Maraudon ~30, ZF ~29 and SM Cathedral ~21. Sunken Temple's six balcony trolls (~39–67), DME lashers (~37–63) and Alcaz Prison (~36–59) are "maybe". Strat Living, Shaper's Terrace, Scholomance and Blackmaw Hold model higher but are **unlikely solo** (level 58–60 elite casters, no documented prot solo): try them only after a test pack passes, or with raid gear after 9 Dec | tiers use Classic-era mechanics; Forever's prot rework may differ |
 
 Rules: use normal pull-and-kill only. No pathing, leash or ledge tricks; Blizzard confiscated
 gold and suspended players for the Blackmaw Hold farm (Nov 16–17, 2026). Instances are capped
@@ -93,8 +92,9 @@ at 5 per hour, so any run under 12 minutes uses the full cap.
 ### Docs
 | File | What it holds |
 |---|---|
-| `docs/dungeon-farms-viability-2026-11-23.md` | Which of those farms a solo prot warrior in pre-raid gear can actually clear: reliable / maybe / unlikely tiers, re-ranked tables at 47 and 60, a one-pack test checklist, what improves the odds (`dungeon_farm_model.py --reasons`) |
-| `docs/dungeon-farms-prot-warrior-2026-11-23.md` | Every Forever instance re-evaluated for a solo prot warrior at 47 and 60 (model: `scripts/dungeon_farm_model.py`) |
+| `docs/sunken-temple-2026-11-25.md` | Sunken Temple: the Spawn of Hakkar farm (~4–8 g/h, not worth a slot) and the six balcony trolls (~40–68 g/h; unlikely solo while levelling, "maybe" at 60, the best "maybe" to test after Krol'dok) |
+| `docs/dungeon-farms-viability-2026-11-23.md` | Which of those farms a solo prot warrior in pre-raid gear can actually clear: reliable / maybe / unlikely tiers, re-ranked tables for levelling and 60, a one-pack test checklist, what improves the odds (`dungeon_farm_model.py --reasons`) |
+| `docs/dungeon-farms-prot-warrior-2026-11-23.md` | Every Forever instance re-evaluated for a solo prot warrior while levelling and at 60 (model: `scripts/dungeon_farm_model.py`) |
 | `docs/kroldok-model-2026-11-23.md` | Krol'dok boss-by-boss expected value, route rules, open questions |
 | `docs/instance-loot-values-2026-11-23.md` | The analysis: BoP check, AH and vendor value per instance, g/hr estimates, ranking, and data still needed |
 | `docs/research-prot-warrior-solo-farms-2026-11-23.md` | The original web-research brief (routes, loot tables, sources, exploit warnings) |
@@ -124,7 +124,7 @@ scripts/item_report.py    price check any item(s)
 scripts/dungeon_drops.py  price the researched drops for each instance
 scripts/fetch_snapshots.py download every snapshot, the catalog, vendor goods and recipes to data/ (~50 MB, git-ignored)
 scripts/farm_leaderboard.py rank farmable commodities by market gold per day, offline from data/
-scripts/dungeon_farm_model.py rough g/h model for every dungeon farm at 47 and 60, ranked by solo viability tier (--reasons)
+scripts/dungeon_farm_model.py rough g/h model for every dungeon farm (levelling band and 60), ranked by solo viability tier (--reasons)
 docs/                     dated analyses and research, plus the farm log
 ```
 

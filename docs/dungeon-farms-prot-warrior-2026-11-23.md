@@ -1,12 +1,12 @@
 # Dungeon farms for a solo Protection Warrior: every instance, re-evaluated (2026-11-23)
 
 **Question:** of every instance in WoW: Forever today, which is the best solo gold farm for a
-Protection Warrior, now (level 47) and at 60 in reasonable pre-raid gear?
+Protection Warrior while levelling (pre-60) and at 60 in reasonable pre-raid gear?
 
 **Short answer**
-- **At 47: Krol'dok Stronghold, by a wide margin.** It makes ~50 g/h: **41.6 g/h from boss
+- **Levelling (pre-60): Krol'dok Stronghold, by a wide margin.** It makes ~50 g/h: **41.6 g/h from boss
   blues** (real sell prices and drop rates) plus **~8 g/h of trash coin** (an estimate from a
-  guide video). Everything else at 47 models at 10–21 g/h on conservative numbers (up to ~30 on
+  guide video). Everything else in the levelling band models at 10–21 g/h on conservative numbers (up to ~30 on
   optimistic ones).
 - **At 60: Krol'dok likely stays competitive; test Strat, Shaper's and DME to beat it.**
   - On conservative numbers only **Stratholme Living, Scarlet side (~62 g/h)** beats Krol'dok
@@ -71,7 +71,7 @@ Scholomance, and Stratholme (Living and Undead).
     are possible but long.
   - Check Forever-specific changes before trying.
 - **DM West.**
-- **Sunken Temple:** long and caster-heavy.
+- **Sunken Temple:** long and caster-heavy. *(Since modelled in `sunken-temple-2026-11-25.md`: the six balcony trolls make ~39–40 g/h conservatively, "maybe" solo at 60; Spawn of Hakkar alone makes ~4–8 g/h.)*
 - **Dungeons under level 30:** their blues sell for under ~40s.
 
 **Raids:** Barrow Deeps (10-player), Hyjal Summit (20) and Onyxia's Lair (40) open on
@@ -123,7 +123,7 @@ g/h = min(5, 60 / minutes per run) x (boss blues + trash coin + other vendor loo
       ilvl 60 (1.94g instead of 3.47g).
     - **Krol'dok-anchored:** scale 1.0.
 
-  | ilvl | 31 | 40 | 47 | 53 | 56 | 58 | 60 | 62 |
+  | ilvl | 31 | 40 | Levelling | 53 | 56 | 58 | 60 | 62 |
   |---|---|---|---|---|---|---|---|---|
   | conservative (g) | 0.25 | 0.47 | 0.77 | 1.18 | 1.46 | 1.68 | **1.94** | 2.24 |
   | Krol'dok-anchored (g) | 0.44 | 0.84 | 1.38 | 2.11 | 2.61 | 3.01 | 3.47 | 4.00 |
@@ -167,23 +167,23 @@ trash-heavy farms (SM mass pulls, ZF graveyard, Strat) more than boss-heavy ones
 12 minutes (the cap) unless noted. Big dungeons are planned as chunks that fit the cap, so they
 only count the bosses one chunk can reach.
 
-## 4. Level 47 (now)
+## 4. Levelling band (pre-60)
 
 | # | Farm | Conservative g/h | Anchored g/h | Split (boss + trash + AH) | Blues | Soloability and risks | Confidence |
 |---|---|---|---|---|---|---|---|
 | 1 | **Krol'dok Stronghold** (full, Ogre Key shortcut) | **50** | 50 | **41.6 boss (real prices) + ~7.9 trash (estimate)** + 0.5 | verified | Mobs 42–45. Risks: Terrorhowl's 60-yard fear (Ashka), Twilight Peons that run for help, caster cultists, Mortal Strike Centurions, Mugg's Mauls phase | **Medium** |
-| 2 | Zul'Farrak (graveyard + 2 bosses) | 21 | 27 | 7.7 + 11.9 + 1.7 | assumed | **Risky at 47:** the graveyard event pulls dozens of level 43–44 elites | Low |
+| 2 | Zul'Farrak (graveyard + 2 bosses) | 21 | 27 | 7.7 + 11.9 + 1.7 | assumed | **Risky while levelling:** the graveyard event pulls dozens of level 43–44 elites | Low |
 | 3 | The Drowned City (full) | 19 | 30 | 14.1 + 5.1 | assumed | Trivial mobs (35–40); loot ilvl unconfirmed | Low |
 | 4 | Razorfen Downs (full) | 18 | 27 | 11.7 + 6.0 | assumed | Easy level; some quilboar casters | Low |
 | 5 | SM Cathedral | 16 | 22 | 8.1 + 6.8 + 1.1 | verified | Easy; Whitemane heals | Low |
 | 6 | Uldaman (3-boss chunk) | 15 | 23 | 9.3 + 5.9 | assumed | Mostly melee; long, spread out | Low |
-| 7 | Maraudon (Orange or Purple wing) | 15 | 22 | 8.9 + 6.3 | assumed | Mobs at your level, satyr casters | Low |
+| 7 | Maraudon (Orange or Purple wing) | 15 | 22 | 8.9 + 6.3 | assumed | Mobs near a levelling character's level, satyr casters | Low |
 | 8 | City of Dalaran | 13 | 21 | 9.2 + 4.2 | assumed | Quest-locked; boss list unconfirmed | Low |
 | 9 | Razorfen Kraul | 11 | 16 | 6.2 + 4.5 | verified | Trivial | Medium |
 | 10 | Ruins of Lordaeron | 10 | 14 | 5.3 + 2.4 + 2.0 (Fermenter) | verified | Trivial; Stone Watchers turn immune | Medium |
 | 11 | SM Armory | 9 | 11 | 2.3 + 6.8 | verified | Trivial | Low |
 
-**Verdict at 47:** stay on **Krol'dok**. Its boss income alone (41.6 g/h from real prices) is
+**Verdict while levelling:** stay on **Krol'dok**. Its boss income alone (41.6 g/h from real prices) is
 about twice the best alternative's total. If runs come in at 15 minutes (4 an hour), it still
 makes ~40 g/h.
 
@@ -195,13 +195,13 @@ makes ~40 g/h.
 | 2 | Shaper's Terrace (4 bosses per run, teleport exit) | 50 | 85 | 44.7 + 5.3 (+5.8 with Mining) | assumed | Mount inside and teleport out save time; boss count disputed (4–11); no solo boss data | Low |
 | 3 | **Krol'dok Stronghold at 60** | **50** | 50 | **41.6 (real) + ~7.9 (estimate)** + 0.5 | verified | **Trivial at 60, very safe.** The benchmark | **Medium** |
 | 4 | Scholomance (4-boss chunk) | 49 | 79 | 38.8 + 8.0 + 2.1 | assumed | Caster-heavy (necromancers, Ras Frostwhisper), long | Low |
-| 5 | Blackmaw Hold (4-boss chunk) | 47 | 77 | 38.8 + 7.8 | assumed | 55–60 elites; Devotees drop nothing now. **Normal boss clears only** | Low |
+| 5 | Blackmaw Hold (4-boss chunk) | Levelling | 77 | 38.8 + 7.8 | assumed | 55–60 elites; Devotees drop nothing now. **Normal boss clears only** | Low |
 | 6 | Dire Maul East (lashers + 4 bosses) | 39 | 66 | 33.7 + 3.9 (non-elite) + 1.7 | assumed | **Best mob mix for prot:** non-elite, melee-only lashers. Alzzin and Lethtendris cast | Low |
 | 7 | Stratholme Undead (3-boss chunk) | 39 | 62 | 29.1 + 7.8 + 2.1 | assumed | Mostly melee undead; Maleki casts | Low |
 | 8 | Alcaz Prison (full) | 39 | 62 | 29.5 + 9.2 | assumed | Easy level at 60; Zarla Ober's dragon phase and Tidemistress (a caster) unknown solo | Low |
 | 9 | Blackrock Depths (4-boss chunk) | 37 | 60 | 29.2 + 7.3 | assumed | Huge; pick one wing | Low |
 | 10 | LBRS (3-boss chunk) | 33 | 53 | 25.3 + 7.7 | assumed | Orc packs, mostly melee | Low |
-| 11 | Maraudon (Princess run) | 30 | 47 | 22.0 + 5.6 + 2.3 | assumed | Easy at 60 | Low |
+| 11 | Maraudon (Princess run) | 30 | Levelling | 22.0 + 5.6 + 2.3 | assumed | Easy at 60 | Low |
 | 12 | Zul'Farrak at 60 | 29 | 41 | 15.4 + 11.9 + 1.7 | assumed | Trivial | Medium |
 | 13 | Uldaman at 60 | 25 | 39 | 18.7 + 5.9 | assumed | Long | Low |
 | 14 | SM Cathedral at 60 (mass pull, 3 bosses) | 21 | 28 | 8.1 + 10.3 + 2.9 (Silk, Mageweave) | verified | Whole-wing pulls of level 34–40 humanoid elites; looting ~60 corpses is the time limit | Low |
@@ -251,11 +251,11 @@ makes ~40 g/h.
 
 | Band | # | Farm | Est. g/h (conservative / anchored) | Main income | Confidence |
 |---|---|---|---|---|---|
-| 47 | 1 | Krol'dok Stronghold | **50** (41.6 boss, real + ~8 trash, estimate) | BoP boss blues | Medium |
-| 47 | 2 | Zul'Farrak (GY + 2 bosses) | 21 / 27 | trash coin, Mageweave | Low |
-| 47 | 3 | The Drowned City | 19 / 30 | BoP boss blues | Low |
-| 47 | 4 | Razorfen Downs | 18 / 27 | BoP boss blues | Low |
-| 47 | 5 | SM Cathedral | 16 / 22 | boss blues, coin, Silk | Low |
+| Levelling | 1 | Krol'dok Stronghold | **50** (41.6 boss, real + ~8 trash, estimate) | BoP boss blues | Medium |
+| Levelling | 2 | Zul'Farrak (GY + 2 bosses) | 21 / 27 | trash coin, Mageweave | Low |
+| Levelling | 3 | The Drowned City | 19 / 30 | BoP boss blues | Low |
+| Levelling | 4 | Razorfen Downs | 18 / 27 | BoP boss blues | Low |
+| Levelling | 5 | SM Cathedral | 16 / 22 | boss blues, coin, Silk | Low |
 | 60 | 1 | Stratholme Living, Scarlet side | 62 / 77 | Righteous Orbs at vendor price, boss blues | Low |
 | 60 | 2 | Shaper's Terrace | 50 / 85 | boss blues (+Thorium with Mining) | Low |
 | 60 | 3 | Krol'dok Stronghold | **50** (41.6 real + ~8 estimate) | BoP boss blues | Medium |
