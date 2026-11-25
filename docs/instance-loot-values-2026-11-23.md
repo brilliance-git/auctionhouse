@@ -6,7 +6,7 @@ drop tables supplied by hand (Wowhead blocks automated requests).
 Re-run prices with `python3 scripts/dungeon_drops.py`.
 
 ## Character
-- Protection Warrior, **level 47** (as of 2026-11-23).
+- Protection Warrior.
 - Instance cap: 5 new instances/hour → any run under 12 min uses the full cap.
 
 ## 1. Boss gear is bind-on-pickup → vendor only
@@ -44,7 +44,7 @@ Gutwrencher, Arcanite Reaper) are present.
 
 ## 3. Estimates
 
-### Krol'dok Stronghold (chosen farm at level 47)
+### Krol'dok Stronghold (chosen levelling farm)
 Bosses 42–45, nearly all elite, ~5 min run (Wowhead). 7 bosses incl. rare Kroog.
 - Campfire blueprint: 5 runs/h × 4.54% × ~27g × 0.95 ≈ **~6 g/h** (avg; one every ~4.4 h, streaky).
 - BoP blues: ~1 per boss at ~76s vendor (ilvl ~45) × 7 bosses ≈ ~5g/run ≈ **~25 g/h**.

@@ -1,6 +1,6 @@
 """Rough g/h model for solo Protection Warrior dungeon farms (WoW: Forever).
 
-    python3 scripts/dungeon_farm_model.py            # both level bands
+    python3 scripts/dungeon_farm_model.py            # levelling band and level 60
     python3 scripts/dungeon_farm_model.py --band 60
     python3 scripts/dungeon_farm_model.py --reasons   # with the solo-viability reason per farm
 
@@ -69,81 +69,95 @@ def F(name, band, bosses, ilvl, kills, mob, minutes, conf, basis, notes,
 
 # basis: "verified" = BoP and ~1 blue per boss checked on Wowhead; "assumed" otherwise.
 FARMS = [
-    # ---- level 47 ----
-    F("Krol'dok Stronghold (full, Ogre Key)", 47, 6, None, 40, 44, 12, "medium", "verified",
+    # ---- levelling band (pre-60; dungeons whose mobs are ~35-55) ----
+    F("Krol'dok Stronghold (full, Ogre Key)", "levelling", 6, None, 40, 44, 12, "medium", "verified",
       "Boss value from real prices and drop rates; trash and time estimated",
       real_boss=8.31, ah=(("Thick Leather", 5), ("Heavy Leather", 5), ("Red Wolf Meat", 5))),
-    F("The Drowned City (full)", 47, 6, 40, 30, 38, 12, "low", "assumed",
+    F("The Drowned City (full)", "levelling", 6, 40, 30, 38, 12, "low", "assumed",
       "6 bosses; loot ilvl ~40 assumed (top of range + 2, like Krol'dok)"),
-    F("Zul'Farrak (graveyard + 2 bosses)", 47, 2, 47, 60, 44, 12, "low", "assumed",
+    F("Zul'Farrak (graveyard + 2 bosses)", "levelling", 2, 47, 60, 44, 12, "low", "assumed",
       "Big near-level zombie pull", ah=(("Mageweave Cloth", 40),)),
-    F("Razorfen Downs (full)", 47, 5, 40, 35, 38, 12, "low", "assumed", "Some quilboar casters"),
-    F("Uldaman (partial, 3 bosses)", 47, 3, 44, 30, 44, 12, "low", "assumed",
+    F("Razorfen Downs (full)", "levelling", 5, 40, 35, 38, 12, "low", "assumed", "Some quilboar casters"),
+    F("Uldaman (partial, 3 bosses)", "levelling", 3, 44, 30, 44, 12, "low", "assumed",
       "Long and spread out; mostly melee"),
-    F("Scarlet Monastery Cathedral", 47, 3, 42, 40, 38, 10, "low", "verified",
+    F("Scarlet Monastery Cathedral", "levelling", 3, 42, 40, 38, 10, "low", "verified",
       "SM boss gear never on the AH", ah=(("Silk Cloth", 60),)),
-    F("Maraudon (Orange/Purple wing)", 47, 2, 49, 30, 47, 12, "low", "assumed",
-      "Mobs at your level; satyr casters"),
-    F("City of Dalaran (full)", 47, 6, 34, 30, 31, 12, "low", "assumed",
+    F("Maraudon (Orange/Purple wing)", "levelling", 2, 49, 30, 47, 12, "low", "assumed",
+      "Mobs near a levelling character's level; satyr casters"),
+    F("City of Dalaran (full)", "levelling", 6, 34, 30, 31, 12, "low", "assumed",
       "Quest-unlocked; bosses and loot ilvl unconfirmed"),
-    F("Razorfen Kraul (full)", 47, 5, 31, 30, 33, 12, "medium", "verified", "Thornspike 65s real"),
-    F("Ruins of Lordaeron (full)", 47, 7, 24, 30, 18, 10, "medium", "verified",
+    F("Razorfen Kraul (full)", "levelling", 5, 31, 30, 33, 12, "medium", "verified", "Thornspike 65s real"),
+    F("Ruins of Lordaeron (full)", "levelling", 7, 24, 30, 18, 10, "medium", "verified",
       "Mirror of Rath'mael 18s real; Fermenter 7% x 6g", extra=0.4),
-    F("Scarlet Monastery Armory", 47, 1, 40, 40, 38, 8, "low", "verified", "Herod only"),
+    F("Scarlet Monastery Armory", "levelling", 1, 40, 40, 38, 8, "low", "verified", "Herod only"),
+    # Sunken Temple (Temple of Atal'Hakkar, ~50-55). Forever: every boss drops a guaranteed blue
+    # (Warcraft Tavern). Spawn of Hakkar: level 49 elite beast in the basement, optional; Classic/TBC
+    # DB drop rates Slitherscale Boots ~47%, Wingveil Cloak ~26% (BoP), so ~0.73 blues per kill.
+    F("Sunken Temple: Spawn of Hakkar only", "levelling", 0.73, 51, 5, 49, 7, "low", "assumed",
+      "One elite in the basement, then exit and reset; Wingveil Cloak BoP, boots never on the AH"),
+    F("Sunken Temple: 6 balcony trolls (chunk)", "levelling", 6, 53, 25, 52, 12, "low", "assumed",
+      "Six troll minibosses on the balconies plus the trash between them"),
     # ---- level 60 ----
-    F("Stratholme Living, Scarlet side (chunked)", 60, 2, 60, 25, 58, 12, "low", "assumed",
+    F("Sunken Temple at 60: Spawn of Hakkar only", "60", 0.73, 51, 5, 49, 6, "low", "assumed",
+      "One elite in the basement, then exit and reset"),
+    F("Sunken Temple at 60: 6 balcony trolls (chunk)", "60", 6, 53, 25, 52, 12, "low", "assumed",
+      "Six troll minibosses, guaranteed blue each in Forever"),
+    F("Stratholme Living, Scarlet side (chunked)", "60", 2, 60, 25, 58, 12, "low", "assumed",
       "Orbs ~3.2/run (Galford 84%, trash ~9.5%), mostly at the 2g vendor price; casters; "
       "no proven prot solo", ah=(("Righteous Orb", 16), ("Runecloth", 40))),
-    F("Krol'dok Stronghold at 60", 60, 6, None, 40, 44, 11, "medium", "verified",
-      "Same loot as at 47, trivial mobs", real_boss=8.31,
+    F("Krol'dok Stronghold at 60", "60", 6, None, 40, 44, 11, "medium", "verified",
+      "Same loot as in the levelling band, trivial mobs", real_boss=8.31,
       ah=(("Thick Leather", 5), ("Heavy Leather", 5), ("Red Wolf Meat", 5))),
-    F("Shaper's Terrace (4 bosses, teleport exit)", 60, 4, 62, 20, 59, 12, "low", "assumed",
+    F("Shaper's Terrace (4 bosses, teleport exit)", "60", 4, 62, 20, 59, 12, "low", "assumed",
       "10-11 encounters; mount inside; + ~5.8 g/h Thorium only with Mining"),
-    F("Scholomance (partial, 4 bosses)", 60, 4, 60, 30, 59, 12, "low", "assumed",
+    F("Scholomance (partial, 4 bosses)", "60", 4, 60, 30, 59, 12, "low", "assumed",
       "Caster-heavy", ah=(("Runecloth", 40),)),
-    F("Blackmaw Hold (partial, 4 bosses)", 60, 4, 60, 30, 58, 12, "low", "assumed",
+    F("Blackmaw Hold (partial, 4 bosses)", "60", 4, 60, 30, 58, 12, "low", "assumed",
       "Devotees drop nothing; normal boss kills only"),
-    F("Dire Maul East (Lashers + 4 bosses)", 60, 4, 58, 40, 54, 12, "low", "assumed",
+    F("Dire Maul East (Lashers + 4 bosses)", "60", 4, 58, 40, 54, 12, "low", "assumed",
       "Non-elite melee lashers suit prot (non-elite coin)", elite=False,
       ah=(("Living Essence", 10), ("Heart of the Wild", 20))),
-    F("Stratholme Undead (chunk, 3 bosses)", 60, 3, 60, 30, 58, 12, "low", "assumed",
+    F("Stratholme Undead (chunk, 3 bosses)", "60", 3, 60, 30, 58, 12, "low", "assumed",
       "Mostly melee undead", ah=(("Runecloth", 40),)),
-    F("Alcaz Prison (full)", 60, 5, 53, 40, 51, 12, "low", "assumed",
+    F("Alcaz Prison (full)", "60", 5, 53, 40, 51, 12, "low", "assumed",
       "5 bosses; no solo reports; Zarla Ober dragon phase"),
-    F("Blackrock Depths (chunk, 4 bosses)", 60, 4, 56, 30, 54, 12, "low", "assumed", "Pick a wing"),
-    F("Lower Blackrock Spire (chunk, 3 bosses)", 60, 3, 58, 30, 57, 12, "low", "assumed",
+    F("Blackrock Depths (chunk, 4 bosses)", "60", 4, 56, 30, 54, 12, "low", "assumed", "Pick a wing"),
+    F("Lower Blackrock Spire (chunk, 3 bosses)", "60", 3, 58, 30, 57, 12, "low", "assumed",
       "Orc packs, mostly melee"),
-    F("Maraudon (Princess run)", 60, 4, 52, 25, 50, 12, "low", "assumed", "",
+    F("Maraudon (Princess run)", "60", 4, 52, 25, 50, 12, "low", "assumed", "",
       ah=(("Essence of Earth", 5),)),
     # Scarlet Monastery at 60: mass-pull clears (gather a whole wing's humanoid packs and
     # AoE-tank them; normal pull-and-kill). Kill counts are estimates: Cathedral courtyard
     # ~25 + chapel ~35 elites (aggroing Mograine pulls the whole chapel); Armory ~65 elites.
     # Cloth: Silk on ~1 in 2-3 humanoid kills, Mageweave ~5%.
-    F("SM Cathedral at 60 (mass pull, 3 bosses)", 60, 3, 42, 60, 38, 12, "low", "verified",
+    F("SM Cathedral at 60 (mass pull, 3 bosses)", "60", 3, 42, 60, 38, 12, "low", "verified",
       "Whole-wing pulls of 34-40 elites; ~60 corpses to loot is the time limit",
       ah=(("Silk Cloth", 125), ("Mageweave Cloth", 15))),
-    F("SM Armory at 60 (full clear, Herod)", 60, 1, 40, 65, 38, 12, "low", "verified",
+    F("SM Armory at 60 (full clear, Herod)", "60", 1, 40, 65, 38, 12, "low", "verified",
       "Full trash clear plus Herod fits ~12 min", ah=(("Silk Cloth", 125), ("Mageweave Cloth", 15))),
-    F("SM Library at 60 (2 bosses)", 60, 2, 38, 40, 36, 10, "low", "verified",
+    F("SM Library at 60 (2 bosses)", "60", 2, 38, 40, 36, 10, "low", "verified",
       "Loksey and Doan; fewer mobs", ah=(("Silk Cloth", 100),)),
-    F("SM Graveyard at 60", 60, 1, 33, 40, 31, 8, "low", "verified",
+    F("SM Graveyard at 60", "60", 1, 33, 40, 31, 8, "low", "verified",
       "Undead 26-36, low coin; Wool not Silk", ah=(("Wool Cloth", 60),)),
-    F("Zul'Farrak at 60 (graveyard + 4 bosses)", 60, 4, 47, 60, 44, 12, "medium", "assumed",
+    F("Zul'Farrak at 60 (graveyard + 4 bosses)", "60", 4, 47, 60, 44, 12, "medium", "assumed",
       "Trivial at 60", ah=(("Mageweave Cloth", 40),)),
-    F("Uldaman at 60 (6 bosses)", 60, 6, 44, 30, 44, 12, "low", "assumed", "Long"),
+    F("Uldaman at 60 (6 bosses)", "60", 6, 44, 30, 44, 12, "low", "assumed", "Long"),
 ]
 
 
 # ---- Solo viability for a Protection Warrior in pre-raid gear (Classic-era mechanics) ----
 # reliable: out-levelled by ~10+, mobs barely hurt;
 # maybe:    mobs a few levels under, or non-elite / melee-only packs; costs consumables;
-# unlikely: elite packs at or near your level with casters, or huge near-level pulls.
+# unlikely: elite packs at or near the farming level with casters, or huge near-level pulls.
 # Rule of thumb (auto_tier) from the level gap; the explicit TIERS below override it with a reason.
 TIER_ORDER = {"reliable": 0, "maybe": 1, "unlikely": 2}
 # Consumables per hour for "maybe"/"unlikely" farms (ESTIMATE): ~10 healing potions + ~10 bandages
 # + one elixir. Horde AH 2026-11-23: Greater/Superior Healing Potion ~4s, Heavy Mageweave
 # Bandage ~6s, Heavy Runecloth Bandage ~14s, Elixir of Fortitude ~30s.
-CONSUMABLES = {47: 1.0, 60: 2.5}
+CONSUMABLES = {"levelling": 1.0, "60": 2.5}
+# Reference level for auto_tier in the levelling band: the top of Krol'dok (40-45), where the
+# band's main farm is current content. It is a band anchor, not the player's level.
+BAND_REF = {"levelling": 45, "60": 60}
 
 
 def auto_tier(player, mob, elite=True):
@@ -156,22 +170,31 @@ def auto_tier(player, mob, elite=True):
 
 
 TIERS = {
-    # level 47
+    # levelling band (gaps relative to a mid-40s character)
     "Krol'dok Stronghold (full, Ogre Key)": ("maybe",
-        "Elites 42-45 (gap 2-5); caster cultists, Terrorhowl fear, Mortal Strike; Battlegear "
+        "Elites 42-45, a few levels below a mid-40s character; caster cultists, Terrorhowl fear, Mortal Strike; Battlegear "
         "4-piece heal is doubled there. Done while levelling, solo not yet timed"),
-    "The Drowned City (full)": ("maybe", "Elites 35-40 (gap 7-12); boss mechanics unknown"),
+    "The Drowned City (full)": ("maybe", "Elites 35-40, well below a mid-40s character; boss mechanics unknown"),
     "Zul'Farrak (graveyard + 2 bosses)": ("unlikely",
-        "Graveyard event pulls dozens of level 43-44 elites at once (gap 3)"),
+        "Graveyard event pulls dozens of level 43-44 elites at once"),
     "Razorfen Downs (full)": ("maybe", "Elites 37-46; quilboar casters"),
     "Uldaman (partial, 3 bosses)": ("maybe", "Elites 41-47, mostly melee"),
-    "Scarlet Monastery Cathedral": ("reliable", "Humanoids 34-40 (gap 7-13), small packs"),
-    "Maraudon (Orange/Purple wing)": ("unlikely", "Elites 44-48 at your level; satyr casters"),
-    "City of Dalaran (full)": ("reliable", "Mobs ~28-33 (gap 14+)"),
+    "Scarlet Monastery Cathedral": ("reliable", "Humanoids 34-40, small packs"),
+    "Maraudon (Orange/Purple wing)": ("unlikely", "Elites 44-48, near a levelling character's level; satyr casters"),
+    "City of Dalaran (full)": ("reliable", "Mobs ~28-33"),
     "Razorfen Kraul (full)": ("reliable", "Mobs 29-38"),
     "Ruins of Lordaeron (full)": ("reliable", "Mobs 15-20"),
     "Scarlet Monastery Armory": ("reliable", "Humanoids 34-40"),
+    "Sunken Temple: Spawn of Hakkar only": ("maybe",
+        "One level-49 elite beast, no packs, but at or above a levelling character's level; Acid of "
+        "Hakkar. The user farmed it before (class and era not confirmed)"),
+    "Sunken Temple: 6 balcony trolls (chunk)": ("unlikely",
+        "Elite trolls 49-55 with priests and witch doctors (casters), plus Nightmare dragonkin elites"),
     # level 60
+    "Sunken Temple at 60: Spawn of Hakkar only": ("reliable",
+        "One level-49 elite (gap 11); the user farmed it before (class not confirmed)"),
+    "Sunken Temple at 60: 6 balcony trolls (chunk)": ("maybe",
+        "Elite trolls 49-55 (gap 5-11) with casters; dragonkin elites are hard solo"),
     "Krol'dok Stronghold at 60": ("reliable", "Elites 42-45 (gap 15+)"),
     "Zul'Farrak at 60 (graveyard + 4 bosses)": ("reliable", "Elites 43-48 (gap 12+)"),
     "Uldaman at 60 (6 bosses)": ("reliable", "Elites 41-47"),
@@ -199,7 +222,7 @@ TIERS = {
 
 def tier(f):
     t = TIERS.get(f["name"])
-    return t if t else (auto_tier(f["band"], f["mob"], f["elite"]), "level-gap rule")
+    return t if t else (auto_tier(BAND_REF[f["band"]], f["mob"], f["elite"]), "level-gap rule")
 
 
 def ah_values():
@@ -230,18 +253,21 @@ def evaluate(f, scale, ah):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--band", type=int, choices=(47, 60))
+    ap.add_argument("--band", choices=("levelling", "60", "47"),
+                    help="levelling (pre-60) or 60; 47 is accepted as an old alias for levelling")
     ap.add_argument("--reasons", action="store_true", help="print the viability reason per farm")
     a = ap.parse_args()
     ah, src = ah_values()
     print(f"AH drops: {src}. Conservative = blues at catalog median (x{CONSERVATIVE:.2f}); "
           "Krol'dok's real boss value is never scaled.")
-    for band in (47, 60):
-        if a.band and a.band != band:
+    want = "levelling" if a.band == "47" else a.band
+    for band in ("levelling", "60"):
+        if want and want != band:
             continue
         rows = [f for f in FARMS if f["band"] == band]
         rows.sort(key=lambda f: (TIER_ORDER[tier(f)[0]], -evaluate(f, CONSERVATIVE, ah)["total"]))
-        print(f"\n== Level {band} (ranked by solo viability, then conservative g/h; "
+        label = "Levelling band (pre-60)" if band == "levelling" else "Level 60"
+        print(f"\n== {label} (ranked by solo viability, then conservative g/h; "
               f"consumables -{CONSUMABLES[band]} g/h on maybe/unlikely) ==")
         print(f"{'tier':9} {'farm':44} {'conserv':>7} {'anchored':>8} | {'boss/h':>6} {'trash/h':>7} "
               f"{'AH+other':>8}  {'blues':8} conf")

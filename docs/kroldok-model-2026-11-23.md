@@ -1,6 +1,6 @@
 # Krol'dok Stronghold: farm model (2026-11-23)
 
-Theorycraft for a solo Protection Warrior at level 47. Drop rates come from Wowhead "Drops" tabs
+Theorycraft for a solo Protection Warrior farming it while levelling (and at 60). Drop rates come from Wowhead "Drops" tabs
 (screenshots supplied by hand, 1,453–2,069 kills sampled per boss). Every boss blue is
 bind-on-pickup, so it's vendor income.
 

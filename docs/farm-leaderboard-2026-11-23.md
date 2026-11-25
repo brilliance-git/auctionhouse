@@ -255,7 +255,7 @@ Loot from the current farms, as it shows up on this board (same data, same date)
 | DME | Living Essence | 22s 80c | 5s | 551 | 68 | 126 | −23% | oversupplied, falling |
 | Fishing | Raw Spotted Yellowtail | 35c | 4c | 7,495 | 738 | 26 | +26% | AH (confirms `findings-2026-11-22.md`) |
 
-**Krol'dok Stronghold (now): no change.** The plan's ~41.5 g/h comes from bind-on-pickup blues
+**Krol'dok Stronghold (levelling farm): no change.** The plan's ~41.5 g/h comes from bind-on-pickup blues
 that you vendor, and vendor income has no demand cap. The trash loot all sells into very deep
 markets (Thick Leather, Mageweave and Red Wolf Meat each sell thousands a day), so list
 everything that isn't flagged "vendor". But a run yields only a handful of units at 2–6s, so
