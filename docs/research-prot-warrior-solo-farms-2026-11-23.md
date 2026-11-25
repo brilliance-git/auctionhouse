@@ -83,7 +83,7 @@
 ### 2.2 Zul'Farrak — Graveyard (best g/hr candidate, NOT warrior-tested)
 
 - **Where:** Tanaris. Forever lists ZF as level 44–54 (Mobalytics), recommended ~48.
-- **Why it's a candidate:** Classic's staple AoE farm. Forever: solo streamers report **40–50 g/hr + XP** (mage, level 40+; ConquestCapped). At level 30 the same type of farm makes only 3–4 g/hr. YouTube: "WoW Forever: Solo ZF Farm – 50 Gold Per Hour" (mage).
+- **Why it's a candidate:** Classic's staple AoE farm. Forever: solo streamers report **40–50 g/hr** (mage; ConquestCapped). YouTube: "WoW Forever: Solo ZF Farm – 50 Gold Per Hour" (mage).
 - **Warrior fit (inference):** graveyard is mostly melee zombies; prot can hold 10–15. Mmonster notes Blizzard weakened mage slows in Forever — "test before planning gold on it". Classic warlocks did it in ~3 big pulls; mages in one.
 - **Mob: Zul'Farrak Zombie** — level 43–44 elite undead, avg ~3s 48c coin per kill (wowclassicdb, Classic data). Spawned from graves near Witch Doctor Zum'rah.
 - **Drops:**
@@ -127,7 +127,7 @@
 
 ### 2.5 Krol'dok Stronghold (fast clears; famous version is a mage exploit)
 
-- **Where:** Riverglades, entrance ~37.5, 37.2. Forever-only, added patch 1.60.1. Level 40–45 (go at 42+). Almost every mob is elite. Ogres + Twilight's Hammer cultists + wolves. Ride mount inside.
+- **Where:** Riverglades, entrance ~37.5, 37.2. Forever-only, added patch 1.60.1. Level 40–45. Almost every mob is elite. Ogres + Twilight's Hammer cultists + wolves. Ride mount inside.
 - Wowhead: "a farm that can be completed in about 5 minutes". GameRant: >100 g/hr (109 g/hr, >8 g per pull) but via **mage standing on a high ledge casting Blizzard while mobs path in circles** = pathing exploit. Not warrior-doable, and risky given Blackmaw enforcement.
 - **No cloth mentioned for any mob** (ConquestCapped). **No drop chances recorded yet.**
 - **Boss loot (ConquestCapped; most "seen dropping"):**

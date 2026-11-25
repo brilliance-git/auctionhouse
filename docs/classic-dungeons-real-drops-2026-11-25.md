@@ -1,5 +1,7 @@
 # Five Classic dungeons re-modelled with real Wowhead Forever drop tables (2026-11-25)
 
+> **Update (2026-11-25):** later docs replaced this one's estimates for the other dungeons. Dire Maul East is ~56 / 86 g/h from real drop tables (`dire-maul-maraudon-real-drops-2026-11-25.md`), and Maraudon, Uldaman, ZF, SM, RFD, RFK and Ruins of Lordaeron are real too (`uldaman-zf-sm-real-drops-2026-11-25.md`). Only City of Dalaran is still estimated, because Wowhead has no data for it. The DME figures below (~40) are as first written.
+
 **Input:** `docs/wowhead-drops-classic-2026-11-25.md`, collected from wowhead.com/forever NPC
 "Drops" tabs. It covers Sunken Temple, LBRS, BRD, Scholomance and Stratholme (21 of 22 mobs).
 Dire Maul, Maraudon, Uldaman, ZF, RFD, SM, RFK, City of Dalaran and Ruins of Lordaeron aren't
@@ -141,4 +143,4 @@ probably hide more BoE dungeon-set pieces, so BoE value is under-counted.
 | Green value | **real** vendor median as the floor; AH upside not counted |
 | Routes, minutes, trash counts, Pyromancers per loop | **estimated** |
 | Solo viability | **judgement** (Classic-era mechanics) |
-| Dire Maul, Maraudon, Uldaman, ZF, RFD, SM, RFK, Dalaran, RoL | **still estimated** (no data) |
+| Dire Maul, Maraudon, Uldaman, ZF, RFD, SM, RFK, Dalaran, RoL | **real since**: see `dire-maul-maraudon-real-drops-2026-11-25.md` and `uldaman-zf-sm-real-drops-2026-11-25.md`. City of Dalaran is still estimated (no Wowhead data) |

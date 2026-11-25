@@ -105,4 +105,4 @@ The 12-minute DME loop wins over 15 minutes: Lethtendris adds less than the extr
 | Green value | **real** vendor median floor |
 | Routes, minutes, trash counts | **estimated** |
 | Solo viability | **judgement** (Classic-era mechanics) |
-| Uldaman, ZF, RFD, SM, RFK, City of Dalaran, Ruins of Lordaeron | **still estimated** (no data) |
+| Uldaman, ZF, RFD, SM, RFK, City of Dalaran, Ruins of Lordaeron | **real since**: see `uldaman-zf-sm-real-drops-2026-11-25.md`, except City of Dalaran (no Wowhead data) |

@@ -112,19 +112,19 @@ All are out-levelled at 60, so they're "reliable" and clear faster (~8–12 min,
 | Maraudon: Princess loop (12 min) | 41 / 64 | real drop tables; best reliable after Krol'dok |
 | Zul'Farrak: graveyard + pyramid loop (15 min) | 39 / 55 | real drop tables (`uldaman-zf-sm-real-drops-2026-11-25.md`) |
 | SM Cathedral (mass pull) | 26 / 33 | real drop tables |
-| The Drowned City: full clear (10 min) | 21 / 32 | real drop tables |
-| Uldaman: back-door loop with Archaedas (15 min) | 23 / 37 | real drop tables |
 | Razorfen Downs (full) | 24 / 37 | real drop tables |
+| Uldaman: back-door loop with Archaedas (15 min) | 23 / 37 | real drop tables |
+| The Drowned City: full clear (10 min) | 21 / 32 | real drop tables |
 | SM Armory / Library / Graveyard | 17 / 14 / 11 | real drop tables |
-| City of Dalaran (full) | 13 / 21 | estimated: Wowhead has no data |
 | Razorfen Kraul (full) | 14 / 21 | real drop tables |
+| City of Dalaran (full) | 13 / 21 | estimated: Wowhead has no data |
 | Ruins of Lordaeron (full) | 8 / 11 | real drop tables |
 | Sunken Temple: Spawn of Hakkar only | 6 / 8 | |
 
-None beats Krol'dok (~50). From City of Dalaran down, a run is worth less than ~15 g/h, so
-those aren't worth a lockout slot while Krol'dok is available. They're kept in the ranking for
-comparison. The pre-60 versions of Maraudon's Orange wing and Alcaz Prison's first four bosses
-were removed; the Princess loop and the full Alcaz clear cover those dungeons at 60.
+None beats Krol'dok (~50). Anything under ~15 g/h (SM Library and Graveyard, Razorfen Kraul,
+City of Dalaran, Ruins of Lordaeron, Spawn of Hakkar) isn't worth a lockout slot while Krol'dok
+is available. They're kept in the ranking for comparison. Maraudon is covered by the Princess
+loop and Alcaz Prison by its full clear.
 
 ## 6. Changes to the plan
 - **Level 60:** Krol'dok at 60 is the plan. Test Dire Maul East and Alcaz Prison first.
