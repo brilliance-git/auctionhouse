@@ -201,3 +201,54 @@ price (×0.95). The trend is shown only where it matters.
 | Reflect and on-block damage per second | **rough estimate** (hits per second and block rate assumed) |
 | Recovery proccing less against low-level mobs | **reported** (Icy Veins), not measured |
 | Horde AH prices (section 6) | **real** (`scripts/item_report.py`, Horde AH, 25 Nov 2026) |
+
+## 8. Checklist by slot: what to get, where, and how likely
+Drop rates come from Wowhead Forever's kill counts: this repo's drop tables, plus item pages
+checked on 25 Nov 2026. "Runs" is the average number of kills you'd need (1 ÷ drop rate). At
+4–5 runs an hour, 5 runs is about an hour.
+
+**How likely:**
+- **Certain:** you buy it (Horde AH or a vendor).
+- **Very likely:** a "reliable" farm with a 25%+ drop rate. Expect it within a few runs.
+- **Likely:** a "reliable" farm at 15–25%, or a "maybe" farm at 25%+ **if** the one-pack test
+  passes.
+- **Possible:** a "maybe" farm at 15–25%, or a quest or currency that takes time.
+- **Unlikely:** an "unlikely" (or group) dungeon, or a drop rate around 1%.
+
+**Tarnished Undermine Real** is the currency Pix Xizzix (Stranglethorn) sells for, with a
+cap of 165. Per ConquestCapped (not confirmed officially), it drops from the bosses of level
+55+ dungeons. **The Dire Maul East loop earns it; Krol'dok and Maraudon don't.** The cap
+means one 125-Real trinket at a time.
+
+| Slot | Get now | Where | Chance | How likely | Later / goal |
+|---|---|---|---|---|---|
+| **Head** | Krol'dok Warplate Helmet (set) | Nar'gurk, Krol'dok | 27% (~4 runs) | **Very likely** | Faceguard of Heroism (Dungeon Set 2 questline: group content). Helm of the Executioner: Baron Rivendare, Strat, 17%: unlikely |
+| **Neck** | Horn of Ve'han | Quest "Work Well Done" (level 60, both factions) | quest | **Likely** | – |
+| **Shoulders** | Krol'dok Warplate Pauldrons (set) | Krol'dok trash (Twilight Outrider) | ~1% per Outrider | **Unlikely** soon; picks up over many runs. BoP: never listed on the Horde AH | Spaulders of Valor: Rend Blackhand, UBRS, 19%: unlikely (BoP: never listed on the Horde AH, so it can't be bought). Pauldrons of Heroism (questline) |
+| **Cloak** | Stalwart Cloak | Pix Xizzix, 75 Reals | currency | **Possible** (needs DME runs for Reals) | – |
+| **Chest** | Krol'dok Warplate Chest (set) | Nar'gurk, Krol'dok | 26% (~4 runs) | **Very likely** | Breastplate of Heroism (questline). Demon Forged Breastplate (heal proc): **certain**, ~85g BoE |
+| **Wrist** | Bracers of Valor | Horde AH | ~7g | **Certain** | Vigorsteel Vambraces: Darkmaster Gandling, Scholomance, 12%: unlikely |
+| **Hands** | Gauntlets of Valor | Horde AH | ~23g | **Certain** | **Razor Gauntlets** (reflect): Alzzin, DME, 18% (~6 runs): possible. Krol'dok Warplate Gauntlets: trash ~1%: unlikely (BoP: never listed on the Horde AH) |
+| **Waist** | Belt of Valor | Horde AH | ~5g | **Certain** | **Girdle of Extracted Answers** (20–30 per block): The Questioner, Alcaz Prison, 30% (~3 runs): likely if Alcaz passes the test. Valiant's Waistguard: 100 Reals |
+| **Legs** | Krol'dok Warplate Legplates (set) | Krol'dok trash (Outrider ~1%, Kroog the rare 1.4%) | ~1% | **Unlikely** soon. BoP: never listed on the Horde AH | Handcrafted Mastersmith Leggings: Goraluk Anvilcrack, UBRS, 23%; Warmaster Legguards: Rend, 19%: both unlikely |
+| **Feet** | Shalehusk Boots | Panzor the Invincible, BRD (a rare spawn) | 19% when he's up | **Possible** (BRD is "maybe", and Panzor doesn't always spawn) | Sabatons of Heroism (questline) |
+| **Ring 1** | **Blackstone Ring** | Princess Theradras, Maraudon | 44% (~2 runs) | **Very likely** | – |
+| **Ring 2** | **Zarmok's Plated Signet** (+11 block value) | Twilight Commander Zarmok, Krol'dok | 34% (~3 runs) | **Very likely** | Cutthroat's Signet: 75 Reals. Myrmidon's Signet: **certain**, ~50g BoE. Naglering: Golem Lord Argelmach, BRD, 22%: possible |
+| **Trinket 1** | Defender's Grip Stabilizer (block chance doubled in Strongholds) | Pix Xizzix, 125 Reals | currency | **Possible** | – |
+| **Trinket 2** | Royal Seal of Eldre'Thalas | Dire Maul class-book quest (Codex of Defense, per Icy Veins) | quest | **Possible** (needs the book from Dire Maul) | Adaptive Combat Assistant: 125 Reals (after the first trinket, because of the 165 cap) |
+| **Main hand** | **Fist of the Damned** (steals 56 life, +2 Def) + **Recovery** enchant | Ogom the Wretched, Sunken Temple; enchant ~3g in mats | 34% (~3 runs) | **Likely** (Sunken Temple is "maybe") | Scaleguard Scimitar (12 block value): Direhorn Matriarch, Shaper's Terrace, 34%: unlikely |
+| **Shield** | Current shield + **Thorium Shield Spike** | Horde AH | ~9.50g | **Certain** | **The Immovable Object**: Grunnda Wolfheart (AV vendor), ~79.50g at Alterac Valley Exalted: certain once Exalted. **Skullflame Shield**: ~515g BoE: certain, but costly. Draconian Deflector: General Drakkisath, UBRS, 23%: unlikely. Barrier Shield: Dire Maul North tribute chest: unlikely solo |
+| **Ranged** | **Satyr's Bow** | Zevrim Thornhoof, DME | 18% (~6 runs) | **Possible** (DME is "maybe") | Deep Jungle Rifle: Thunderhoof, Shaper's Terrace, 31%: unlikely |
+
+**Krol'dok Battlegear:** the Helmet and Chest come quickly from Nar'gurk, and with any two
+Warplate pieces you get +100 armor. The 4-piece heal on block needs two of the ~1% trash
+pieces, so expect it only after many runs. Don't skip Outriders. The trash pieces are BoP (never
+listed on the Horde AH, checked 25 Nov 2026), so they can't be bought.
+
+**In short:**
+- **Within a day of farming:** Helmet, Chest, both rings, the Valor bracers, gloves and belt,
+  the Shield Spike and the Recovery enchant. That covers most slots for about 50g.
+- **From the "maybe" tests:** Fist of the Damned, the Girdle, Razor Gauntlets and Satyr's Bow,
+  plus Reals for the vendor pieces.
+- **Group content or a long grind:** the Heroism set, the Scholomance, Stratholme and UBRS
+  drops, and Shaper's Terrace.
