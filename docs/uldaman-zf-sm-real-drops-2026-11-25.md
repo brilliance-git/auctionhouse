@@ -1,10 +1,9 @@
 # Uldaman, Zul'Farrak, Scarlet Monastery, Razorfen Downs and Razorfen Kraul at 60, with real Wowhead Forever drop tables (2026-11-25)
 
-> **Update (same day):** `wowhead-drops-classic-4-2026-11-25.md` completes Scarlet Monastery and adds Razorfen Downs and 7 of 8 Razorfen Kraul bosses. See section 5; the SM rows in the table below are superseded there.
+> **Update (same day):** `wowhead-drops-classic-4-2026-11-25.md` completes Scarlet Monastery and adds Razorfen Downs and 7 of 8 Razorfen Kraul bosses. See section 5; the SM rows in the table below are superseded there. `wowhead-drops-classic-5-2026-11-25.md` adds Roogug and Ruins of Lordaeron: see section 6.
 
 **Input:** `docs/wowhead-drops-classic-3-2026-11-25.md` (wowhead.com/forever NPC "Drops" tabs):
-full tables for Uldaman (10 bosses) and Zul'Farrak (13), and partial data for Scarlet Monastery
-(Houndmaster Loksey and Interrogator Vishas only).
+full tables for Uldaman (10 bosses) and Zul'Farrak (13), and Scarlet Monastery's Houndmaster Loksey and Interrogator Vishas. The rest of SM is in section 5.
 
 **Method:** same as `dire-maul-maraudon-real-drops-2026-11-25.md`.
 - All 75 item IDs were checked on the **Horde AH**: ever listed means BoE (AH price), otherwise
@@ -69,11 +68,8 @@ BoP.**
   - Gahz'rilla 1.02 needs the Mallet of Zul'Farrak, so he's not on the loop.
   - Rares (Sandarr, Zerillis, Dustwraith) are not counted.
 - **Scarlet Monastery:** Houndmaster Loksey 1.27 (ilvl 36), Interrogator Vishas 1.04 (ilvl 34).
-  - **Not yet backed by real drops:** Bloodmage Thalnos, Ironspine, Fallen Champion, Azshir the
-    Sleepless, Arcanist Doan, Herod, Whitemane, Mograine, Scarlet Champion, Scarlet Centurion and
-    Fairbanks.
-  - Doan and Thalnos are estimated at 1 blue per kill (Forever's stated rule).
-  - The Cathedral and Armory rows are unchanged estimates.
+  - The other 11 SM mobs (Thalnos, Doan, Herod, Mograine, Whitemane, Fairbanks, the Graveyard
+    rares and the Cathedral trash) are real data too: see section 5.
 
 ## 3. Loops
 - **Zul'Farrak, graveyard + pyramid (15 min, 4 an hour):**

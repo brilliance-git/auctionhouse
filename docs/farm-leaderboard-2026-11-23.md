@@ -162,7 +162,7 @@ So `--min-level` / `--max-level` is a decent first cut for materials, not a zone
 
 ## 3. Level-60 materials (item level 50+; herbs, ore, cloth, leather, elementals, enchanting, other)
 
-For when the character hits 60. Same columns, filtered to `--min-level 50` and the material
+The materials a level-60 character farms. Same columns, filtered to `--min-level 50` and the material
 subclasses.
 
 | # | Item | ilvl | Subclass | Net | Vendor | Sold/d | Sure/d | **g/day** | Sure g/d | Qty / lots | Trend | Flags | Needs |

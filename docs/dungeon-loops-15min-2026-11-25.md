@@ -4,7 +4,8 @@
 > - **Sunken Temple falls to ~20–22 g/h:** the balcony trolls drop no blues.
 > - **BRD stays at ~34.**
 > - **Strat Undead (ziggurats + Ramstein ~105), Strat Living (~103), LBRS (~77) and Scholomance (~58) jump:** boss greens and BoE set pieces. All are "unlikely" solo.
-> - **Krol'dok (~50) is still the best reliable farm,** and DME (~40) is the best "maybe".
+> - **Krol'dok (~50) is still the best reliable farm,** and DME (~56, real drop tables in `dire-maul-maraudon-real-drops-2026-11-25.md`) is the best "maybe".
+> - **Every other dungeon now uses real drop tables too** (`dire-maul-maraudon-real-drops-2026-11-25.md`, `uldaman-zf-sm-real-drops-2026-11-25.md`), except City of Dalaran, which has no Wowhead data.
 >
 > Run `python3 scripts/dungeon_farm_model.py` for current numbers; the tables below are as first written.
 
@@ -137,7 +138,8 @@ Reproduce with `python3 scripts/dungeon_farm_model.py --reasons`. Each loop appe
 | Part | Status |
 |---|---|
 | Routes, boss order, kill counts, minutes | **estimated** (Classic layouts; Forever-only dungeons from guide boss lists) |
-| Boss blue value (all but Krol'dok) | **estimated** (item-level curve; conservative = catalog median) |
+| Boss drop rates | **real** for every dungeon except City of Dalaran (see the correction above) |
+| Vendor value of BoP blues (all but Krol'dok) | **estimated** (item-level curve; conservative = catalog median) |
 | Krol'dok boss value | **real** (Wowhead sell prices and drop rates) |
 | Trash coin | **estimated** (from a Krol'dok guide video) |
 | Spawn of Hakkar drops | **real** drop rates (Wowhead Forever, 1,265 kills); greens priced from 163 Horde AH greens |

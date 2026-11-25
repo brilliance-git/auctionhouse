@@ -1,5 +1,7 @@
 # Five Classic dungeons re-modelled with real Wowhead Forever drop tables (2026-11-25)
 
+> **Update (2026-11-25):** later docs replaced this one's estimates for the other dungeons. Dire Maul East is ~56 / 86 g/h from real drop tables (`dire-maul-maraudon-real-drops-2026-11-25.md`), and Maraudon, Uldaman, ZF, SM, RFD, RFK and Ruins of Lordaeron are real too (`uldaman-zf-sm-real-drops-2026-11-25.md`). Only City of Dalaran is still estimated, because Wowhead has no data for it. The DME figures below (~40) are as first written.
+
 **Input:** `docs/wowhead-drops-classic-2026-11-25.md`, collected from wowhead.com/forever NPC
 "Drops" tabs. It covers Sunken Temple, LBRS, BRD, Scholomance and Stratholme (21 of 22 mobs).
 Dire Maul, Maraudon, Uldaman, ZF, RFD, SM, RFK, City of Dalaran and Ruins of Lordaeron aren't
@@ -34,7 +36,7 @@ in it, so they're still estimates.
   - **Sunken Temple falls from ~41 to ~20 g/h.** The six balcony troll minibosses are **not in
     Wowhead's list of mobs that drop a blue**, so they drop none. The loop's real value is
     Jammal'an and Ogom (~1 blue each) plus Spawn of Hakkar. It's no longer the best "maybe";
-    **Dire Maul East (~40, still estimated) is.**
+    **Dire Maul East is** (~40 when this was written, before its own drop tables; now ~56, see `dire-maul-maraudon-real-drops-2026-11-25.md`).
   - **Blackrock Depths' entrance loop stays at ~34 g/h** with real data (Roccor's 1.86 "blues"
     are mostly Rockshard Pellets ammo).
   - Every other reliable or maybe loop is in dungeons without data, so unchanged.
@@ -96,7 +98,7 @@ probably hide more BoE dungeon-set pieces, so BoE value is under-counted.
 | Loop | Before | Now | Tier |
 |---|---|---|---|
 | Krol'dok at 60 | 50 | **50** | reliable |
-| Dire Maul East (estimated) | 40 / 66 | 40 / 66 | maybe |
+| Dire Maul East (not yet re-modelled here; real data since: 56 / 86) | 40 / 66 | 40 / 66 | maybe |
 | Blackrock Depths: entrance loop (12 min) | 34 / 57 | 34 / 54 | maybe |
 | Sunken Temple at 60: trolls > Jammal'an + Ogom (12 min) | 41 / 69 | **20 / 30** | maybe |
 | **Stratholme Undead: ziggurats + Ramstein (15 min)**, new | — | **105 / 135** | unlikely |
@@ -129,7 +131,7 @@ probably hide more BoE dungeon-set pieces, so BoE value is under-counted.
   4. **Dire Maul East** (~40, the only "maybe" above BRD).
 
   **Sunken Temple drops off the list** (~20).
-- **What would help:** a timed Strat test and the Dire Maul tables (DME is still estimated).
+- **What would help:** a timed Strat test. (The Dire Maul tables have since been added: `dire-maul-maraudon-real-drops-2026-11-25.md`.)
 
 ## 6. Real vs estimated
 | Part | Status |
@@ -141,4 +143,4 @@ probably hide more BoE dungeon-set pieces, so BoE value is under-counted.
 | Green value | **real** vendor median as the floor; AH upside not counted |
 | Routes, minutes, trash counts, Pyromancers per loop | **estimated** |
 | Solo viability | **judgement** (Classic-era mechanics) |
-| Dire Maul, Maraudon, Uldaman, ZF, RFD, SM, RFK, Dalaran, RoL | **still estimated** (no data) |
+| Dire Maul, Maraudon, Uldaman, ZF, RFD, SM, RFK, Dalaran, RoL | **real since**: see `dire-maul-maraudon-real-drops-2026-11-25.md` and `uldaman-zf-sm-real-drops-2026-11-25.md`. City of Dalaran is still estimated (no Wowhead data) |

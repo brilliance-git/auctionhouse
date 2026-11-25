@@ -1,5 +1,7 @@
 # Dungeon farms for a solo Protection Warrior: every instance, re-evaluated (2026-11-23)
 
+> **Superseded numbers (2026-11-25):** this was the first model, built on estimated drop rates. Every dungeon except City of Dalaran now uses real Wowhead Forever drop tables, and the g/h figures below are out of date. For current numbers see the README's "Current plan" or run `python3 scripts/dungeon_farm_model.py`.
+
 **Question:** of every instance in WoW: Forever today, which is the best solo gold farm for a
 Protection Warrior at level 60 in reasonable pre-raid gear?
 
