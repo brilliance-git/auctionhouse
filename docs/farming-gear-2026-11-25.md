@@ -146,8 +146,9 @@ farming, use **Survivability** as the target and **Affordable** as the path.
 1. **Weapon enchant: Recovery or Lifestealing.** Cheapest sustain.
 2. **Thorium Shield Spike** on your current shield (~9.50g).
 3. **Pix Xizzix pieces and Defender's Grip Stabilizer:** Krol'dok benefits most.
-4. **Valor BoE pieces** now that they're cheap: Gauntlets ~23g, Bracers ~7g, Belt ~5g on the
-   Horde AH (section 6).
+4. **Valor BoE bracers and belt** now that they're cheap: Bracers ~7g, Belt ~5g on the Horde
+   AH (section 6). Skip the Gauntlets (~23g) while you're wearing the full Krol'dok set
+   (section 8).
 5. **Farm your own upgrades while you farm gold:**
    - Blackstone Ring on the Princess loop.
    - Fist of the Damned from Ogom.
@@ -222,15 +223,15 @@ means one 125-Real trinket at a time.
 
 | Slot | Get now | Where | Chance | How likely | Later / goal |
 |---|---|---|---|---|---|
-| **Head** | Krol'dok Warplate Helmet (set) | Nar'gurk, Krol'dok | 27% (~4 runs) | **Very likely** | Faceguard of Heroism (Dungeon Set 2 questline: group content). Helm of the Executioner: Baron Rivendare, Strat, 17%: unlikely |
+| **Head** | **Have:** Krol'dok Warplate Helmet (set) | – | – | **Done** | Faceguard of Heroism (Dungeon Set 2 questline: group content). Helm of the Executioner: Baron Rivendare, Strat, 17%: unlikely |
 | **Neck** | Horn of Ve'han | Quest "Work Well Done" (level 60, both factions) | quest | **Likely** | – |
-| **Shoulders** | Krol'dok Warplate Pauldrons (set) | Krol'dok trash (Twilight Outrider) | ~1% per Outrider | **Unlikely** soon; picks up over many runs. BoP: never listed on the Horde AH | Spaulders of Valor: Rend Blackhand, UBRS, 19%: unlikely (BoP: never listed on the Horde AH, so it can't be bought). Pauldrons of Heroism (questline) |
+| **Shoulders** | **Have:** Krol'dok Warplate Pauldrons (set) | – | – | **Done** | Spaulders of Valor: Warchief Rend Blackhand, UBRS, 19%: unlikely solo (BoP: never listed on the Horde AH, so it can't be bought). Pauldrons of Heroism (questline) |
 | **Cloak** | Stalwart Cloak | Pix Xizzix, 75 Reals | currency | **Possible** (needs DME runs for Reals) | – |
-| **Chest** | Krol'dok Warplate Chest (set) | Nar'gurk, Krol'dok | 26% (~4 runs) | **Very likely** | Breastplate of Heroism (questline). Demon Forged Breastplate (heal proc): **certain**, ~85g BoE |
+| **Chest** | **Have:** Krol'dok Warplate Chest (set) | – | – | **Done** | Breastplate of Heroism (questline). Demon Forged Breastplate (heal proc): **certain**, ~85g BoE |
 | **Wrist** | Bracers of Valor | Horde AH | ~7g | **Certain** | Vigorsteel Vambraces: Darkmaster Gandling, Scholomance, 12%: unlikely |
-| **Hands** | Gauntlets of Valor | Horde AH | ~23g | **Certain** | **Razor Gauntlets** (reflect): Alzzin, DME, 18% (~6 runs): possible. Krol'dok Warplate Gauntlets: trash ~1%: unlikely (BoP: never listed on the Horde AH) |
+| **Hands** | **Have:** Krol'dok Warplate Gauntlets (set) | – | – | **Done** | **Razor Gauntlets** (reflect): Alzzin, DME, 18% (~6 runs): possible. Gauntlets of Valor: ~23g on the Horde AH. Either one drops you from 5 set pieces to 4 (see below) |
 | **Waist** | Belt of Valor | Horde AH | ~5g | **Certain** | **Girdle of Extracted Answers** (20–30 per block): The Questioner, Alcaz Prison, 30% (~3 runs): likely if Alcaz passes the test. Valiant's Waistguard: 100 Reals |
-| **Legs** | Krol'dok Warplate Legplates (set) | Krol'dok trash (Outrider ~1%, Kroog the rare 1.4%) | ~1% | **Unlikely** soon. BoP: never listed on the Horde AH | Handcrafted Mastersmith Leggings: Goraluk Anvilcrack, UBRS, 23%; Warmaster Legguards: Rend, 19%: both unlikely |
+| **Legs** | **Have:** Krol'dok Warplate Legplates (set) | – | – | **Done** | Handcrafted Mastersmith Leggings: Goraluk Anvilcrack, UBRS, 23%; Warmaster Legguards: Rend, 19%: both unlikely |
 | **Feet** | Shalehusk Boots | Panzor the Invincible, BRD (a rare spawn) | 19% when he's up | **Possible** (BRD is "maybe", and Panzor doesn't always spawn) | Sabatons of Heroism (questline) |
 | **Ring 1** | **Blackstone Ring** | Princess Theradras, Maraudon | 44% (~2 runs) | **Very likely** | – |
 | **Ring 2** | **Zarmok's Plated Signet** (+11 block value) | Twilight Commander Zarmok, Krol'dok | 34% (~3 runs) | **Very likely** | Cutthroat's Signet: 75 Reals. Myrmidon's Signet: **certain**, ~50g BoE. Naglering: Golem Lord Argelmach, BRD, 22%: possible |
@@ -240,14 +241,23 @@ means one 125-Real trinket at a time.
 | **Shield** | Current shield + **Thorium Shield Spike** | Horde AH | ~9.50g | **Certain** | **The Immovable Object**: Grunnda Wolfheart (AV vendor), ~79.50g at Alterac Valley Exalted: certain once Exalted. **Skullflame Shield**: ~515g BoE: certain, but costly. Draconian Deflector: General Drakkisath, UBRS, 23%: unlikely. Barrier Shield: Dire Maul North tribute chest: unlikely solo |
 | **Ranged** | **Satyr's Bow** | Zevrim Thornhoof, DME | 18% (~6 runs) | **Possible** (DME is "maybe") | Deep Jungle Rifle: Thunderhoof, Shaper's Terrace, 31%: unlikely |
 
-**Krol'dok Battlegear:** the Helmet and Chest come quickly from Nar'gurk, and with any two
-Warplate pieces you get +100 armor. The 4-piece heal on block needs two of the ~1% trash
-pieces, so expect it only after many runs. Don't skip Outriders. The trash pieces are BoP (never
-listed on the Horde AH, checked 25 Nov 2026), so they can't be bought.
+**Krol'dok Battlegear: you have all 5 pieces** (Helmet, Chest, Pauldrons, Legplates,
+Gauntlets), so every set bonus is active:
+- (2) +100 armor.
+- (3) +5 Defense.
+- (4) Heal on block, doubled in Strongholds like Krol'dok.
+- (5) Stacking Stamina when you take damage.
+
+That covers head, shoulders, chest, legs and hands. **Replacing one piece costs only the
+5-piece Stamina stacks; replacing two also loses the heal on block.** So for farming, swap at
+most one set piece, and only for something clearly better. The obvious candidate is Razor
+Gauntlets on the hands, for damage back to attackers. The bracers and belt aren't part of the
+set, so the Valor pieces there cost you nothing.
 
 **In short:**
-- **Within a day of farming:** Helmet, Chest, both rings, the Valor bracers, gloves and belt,
-  the Shield Spike and the Recovery enchant. That covers most slots for about 50g.
+- **Within a day of farming:** both rings, the Valor bracers and belt, the Shield Spike and
+  the Recovery enchant, for about 25g. With the set you already have, that covers every slot
+  except neck, cloak, feet, trinkets and ranged.
 - **From the "maybe" tests:** Fist of the Damned, the Girdle, Razor Gauntlets and Satyr's Bow,
   plus Reals for the vendor pieces.
 - **Group content or a long grind:** the Heroism set, the Scholomance, Stratholme and UBRS

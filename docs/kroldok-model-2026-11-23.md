@@ -31,8 +31,9 @@ Aquamarine (0.06% each).
   Gutslicer, Athame, Toofbreaker, Jabber, Crosser), so single hours will vary widely.
 
 ## Krol'dok Battlegear set: farming value
-The full 5-piece set: Helmet and Chest from Nar'gurk; Pauldrons, Legplates and Gauntlets from
-trash (not yet confirmed).
+**The player already has the full 5-piece set.** For reference: Helmet and Chest drop from
+Nar'gurk; Pauldrons, Legplates and Gauntlets from Twilight Outrider trash (~1% each, BoP;
+Wowhead Forever, confirmed 25 Nov 2026).
 - (2) +100 armor
 - (3) +5 Defense
 - (4) Chance on block to heal for 14–23. **Healing is doubled in Strongholds and Cities**, and
@@ -40,7 +41,9 @@ trash (not yet confirmed).
 - (5) Taking damage has a high chance to add 1 Stamina for 30 seconds, stacking up to 20 times.
 
 The 4-piece healing is doubled in Krol'dok itself, so the set directly supports bigger pulls
-there. Equip pieces as they drop rather than vendoring them.
+there. Since the set is owned, its pieces now drop only as vendor value (counted in the boss
+value above). Swapping one piece out loses the 5-piece Stamina stacks; swapping two also loses
+the heal on block (`farming-gear-2026-11-25.md`, section 8).
 
 ## Map and route
 ![Boss map](img/kroldok-map.webp)
@@ -71,8 +74,8 @@ What can be improved:
    against Mugg's part of the route. Time it: if the full route goes over 12 minutes, the
    decision is whether Ashka + Toof + Mugg (4g 00s together) are worth the trip east plus the
    run back.
-4. **Once you have the Warplate Helmet and Chest,** Nar'gurk is the lowest-value boss
-   (1g 01s) and the longest detour, so he's the first to skip if a run runs long.
+4. **Nar'gurk is the first boss to skip if a run runs long.** He's the lowest-value boss
+   (1g 01s) and the longest detour, and the Warplate Helmet and Chest he drops are already owned.
 
 Value along the proposed route: Grox 2g 19s → Zarmok 1g 11s → Nar'gurk 1g 01s → Ashka 1g 41s
 → Toof 1g 12s → Mugg 1g 47s. The bosses nearest the entrance (Grox and Zarmok) are 3g 30s,
@@ -85,13 +88,13 @@ and it's cut, so it gives **no timings**. Map overlay credited to Santiago Reyes
 **Boss order shown:** Grox → Zarmok → the cultist area → Ashka → Tunk → Nar'gurk (Zalfan
 Moonshadow is also in the cultist area) → the bridge (Toof: "Hold da bridge!") → Mugg.
 
-**Tunk the Blacksmith matters for the tank set:**
+**Tunk the Blacksmith:**
 - He drops the **Krol'dok Moulding** (51.48%, BoP, starts a quest): "The moulding appears to
   be for a key." The quest is to find someone in Farholde Keep who knows about the mould.
   Reward: 55s and 3,399 XP.
 - The Moulding chain gives the **Krol'dok Ogre Key**, which the player already has, so
-  **Tunk is skippable.** The video listed the Moulding near the Battlegear set, but where the
-  Pauldrons, Legplates and Gauntlets come from is still unconfirmed.
+  **Tunk is skippable.** (The Pauldrons, Legplates and Gauntlets turned out to come from Twilight
+  Outrider trash, and the set is already owned.)
 
 **Mechanics that matter solo:**
 | Where | Threat | Why it matters for a prot warrior |
