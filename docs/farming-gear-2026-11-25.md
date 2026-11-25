@@ -224,13 +224,13 @@ means one 125-Real trinket at a time.
 |---|---|---|---|---|---|
 | **Head** | Krol'dok Warplate Helmet (set) | Nar'gurk, Krol'dok | 27% (~4 runs) | **Very likely** | Faceguard of Heroism (Dungeon Set 2 questline: group content). Helm of the Executioner: Baron Rivendare, Strat, 17%: unlikely |
 | **Neck** | Horn of Ve'han | Quest "Work Well Done" (level 60, both factions) | quest | **Likely** | – |
-| **Shoulders** | Krol'dok Warplate Pauldrons (set) | Krol'dok trash (Twilight Outrider) | ~1% per Outrider | **Unlikely** soon; picks up over many runs | Spaulders of Valor: Rend Blackhand, UBRS, 19%: unlikely. Pauldrons of Heroism (questline) |
+| **Shoulders** | Krol'dok Warplate Pauldrons (set) | Krol'dok trash (Twilight Outrider) | ~1% per Outrider | **Unlikely** soon; picks up over many runs. BoP: never listed on the Horde AH | Spaulders of Valor: Rend Blackhand, UBRS, 19%: unlikely (BoP: never listed on the Horde AH, so it can't be bought). Pauldrons of Heroism (questline) |
 | **Cloak** | Stalwart Cloak | Pix Xizzix, 75 Reals | currency | **Possible** (needs DME runs for Reals) | – |
 | **Chest** | Krol'dok Warplate Chest (set) | Nar'gurk, Krol'dok | 26% (~4 runs) | **Very likely** | Breastplate of Heroism (questline). Demon Forged Breastplate (heal proc): **certain**, ~85g BoE |
 | **Wrist** | Bracers of Valor | Horde AH | ~7g | **Certain** | Vigorsteel Vambraces: Darkmaster Gandling, Scholomance, 12%: unlikely |
-| **Hands** | Gauntlets of Valor | Horde AH | ~23g | **Certain** | **Razor Gauntlets** (reflect): Alzzin, DME, 18% (~6 runs): possible. Krol'dok Warplate Gauntlets: trash ~1%: unlikely |
+| **Hands** | Gauntlets of Valor | Horde AH | ~23g | **Certain** | **Razor Gauntlets** (reflect): Alzzin, DME, 18% (~6 runs): possible. Krol'dok Warplate Gauntlets: trash ~1%: unlikely (BoP: never listed on the Horde AH) |
 | **Waist** | Belt of Valor | Horde AH | ~5g | **Certain** | **Girdle of Extracted Answers** (20–30 per block): The Questioner, Alcaz Prison, 30% (~3 runs): likely if Alcaz passes the test. Valiant's Waistguard: 100 Reals |
-| **Legs** | Krol'dok Warplate Legplates (set) | Krol'dok trash (Outrider ~1%, Kroog the rare 1.4%) | ~1% | **Unlikely** soon | Handcrafted Mastersmith Leggings: Goraluk Anvilcrack, UBRS, 23%; Warmaster Legguards: Rend, 19%: both unlikely |
+| **Legs** | Krol'dok Warplate Legplates (set) | Krol'dok trash (Outrider ~1%, Kroog the rare 1.4%) | ~1% | **Unlikely** soon. BoP: never listed on the Horde AH | Handcrafted Mastersmith Leggings: Goraluk Anvilcrack, UBRS, 23%; Warmaster Legguards: Rend, 19%: both unlikely |
 | **Feet** | Shalehusk Boots | Panzor the Invincible, BRD (a rare spawn) | 19% when he's up | **Possible** (BRD is "maybe", and Panzor doesn't always spawn) | Sabatons of Heroism (questline) |
 | **Ring 1** | **Blackstone Ring** | Princess Theradras, Maraudon | 44% (~2 runs) | **Very likely** | – |
 | **Ring 2** | **Zarmok's Plated Signet** (+11 block value) | Twilight Commander Zarmok, Krol'dok | 34% (~3 runs) | **Very likely** | Cutthroat's Signet: 75 Reals. Myrmidon's Signet: **certain**, ~50g BoE. Naglering: Golem Lord Argelmach, BRD, 22%: possible |
@@ -242,7 +242,8 @@ means one 125-Real trinket at a time.
 
 **Krol'dok Battlegear:** the Helmet and Chest come quickly from Nar'gurk, and with any two
 Warplate pieces you get +100 armor. The 4-piece heal on block needs two of the ~1% trash
-pieces, so expect it only after many runs. Don't skip Outriders.
+pieces, so expect it only after many runs. Don't skip Outriders. The trash pieces are BoP (never
+listed on the Horde AH, checked 25 Nov 2026), so they can't be bought.
 
 **In short:**
 - **Within a day of farming:** Helmet, Chest, both rings, the Valor bracers, gloves and belt,
