@@ -3,6 +3,7 @@
 ## Notes: Equips Carrot on a Stick when you mount and puts your old trinket back when you dismount.
 ## Author: brilliance-git
 ## Version: 1.2
+## IconTexture: Interface\AddOns\CarrotSwap\CarrotSwap
 ## SavedVariablesPerCharacter: CarrotSwapDB
 
 CarrotSwap.lua
