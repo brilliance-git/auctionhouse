@@ -54,6 +54,40 @@ FALLBACK = {
 }
 
 
+# ---- Real Wowhead Forever boss data (docs/wowhead-drops-forever-2026-11-25.md) ----
+# boss -> (blues per kill, mean blue ilvl, other sellable value per kill in g).
+# Every blue listed there was looked up on the Horde AH on 2026-11-25: none has ever been listed,
+# so all are BoP. Their vendor prices aren't in the API (it only knows AH-seen items), so blue
+# VALUE still comes from blue(ilvl); blues per kill and item levels are REAL.
+# Sellable extras (Horde AH fill price, demand-capped by hand at a 10% share):
+#   Blackmaw Pouch ~85s, ~330 sold/day (AH absorbs ~10%/boss): 0.10 x 0.81 = 0.08
+#   Nanaya: Maker's Spark 94% (AH absorbs ~0.1/h, rest at the 2.50g vendor price) = 2.35;
+#           green 99% x ~1.9g (lower-quartile AH price of 467 ilvl 56-63 greens, after cut) = 1.88;
+#           Blueprint: Arcane Forge 5.5% x 12g vendor (AH ~90g but ~4 listed, no sales seen) = 0.66
+#   Grox: Blueprint: Expert Campfire 4.3% (2,047 kills) x ~27g x 0.95 (in KROL_REAL_BOSS)
+POUCH = 0.08
+FOREVER_BOSSES = {
+    # The Drowned City
+    "Zul'Alai": (1.01, 39, 0), "Var'Taka": (1.01, 40, 0), "Captain Dreadrise": (1.01, 40, 0),
+    "Deathless Marrow": (0.90, 41, 0), "Min'loth the Serpent": (1.01, 42, 0),
+    "Primeval Elemental": (1.01, 40, 0), "Gill": (1.01, 40, 0),
+    # Alcaz Prison
+    "Overseer Wrex": (0.97, 52, 0), "The Questioner": (0.98, 53, 0),
+    "Tidemistress Ca'zass": (0.94, 52, 0), "Katerina the Cleaner": (0.99, 54, 0),
+    "Blazeroar": (0.98, 55, 0),
+    # Blackmaw Hold
+    "Withermaw": (0.92, 60, POUCH), "Bonesnout the Unbroken": (0.96, 60, POUCH),
+    "Impaan the Imprisoner": (0.96, 59, POUCH), "Elder Shaman Bloodmane": (0.80, 61, POUCH),
+    "Unbound Spirit": (0.97, 61, POUCH), "Varrox Bleakhoof": (0.96, 62, POUCH),
+    # The Shaper's Terrace
+    "Titanosaur": (1.52, 63, 0), "Venomridge": (0.94, 63, 0), "Thunderhoof": (0.94, 63, 0),
+    "Direhorn Matriarch": (0.97, 63, 0), "Tor'Rel": (0.93, 63, 0),
+    "Nanaya": (0.95, 63, 2.35 + 1.88 + 0.66),
+}
+# Krol'dok boss value per run: real Wowhead sell prices; Campfire updated 4.54% -> 4.3%.
+KROL_REAL_BOSS = 8.31 - (0.0454 - 0.043) * 27 * 0.95
+
+
 def blue(ilvl, scale):
     """Average vendor value (g) of one BoP boss blue at this item level."""
     return scale * KROL_BLUE * math.exp(0.071 * (ilvl - 45.5))
@@ -76,7 +110,7 @@ FARMS = [
     # ---- levelling band (pre-60; dungeons whose mobs are ~35-55) ----
     F("Krol'dok Stronghold (full, Ogre Key)", "levelling", 6, None, 40, 44, 12, "medium", "verified",
       "Boss value from real prices and drop rates; trash and time estimated",
-      real_boss=8.31, ah=(("Thick Leather", 5), ("Heavy Leather", 5), ("Red Wolf Meat", 5))),
+      real_boss=KROL_REAL_BOSS, ah=(("Thick Leather", 5), ("Heavy Leather", 5), ("Red Wolf Meat", 5))),
     F("The Drowned City (full)", "levelling", 6, 40, 30, 38, 12, "low", "assumed",
       "6 bosses; loot ilvl ~40 assumed (top of range + 2, like Krol'dok)"),
     F("Zul'Farrak (graveyard + 2 bosses)", "levelling", 2, 47, 60, 44, 12, "low", "assumed",
@@ -112,7 +146,7 @@ FARMS = [
       "Orbs ~3.2/run (Galford 84%, trash ~9.5%), mostly at the 2g vendor price; casters; "
       "no proven prot solo", ah=(("Righteous Orb", 16), ("Runecloth", 40))),
     F("Krol'dok Stronghold at 60", "60", 6, None, 40, 44, 11, "medium", "verified",
-      "Same loot as in the levelling band, trivial mobs", real_boss=8.31,
+      "Same loot as in the levelling band, trivial mobs", real_boss=KROL_REAL_BOSS,
       ah=(("Thick Leather", 5), ("Heavy Leather", 5), ("Red Wolf Meat", 5))),
     F("Shaper's Terrace (4 bosses, teleport exit)", "60", 4, 62, 20, 59, 12, "low", "assumed",
       "10-11 encounters; mount inside; + ~5.8 g/h Thorium only with Mining"),
@@ -254,12 +288,19 @@ def R(name, band, tier_, why, ilvl, mob, v15, v12, elite=True, drops=(), basis="
         if not v:
             continue
         bosses, kills, minutes, route = v
+        boss_list = None
+        if isinstance(bosses, (list, tuple)):
+            boss_list = list(bosses)
+            extra = extra + sum(FOREVER_BOSSES[b][2] for b in boss_list)
+            bosses = sum(FOREVER_BOSSES[b][0] for b in boss_list)
+            basis = "real-rate"
         runs = min(CAP, 60 / minutes)
         ah = tuple((item, round(runs * (kills * pk + pr))) for item, pk, pr in drops
                    if round(runs * (kills * pk + pr)) > 0)
         f = F(f"{name} ({tag})", band, bosses, ilvl, kills, mob, minutes, conf, basis,
               f"{route}. {notes}".strip(), elite=elite, ah=ah, extra=extra)
         f["route"] = route
+        f["boss_list"] = boss_list
         out.append(f)
         TIERS[f["name"]] = (tier_, why)
     return out
@@ -269,8 +310,11 @@ ROUTES = [
     # ---- levelling band ----
     R("The Drowned City: full clear", "levelling", "maybe",
       "Elites 35-40, well below a mid-40s character; boss mechanics unknown", 40, 38,
-      (6, 40, 15, "Zul'Alai > Var'Taka > Captain Dreadrise > Deathless Marrow > Gill > Min'loth, all trash"),
-      (5, 30, 12, "Same, skipping Min'loth at the end")),
+      (["Zul'Alai", "Var'Taka", "Captain Dreadrise", "Deathless Marrow", "Primeval Elemental",
+        "Min'loth the Serpent"], 40, 15,
+       "Zul'Alai > Var'Taka > Captain Dreadrise > Deathless Marrow > Primeval Elemental > Min'loth, all trash"),
+      (["Zul'Alai", "Var'Taka", "Captain Dreadrise", "Deathless Marrow", "Primeval Elemental"], 30, 12,
+       "Same, skipping Min'loth at the end")),
     R("Uldaman: back-door loop", "levelling", "maybe", "Elites 41-47, mostly melee troggs and dwarves",
       44, 44, (4, 30, 15, "Back (Badlands) entrance > Ironaya > Obsidian Sentinel > Ancient Stone Keeper > Galgann Firehammer"),
       (3, 25, 12, "Ironaya > Obsidian Sentinel > Ancient Stone Keeper")),
@@ -285,8 +329,10 @@ ROUTES = [
       notes="Spawn of Hakkar (confirmed as the old farm): ~0.73 blues + ~22% BoE green per kill"),
     R("Alcaz Prison: first four bosses", "levelling", "unlikely",
       "Elites 48-53, above a mid-40s character; Tidemistress is a caster", 53, 51,
-      (4, 35, 15, "Overseer Wrex > The Questioner > Tidemistress Ca'zass > Katerina the Cleaner"),
-      (3, 30, 12, "Overseer Wrex > The Questioner > Tidemistress Ca'zass")),
+      (["Overseer Wrex", "The Questioner", "Tidemistress Ca'zass", "Katerina the Cleaner"], 35, 15,
+       "Overseer Wrex > The Questioner > Tidemistress Ca'zass > Katerina the Cleaner"),
+      (["Overseer Wrex", "The Questioner", "Tidemistress Ca'zass"], 30, 12,
+       "Overseer Wrex > The Questioner > Tidemistress Ca'zass")),
     # ---- level 60 ----
     R("Uldaman at 60: back-door loop", "60", "reliable", "Elites 41-47", 44, 44,
       (6, 30, 15, "Back entrance > Ironaya > Obsidian Sentinel > Ancient Stone Keeper > Galgann > Grimlok > Revelosh"),
@@ -302,8 +348,10 @@ ROUTES = [
       (6, 25, 12, "Six balcony trolls only"), drops=(MAGEWEAVE,), extra15=SPAWN_GREENS),
     R("Alcaz Prison at 60: full clear", "60", "maybe",
       "Elites 48-53 (gap 7-12); Tidemistress casts, Zarla Ober's dragon phase unknown", 53, 51,
-      (5, 45, 15, "Wrex > The Questioner > Tidemistress Ca'zass > Katerina the Cleaner > Zarla Ober (Blazeroar)"),
-      (4, 35, 12, "Same without Zarla Ober")),
+      (["Overseer Wrex", "The Questioner", "Tidemistress Ca'zass", "Katerina the Cleaner", "Blazeroar"],
+       45, 15, "Wrex > The Questioner > Tidemistress Ca'zass > Katerina the Cleaner > Zarla Ober (Blazeroar)"),
+      (["Overseer Wrex", "The Questioner", "Tidemistress Ca'zass", "Katerina the Cleaner"], 35, 12,
+       "Same without Zarla Ober")),
     R("Dire Maul East: Pusillin + lashers + Alzzin", "60", "maybe",
       "Lashers are non-elite melee 54 (ideal for rage); Alzzin and Lethtendris cast", 58, 54,
       (5, 50, 15, "Pusillin chase (key) > Zevrim Thornhoof > Hydrospawn > Lethtendris > Conservatory lashers > Alzzin"),
@@ -338,13 +386,24 @@ ROUTES = [
       (3, 30, 12, "Omokk > Vosh'gajin > Voone"), drops=(RUNECLOTH,)),
     R("Blackmaw Hold: first bosses", "60", "unlikely",
       "Elites 55-60; no solo reports; avoid the old Devotee room farm", 60, 58,
-      (4, 30, 15, "Withermaw > Impaan the Imprisoner > Elder Shaman Bloodmane > Bonesnout (order unconfirmed)"),
-      (3, 25, 12, "First three bosses")),
+      (["Withermaw", "Impaan the Imprisoner", "Elder Shaman Bloodmane", "Bonesnout the Unbroken"], 30, 15,
+       "Withermaw > Impaan the Imprisoner > Elder Shaman Bloodmane > Bonesnout (order unconfirmed)"),
+      (["Withermaw", "Impaan the Imprisoner", "Bonesnout the Unbroken"], 25, 12,
+       "Withermaw > Impaan > Bonesnout (skips Bloodmane, the lowest blue rate)")),
+    R("Shaper's Terrace: Titanosaur + Nanaya loop", "60", "unlikely",
+      "Elites 58-60; Nanaya's position on the route is unconfirmed; no solo data", 63, 59,
+      (["Titanosaur", "Venomridge", "Thunderhoof", "Direhorn Matriarch", "Nanaya"], 20, 15,
+       "Mount in > Titanosaur > Venomridge > Thunderhoof > Direhorn Matriarch > Nanaya > teleport out"),
+      (["Titanosaur", "Direhorn Matriarch", "Nanaya"], 15, 12,
+       "Titanosaur > Direhorn Matriarch > Nanaya > teleport out (route unconfirmed)"),
+      notes="Nanaya: Maker's Spark 94%, green 99%, Arcane Forge blueprint 5.5%"),
     R("Shaper's Terrace: dinosaur loop", "60", "unlikely",
       "Elites 58-60; the bosses on this route are melee beasts, which suit rage better than casters, "
       "but no solo data", 62, 59,
-      (5, 20, 15, "Mount in > Titanosaur > Venomridge > Thunderhoof > Direhorn Matriarch > Izha'Rel and Tor'Rel > teleport out"),
-      (4, 15, 12, "Same without Izha'Rel and Tor'Rel"),
+      (["Titanosaur", "Venomridge", "Thunderhoof", "Direhorn Matriarch", "Tor'Rel"], 20, 15,
+       "Mount in > Titanosaur > Venomridge > Thunderhoof > Direhorn Matriarch > Izha'Rel and Tor'Rel > teleport out"),
+      (["Titanosaur", "Venomridge", "Thunderhoof", "Direhorn Matriarch"], 15, 12,
+       "Same without Izha'Rel and Tor'Rel"),
       notes="+ ~5.8 g/h Thorium only with Mining"),
 ]
 FARMS = [f for f in FARMS if f["name"] not in REPLACED] + [f for r in ROUTES for f in r]
@@ -377,7 +436,10 @@ def ah_values():
 
 def evaluate(f, scale, ah):
     runs = min(CAP, 60 / f["minutes"])
-    boss = f["real_boss"] if f["real_boss"] is not None else f["bosses"] * blue(f["ilvl"], scale)
+    if f.get("boss_list"):
+        boss = sum(FOREVER_BOSSES[b][0] * blue(FOREVER_BOSSES[b][1], scale) for b in f["boss_list"])
+    else:
+        boss = f["real_boss"] if f["real_boss"] is not None else f["bosses"] * blue(f["ilvl"], scale)
     trash = f["kills"] * coin(f["mob"], f["elite"])
     ahg = sum(ah[p] for p in f["ah"])
     cons = CONSUMABLES[f["band"]] if tier(f)[0] != "reliable" else 0.0
@@ -404,7 +466,7 @@ def main():
         print(f"\n== {label} (ranked by solo viability, then conservative g/h; "
               f"consumables -{CONSUMABLES[band]} g/h on maybe/unlikely) ==")
         print(f"{'tier':9} {'farm':62} {'conserv':>7} {'anchored':>8} | {'boss/h':>6} {'trash/h':>7} "
-              f"{'AH+other':>8}  {'blues':8} conf")
+              f"{'AH+other':>8}  {'blues':9} conf")
         last = None
         for f in rows:
             t, why = tier(f)
@@ -413,7 +475,7 @@ def main():
             last = t
             c, h = evaluate(f, CONSERVATIVE, ah), evaluate(f, 1.0, ah)
             print(f"{t:9} {f['name']:62} {c['total']:7.0f} {h['total']:8.0f} | {c['boss_h']:6.1f} "
-                  f"{c['trash_h']:7.1f} {c['other_h']:8.1f}  {f['basis']:8} {f['conf']}")
+                  f"{c['trash_h']:7.1f} {c['other_h']:8.1f}  {f['basis']:9} {f['conf']}")
             if a.reasons:
                 print(f"{'':9}   why: {why}")
 
