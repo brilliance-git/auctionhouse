@@ -156,8 +156,21 @@ CLASSIC_BOSSES = {
     "Hydromancer Velratha": (0.87, 48, 0.02 * 0.52),
     "Houndmaster Loksey": (1.27, 36, 0.10 * 0.27),
     "Interrogator Vishas": (1.04, 34, 0.07 * 0.27 + 0.08 * 0.016),
-    # Not collected yet: estimated at ~1 blue per boss (Forever's stated rule), curve value.
-    "Arcanist Doan (est.)": (1.00, 40, 0), "Bloodmage Thalnos (est.)": (1.00, 36, 0),
+    # Rest of SM, Razorfen Downs, Razorfen Kraul (docs/wowhead-drops-classic-4-2026-11-25.md); all boss
+    # blues BoP. Quest items (Skull of the Coldbringer, Razorflank's Heart, Small Scroll) aren't counted.
+    # Greens at the vendor median: ilvl 41-47 0.52g, ilvl 30-40 0.27g, ilvl 28-36 0.21g.
+    "Herod": (1.19, 42, 0.06 * 0.52), "High Inquisitor Fairbanks": (1.09, 42, 0.06 * 0.52),
+    "Scarlet Commander Mograine": (1.08, 44, 0.06 * 0.52),
+    "High Inquisitor Whitemane": (1.07, 44, 0.02 * 0.52),
+    "Arcanist Doan": (0.99, 39, 0.98 * 0.27), "Bloodmage Thalnos": (1.07, 36, 0.06 * 0.27 + 0.09 * 0.016),
+    "Amnennar the Coldbringer": (1.81, 43, 0.07 * 0.52), "Mordresh Fire Eye": (1.09, 41, 0.06 * 0.52),
+    "Plaguemaw the Rotting": (1.08, 42, 0.06 * 0.52), "Glutton": (1.08, 42, 0.07 * 0.52),
+    "Tuten'kash": (1.07, 42, 0.06 * 0.52),
+    "Aggem Thorncurse": (1.07, 32, 0.26 * 0.21 + 0.13 * 0.016),
+    "Death Speaker Jargba": (1.06, 32, 0.08 * 0.21 + 0.10 * 0.016),
+    "Overlord Ramtusk": (1.06, 34, 0.06 * 0.21 + 0.12 * 0.016),
+    "Agathelos the Raging": (1.05, 35, 0.06 * 0.21), "Charlga Razorflank": (1.01, 35, 0.12 * 0.21),
+    "Roogug (est.)": (1.00, 33, 0),
 }
 FOREVER_BOSSES.update(CLASSIC_BOSSES)
 # LBRS Firebrand Pyromancer (trash): Pattern: Robe of the Archmage 19% (vendor 1.50g; ~26g on the AH but
@@ -310,6 +323,8 @@ TIERS = {
 # and minutes are ESTIMATES. Forever bosses drop a guaranteed blue (Warcraft Tavern).
 # drops: (item, units per trash kill, units per run) -> priced on the Horde AH, demand-capped.
 REPLACED = {
+    "SM Cathedral at 60 (mass pull, 3 bosses)", "SM Armory at 60 (full clear, Herod)",
+    "Razorfen Downs at 60 (full)", "Razorfen Kraul at 60 (full)",
     "Zul'Farrak at 60 (graveyard + 4 bosses)", "SM Library at 60 (2 bosses)", "SM Graveyard at 60",
     "Sunken Temple at 60: 6 balcony trolls (chunk)",
     "Stratholme Living, Scarlet side (chunked)", "Shaper's Terrace (4 bosses, teleport exit)",
@@ -365,12 +380,32 @@ ROUTES = [
        "Graveyard (Zum'rah + ~50 zombies) > pyramid stairs event (Nekrum, Sezz'ziz, Bly's crew) > Ruuzlu + Ukorz"),
       (["Witch Doctor Zum'rah", "Antu'sul", "Theka the Martyr"], 60, 12,
        "Antu'sul > Theka > graveyard (Zum'rah + ~50 zombies)"), drops=(MAGEWEAVE,)),
+    # Cathedral trash (Scarlet Centurion/Champion): Scarlet Gauntlets 4% (BoE, ~5.8g on the AH, 18 listed),
+    # Scarlet Chestpiece 1% (BoE, ~35g, 6 listed), Sealed Expert's Writ 1% (~31s). Thin markets, so counted
+    # at the vendor floor (~0.012g per kill); AH sales are upside.
+    R("SM Cathedral at 60: mass pull", "reliable", "Humanoids 34-40 (gap 20+)", 43, 38,
+      (["High Inquisitor Fairbanks", "Scarlet Commander Mograine", "High Inquisitor Whitemane"], 60, 12,
+       "Courtyard pull > chapel pull (Mograine pulls the chapel) > Mograine > Whitemane > Fairbanks"),
+      None, drops=(("Silk Cloth", 0.24, 0), ("Mageweave Cloth", 0.05, 0)), extra15=60 * 0.012),
+    R("SM Armory at 60: full clear", "reliable", "Humanoids 34-40", 42, 38,
+      (["Herod"], 65, 12, "Full Armory trash clear > Herod"), None,
+      drops=(("Silk Cloth", 0.24, 0), ("Mageweave Cloth", 0.05, 0))),
+    R("Razorfen Downs at 60: full clear", "reliable", "Elites 37-46 (gap 14+)", 42, 38,
+      (["Tuten'kash", "Mordresh Fire Eye", "Glutton", "Plaguemaw the Rotting", "Amnennar the Coldbringer"], 35, 12,
+       "Tuten'kash (gong) > Mordresh Fire Eye > Glutton > Plaguemaw > Amnennar the Coldbringer"), None,
+      notes="Ragglesnout (rare, 1.06 blues) not counted"),
+    R("Razorfen Kraul at 60: full clear", "reliable", "Mobs 29-38", 34, 33,
+      (["Aggem Thorncurse", "Death Speaker Jargba", "Overlord Ramtusk", "Agathelos the Raging", "Roogug (est.)",
+        "Charlga Razorflank"], 30, 10,
+       "Roogug > Aggem > Jargba > Ramtusk > Agathelos > Charlga"), None,
+      notes="Only Roogug is estimated; Blind Hunter and Earthcaller Halmgar (rares) not counted"),
     R("SM Library at 60: Loksey + Doan", "reliable", "Humanoids 33-39", 38, 36,
-      (["Houndmaster Loksey", "Arcanist Doan (est.)"], 40, 10, "Library: Houndmaster Loksey > Arcanist Doan"), None,
-      drops=(("Silk Cloth", 0.4, 0),), notes="Doan not yet in Wowhead data (estimated)"),
+      (["Houndmaster Loksey", "Arcanist Doan"], 40, 10, "Library: Houndmaster Loksey > Arcanist Doan"), None,
+      drops=(("Silk Cloth", 0.4, 0),)),
     R("SM Graveyard at 60: Vishas + Thalnos", "reliable", "Undead 26-36", 34, 31,
-      (["Interrogator Vishas", "Bloodmage Thalnos (est.)"], 40, 8, "Graveyard: Interrogator Vishas > Bloodmage Thalnos"),
-      None, drops=(("Wool Cloth", 0.4, 0),), notes="Thalnos not yet in Wowhead data (estimated)"),
+      (["Interrogator Vishas", "Bloodmage Thalnos"], 40, 8, "Graveyard: Interrogator Vishas > Bloodmage Thalnos"),
+      None, drops=(("Wool Cloth", 0.4, 0),),
+      notes="Graveyard rares (Ironspine, Fallen Champion, Azshir; ~1.06-1.10 blues) not counted"),
     R("Maraudon at 60: Princess loop", "reliable",
       "Elites 44-52 (gap 8-16); Princess Theradras hits hard", 52, 50,
       (["Noxxion", "Razorlash", "Landslide", "Rotgrip", "Princess Theradras"], 30, 15,
