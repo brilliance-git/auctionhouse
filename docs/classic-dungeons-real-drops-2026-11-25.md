@@ -36,7 +36,7 @@ in it, so they're still estimates.
   - **Sunken Temple falls from ~41 to ~20 g/h.** The six balcony troll minibosses are **not in
     Wowhead's list of mobs that drop a blue**, so they drop none. The loop's real value is
     Jammal'an and Ogom (~1 blue each) plus Spawn of Hakkar. It's no longer the best "maybe";
-    **Dire Maul East (~40, still estimated) is.**
+    **Dire Maul East is** (~40 when this was written, before its own drop tables; now ~56, see `dire-maul-maraudon-real-drops-2026-11-25.md`).
   - **Blackrock Depths' entrance loop stays at ~34 g/h** with real data (Roccor's 1.86 "blues"
     are mostly Rockshard Pellets ammo).
   - Every other reliable or maybe loop is in dungeons without data, so unchanged.
@@ -98,7 +98,7 @@ probably hide more BoE dungeon-set pieces, so BoE value is under-counted.
 | Loop | Before | Now | Tier |
 |---|---|---|---|
 | Krol'dok at 60 | 50 | **50** | reliable |
-| Dire Maul East (estimated) | 40 / 66 | 40 / 66 | maybe |
+| Dire Maul East (not yet re-modelled here; real data since: 56 / 86) | 40 / 66 | 40 / 66 | maybe |
 | Blackrock Depths: entrance loop (12 min) | 34 / 57 | 34 / 54 | maybe |
 | Sunken Temple at 60: trolls > Jammal'an + Ogom (12 min) | 41 / 69 | **20 / 30** | maybe |
 | **Stratholme Undead: ziggurats + Ramstein (15 min)**, new | — | **105 / 135** | unlikely |
@@ -131,7 +131,7 @@ probably hide more BoE dungeon-set pieces, so BoE value is under-counted.
   4. **Dire Maul East** (~40, the only "maybe" above BRD).
 
   **Sunken Temple drops off the list** (~20).
-- **What would help:** a timed Strat test and the Dire Maul tables (DME is still estimated).
+- **What would help:** a timed Strat test. (The Dire Maul tables have since been added: `dire-maul-maraudon-real-drops-2026-11-25.md`.)
 
 ## 6. Real vs estimated
 | Part | Status |
