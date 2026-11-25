@@ -86,7 +86,7 @@ Conservative / optimistic figures.
 |---|---|---|---|
 | **Baseline (reliable)** | **Krol'dok Stronghold** | ~50 g/hr: **41.2 g/hr from 6 bosses at real sell prices** (BoP blues plus the Expert Campfire blueprint, 4.3%, ~27g) **+ ~8 g/hr trash coin (estimate)**. Mobs 42–45, so trivial at 60. Ogre Key shortcut. See `docs/kroldok-model-2026-11-23.md` | modelled; **needs timed runs** |
 | **Test first (maybe)** | **Dire Maul East: Pusillin > Zevrim > Hydrospawn > lashers > Alzzin (12 min)** | ~56 / 86 g/hr from real drop tables (Alzzin 1.94 blues, Pusillin 1.35 greens): above Krol'dok on conservative numbers. Non-elite melee lashers suit rage; Alzzin and Lethtendris cast. See `docs/dire-maul-maraudon-real-drops-2026-11-25.md` | not tested solo |
-| **Reliable backup** | **Maraudon: Princess loop (12 min)** | ~41 / 64 g/hr (Princess Theradras 1.89 blues). Mobs 44–52 | not tested |
+| **Reliable backup** | **Maraudon: Princess loop (12 min)** | ~41 / 64 g/hr (Princess Theradras 1.89 blues). Mobs 44–52. Next: **Zul'Farrak graveyard + pyramid (15 min) ~39 / 55** (real drop tables, `docs/uldaman-zf-sm-real-drops-2026-11-25.md`) | not tested |
 | Other "maybe" | BRD entrance loop (~34 / 54), Alcaz Prison (~29 / 48), Sunken Temple Jammal'an + Ogom (~20 / 30; the balcony trolls drop no blues) | see `docs/dungeon-loops-15min-2026-11-25.md` | not tested |
 | **Unlikely solo (highest value)** | **Stratholme** (Undead ziggurats + Ramstein ~105 / 135, Living Willey + Galford ~103 / 130), LBRS (~77), Shaper's Terrace Nanaya loop (~70), DM North to Gordok (~63), Scholomance (~58) | Boss greens and BoE set pieces from real drop tables. Level 57–62 elite casters, no documented prot-warrior solo. Try one pack first, or come back with raid gear after 9 Dec. See `docs/classic-dungeons-real-drops-2026-11-25.md` | test one pack |
 
@@ -97,6 +97,8 @@ at 5 per hour, so any run under 12 minutes uses the full cap.
 ### Docs
 | File | What it holds |
 |---|---|
+| `docs/uldaman-zf-sm-real-drops-2026-11-25.md` | Uldaman, Zul'Farrak and part of SM at 60 from real Wowhead Forever drop tables: ZF graveyard + pyramid ~39 g/hr (third reliable farm), Uldaman ~23, SM Library/Graveyard ~10–13; all boss blues BoP |
+| `docs/wowhead-drops-classic-3-2026-11-25.md` | Raw Wowhead Forever drop tables for Uldaman, Zul'Farrak and SM (Loksey, Vishas) |
 | `docs/dire-maul-maraudon-real-drops-2026-11-25.md` | Dire Maul and Maraudon from real Wowhead Forever drop tables (`docs/wowhead-drops-classic-2-2026-11-25.md`): DME loop ~56 g/hr (passes Krol'dok conservatively, "maybe"), Maraudon Princess ~41 (best reliable after Krol'dok), DM North to Gordok ~63 ("unlikely") |
 | `docs/wowhead-drops-classic-2-2026-11-25.md` | Raw Wowhead Forever drop tables for Dire Maul and Maraudon |
 | `docs/classic-dungeons-real-drops-2026-11-25.md` | Sunken Temple, LBRS, BRD, Scholomance and Stratholme re-modelled from real Wowhead Forever drop tables (`docs/wowhead-drops-classic-2026-11-25.md`): BoE set pieces and boss greens push Strat to ~100+ g/hr ("unlikely" solo); Sunken Temple falls to ~20 |
