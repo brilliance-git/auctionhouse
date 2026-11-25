@@ -1,4 +1,6 @@
-# Uldaman, Zul'Farrak and Scarlet Monastery at 60, with real Wowhead Forever drop tables (2026-11-25)
+# Uldaman, Zul'Farrak, Scarlet Monastery, Razorfen Downs and Razorfen Kraul at 60, with real Wowhead Forever drop tables (2026-11-25)
+
+> **Update (same day):** `wowhead-drops-classic-4-2026-11-25.md` completes Scarlet Monastery and adds Razorfen Downs and 7 of 8 Razorfen Kraul bosses. See section 5; the SM rows in the table below are superseded there.
 
 **Input:** `docs/wowhead-drops-classic-3-2026-11-25.md` (wowhead.com/forever NPC "Drops" tabs):
 full tables for Uldaman (10 bosses) and Zul'Farrak (13), and partial data for Scarlet Monastery
@@ -22,12 +24,12 @@ full tables for Uldaman (10 bosses) and Zul'Farrak (13), and partial data for Sc
 | Zul'Farrak: Antu'sul + Theka + graveyard (12 min) | 29 / 39 | | real tables |
 | **Uldaman: back-door loop with Archaedas (15 min)** | **23 / 37** | 20 / 32 | **real tables** |
 | Uldaman: back-door loop (12 min) | 21 / 33 | 21 / 33 | real tables |
-| SM Library: Loksey + Doan (10 min) | 13 / 16 | 12 / 16 | **partial** (Loksey real, Doan estimated) |
-| SM Graveyard: Vishas + Thalnos (8 min) | 10 / 13 | 8 / 9 | **partial** (Vishas real, Thalnos estimated) |
-| SM Cathedral, SM Armory | 21 / 28, 16 / 18 | unchanged | **not yet backed by real drops** |
+| SM Library: Loksey + Doan (10 min) | 14 / 17 | 12 / 16 | real tables (see section 5) |
+| SM Graveyard: Vishas + Thalnos (8 min) | 11 / 13 | 8 / 9 | real tables (see section 5) |
+| SM Cathedral mass pull, SM Armory full clear (12 min) | 26 / 33, 17 / 19 | 21 / 28, 16 / 18 | real tables (see section 5) |
 
-- **Zul'Farrak is now the second-best "reliable" farm,** a close third behind Krol'dok (50) and
-  the Maraudon Princess loop (41). It's ~11 g/h short of Krol'dok.
+- **Zul'Farrak is now the third-best "reliable" farm,** just behind Krol'dok (50) and the
+  Maraudon Princess loop (41). It's ~11 g/h short of Krol'dok.
   - **Why it's up:** the 15-minute loop now reaches six real ~1-blue bosses (Zum'rah, Nekrum,
     Sezz'ziz, Bly, Ruuzlu, Ukorz) plus ~80 trash kills of coin.
 - **Uldaman edges up** once Archaedas is in the loop, but stays a ~20–23 g/h farm.
@@ -93,5 +95,70 @@ BoP.**
 | Blues and greens per kill, ilvls (Uldaman, ZF, Loksey, Vishas) | **real** (Wowhead Forever, 2026-11-25) |
 | BoE vs BoP | **real** (Horde AH) |
 | Vendor value of BoP blues | **estimated** (item-level curve) |
-| Doan, Thalnos, SM Cathedral and Armory, RFD, RFK, City of Dalaran, Ruins of Lordaeron | **estimated, not yet backed by real drops** |
+| Roogug (RFK), City of Dalaran, Ruins of Lordaeron | **estimated, not yet backed by real drops** (SM, RFD and the rest of RFK: real, see section 5) |
 | Routes, minutes, trash counts | **estimated** |
+
+## 5. Update: all of Scarlet Monastery, Razorfen Downs and Razorfen Kraul
+Source: `docs/wowhead-drops-classic-4-2026-11-25.md`. It has the other 11 SM mobs, all 6 RFD
+bosses, and 7 of 8 RFK bosses (Roogug missing). All are out-levelled at 60, so every loop is
+"reliable".
+
+**BoE check:** 6 of 71 IDs have ever been listed on the Horde AH, all from Cathedral trash.
+**Every boss blue in SM, RFD and RFK is BoP.**
+
+| Item | Fill price | ~Listed | Source and rate | Counted as |
+|---|---|---|---|---|
+| **Scarlet Chestpiece** | ~35g | 6 | Scarlet Champion 1% | vendor 0.70g (thin market; ~1 every 1.5 h on the Cathedral loop is upside) |
+| Scarlet Gauntlets | ~5.8g | 18 | Scarlet Centurion 4% | vendor 0.27g (upside ~5.5g each) |
+| Mark of Kern / Cobalt Crusher | ~10g / ~5.6g | 4–7 | Centurion / Champion ~0% | negligible |
+| Sealed Expert's Writ | ~31s | ~490 | Centurion / Champion 1% | counted |
+| Pattern: Filigreed Pristine Circlet | ~0.3g | 21 | Earthcaller Halmgar (rare) 1% | negligible |
+
+Quest items aren't in any blue count: Skull of the Coldbringer (Amnennar 33%), Razorflank's
+Heart (Charlga 40%), Small Scroll. None has ever been listed.
+
+**Boss data (blues per kill, ilvl):**
+- **SM:**
+  - Herod 1.19 (42); Fairbanks 1.09 (42); Mograine 1.08 (44); Whitemane 1.07 (44).
+  - Doan 0.99 (39, with 98% greens); Thalnos 1.07 (36).
+  - Graveyard rares: Ironspine 1.10, Fallen Champion 1.08, Azshir 1.06 (35). Not counted; they
+    don't spawn every run.
+- **RFD:** **Amnennar 1.81** (43); Mordresh 1.09, Plaguemaw 1.08, Glutton 1.08, Tuten'kash 1.07
+  (41–42); Ragglesnout (rare) 1.06.
+- **RFK:**
+  - Aggem 1.07; Jargba 1.06; Ramtusk 1.06; Agathelos 1.05; Charlga 1.01 (ilvl 31–35).
+  - Blind Hunter 1.03 and Earthcaller Halmgar 1.02 are rares, not counted.
+  - **Only Roogug is estimated** (1 blue per kill).
+
+**Results at 60 (conservative / anchored g/h):**
+
+| Farm | Now | Before | Data |
+|---|---|---|---|
+| *Krol'dok Stronghold (baseline)* | *50 / 50* | | real sell prices |
+| *Dire Maul East (12 min, "maybe")* | *56 / 86* | | real tables |
+| *Maraudon: Princess loop (12 min)* | *41 / 64* | | real tables |
+| *Zul'Farrak: graveyard + pyramid (15 min)* | *39 / 55* | | real tables |
+| **SM Cathedral: mass pull (12 min)** | **26 / 33** | 21 / 28 | real tables |
+| **Razorfen Downs: full clear (12 min)** | **24 / 37** | 18 / 27 | real tables |
+| SM Armory: full clear + Herod (12 min) | 17 / 19 | 16 / 18 | real tables |
+| Razorfen Kraul: full clear (10 min) | 14 / 22 | 11 / 16 | real except Roogug |
+| SM Library: Loksey + Doan (10 min) | 14 / 17 | 13 / 16 (partial) | real tables |
+| SM Graveyard: Vishas + Thalnos (8 min) | 11 / 13 | 10 / 13 (partial) | real tables |
+
+**Routes:**
+- **SM Cathedral:** courtyard pull, then the chapel pull (aggroing Mograine pulls the chapel),
+  then Mograine > Whitemane > Fairbanks.
+- **RFD:** Tuten'kash (gong) > Mordresh Fire Eye > Glutton > Plaguemaw > Amnennar.
+- **RFK:** Roogug > Aggem > Jargba > Ramtusk > Agathelos > Charlga.
+
+**Verdict:**
+- **Nothing here comes close to Krol'dok (~50), DME (~56), Maraudon Princess (~41) or the ZF
+  loop (~39).**
+- The best of this group are the **SM Cathedral mass pull (~26)** and **RFD's full clear
+  (~24)**.
+- The Cathedral has the one real upside: its Scarlet Chestpiece and Scarlet Gauntlets drops are
+  BoE and sell for ~35g and ~5.8g on the AH, if those thin markets take them.
+- RFK, SM Library and SM Graveyard (11–14) aren't worth a lockout slot while Krol'dok is
+  available.
+- **Still not backed by real drops:** Roogug, City of Dalaran and Ruins of Lordaeron.
+
