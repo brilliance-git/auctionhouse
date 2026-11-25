@@ -44,7 +44,7 @@ Gutwrencher, Arcanite Reaper) are present.
 
 ## 3. Estimates
 
-### Krol'dok Stronghold (chosen levelling farm)
+### Krol'dok Stronghold (the level-60 baseline farm)
 Bosses 42–45, nearly all elite, ~5 min run (Wowhead). 7 bosses incl. rare Kroog.
 - Campfire blueprint: 5 runs/h × 4.54% × ~27g × 0.95 ≈ **~6 g/h** (avg; one every ~4.4 h, streaky).
 - BoP blues: ~1 per boss at ~76s vendor (ilvl ~45) × 7 bosses ≈ ~5g/run ≈ **~25 g/h**.
@@ -54,7 +54,7 @@ Bosses 42–45, nearly all elite, ~5 min run (Wowhead). 7 bosses incl. rare Kroo
 - Use normal pull-and-kill only. The mage ledge/pathing farm is exploit-adjacent (see the
   Blackmaw Hold bans, Nov 16–17).
 
-### Stratholme Living, Scarlet side (level 60 target — unproven for warriors)
+### Stratholme Living, Scarlet side (unproven for warriors)
 Assume ~25 kills per 12-min chunk → ~2.4 trash orbs + 0.84 Galford ≈ 3 orbs/run.
 - Vendor-only: ~7.6g/run ≈ **~38 g/h**. With AH orbs: up to ~27g/run, but the market
   can't absorb 15 orbs/h — sell a few per day, vendor the rest.
@@ -64,13 +64,14 @@ Assume ~25 kills per 12-min chunk → ~2.4 trash orbs + 0.84 Galford ≈ 3 orbs/
   One other database lists Galford's orb drop at 18%; Wowhead's sample of 735 kills says 84%.
 
 ### Others
-- ZF graveyard (44+): coin/grey farm, 40–50 g/h reported for mages; untested on warriors; gives XP.
+- ZF graveyard: coin/grey farm, 40–50 g/h reported for mages; untested on warriors.
 - RoL, RFK: ~1–3g/run in vendored blues. SM, DME lashers: weak.
 
 ## 4. Ranking
-1. **Level 60:** Strat Living Scarlet side (if soloable).
-2. **Level 42–59:** **Krol'dok** — current plan.
-3. **Level 44+ alt:** ZF graveyard (gold + XP).
+All at level 60 (see `dungeon-farms-viability-2026-11-23.md` and later docs for the current ranking):
+1. **Krol'dok** — the reliable baseline (out-levelled).
+2. Strat Living Scarlet side, if soloable.
+3. ZF graveyard (gold only).
 
 ## 5. Data still needed to pin down Krol'dok g/h
 1. **1–2 timed test runs:** gold before/after (greys vendored, blues kept), run time, full loot list.

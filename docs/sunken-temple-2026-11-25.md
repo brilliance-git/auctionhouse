@@ -1,26 +1,22 @@
 # Sunken Temple (Temple of Atal'Hakkar): the "Sons of Hakkar" farm (2026-11-25)
 
-> **Correction (2026-11-25, `classic-dungeons-real-drops-2026-11-25.md`):** real Wowhead Forever data shows the **six balcony trolls drop no blues**. They aren't in the list of mobs that drop one. The "guaranteed blue per boss" claim below doesn't hold for them. The real route value is Jammal'an (1.00 blues per kill) + Ogom (0.98) + Spawn of Hakkar (0.48 blues + Wingveil + greens): **~20–22 g/h conservative**, not ~40. Spawn of Hakkar alone stays ~5–8 g/h. Sunken Temple is no longer the best "maybe" at 60; Dire Maul East (~40, estimated) is. The sections below are kept as written.
+> **Correction (2026-11-25, `classic-dungeons-real-drops-2026-11-25.md`):** real Wowhead Forever data shows the **six balcony trolls drop no blues**. They aren't in the list of mobs that drop one. The "guaranteed blue per boss" claim below doesn't hold for them. The real route value is Jammal'an (1.00 blues per kill) + Ogom (0.98) + Spawn of Hakkar (0.48 blues + Wingveil + greens): **~20–22 g/h conservative**, not ~40. Spawn of Hakkar alone stays ~5–8 g/h. Sunken Temple is no longer the best "maybe" at 60; Dire Maul East (~40, estimated) is. The sections below keep the original working, at level 60.
 
 
 **Question:** you used to farm the "Sons of Hakkar" in Sunken Temple. Is that, or a normal
 Sunken Temple boss route, a good solo farm for a Protection Warrior in WoW: Forever, and how
 does it compare with Krol'dok?
 
-**Short answer**
-- **Spawn of Hakkar alone is not a gold farm:** ~5–9 g/h. It's a single level 50–51 elite
-  worth ~0.73 blues (~1–2g at a vendor) plus a ~22% chance of a BoE green (~1g on the AH) per
-  kill, and you can only reset 5 times an hour. It's
-  "maybe" solo while levelling and "reliable" at 60.
-- **The balcony-troll chunk is the real Sunken Temple farm:** six troll minibosses, each with a
-  guaranteed blue in Forever. It models at **~40 g/h** conservatively, ~68 optimistically.
-  - **While levelling it's "unlikely" solo:** elite trolls 49–55 with caster priests and witch
-    doctors.
-  - **At 60 it's "maybe"**, and it's the best of the "maybe" farms on conservative numbers
-    (41 vs DME 40, with the 15-minute loop model).
-- **Against Krol'dok:** Krol'dok (~49–50 g/h, real prices, "maybe" while levelling and
-  "reliable" at 60) stays ahead in both bands. Sunken Temple's troll chunk is the best farm to
-  **test** at 60 after Krol'dok, on a par with Dire Maul East.
+**Short answer (level 60)**
+- **Spawn of Hakkar alone is not a gold farm:** ~6–8 g/h. It's a single level 50–51 elite
+  worth ~0.48 BoP blues plus Wingveil Cloak (25%) and a ~27% chance of a world-drop green per
+  kill, and you can only reset 5 times an hour. It's "reliable" at 60, but not worth a lockout
+  slot.
+- **The normal boss route is Jammal'an + Ogom** (~1 blue each), after the six balcony trolls,
+  which drop no blues. It models at **~20 g/h** conservatively (~30 optimistically), "maybe"
+  solo at 60 (elite trolls 49–55 with casters).
+- **Against Krol'dok:** Krol'dok (~50 g/h, real prices, "reliable" at 60) stays well ahead.
+  Dire Maul East is the "maybe" farm to test, not Sunken Temple.
 
 Reproduce with `python3 scripts/dungeon_farm_model.py --reasons`. Every g/h is a model, and
 nothing is timed yet (`docs/farm-log.md`).
@@ -57,10 +53,9 @@ Wowhead Forever NPC page, read 2026-11-25; drop counts are out of 1,265 kills.
 **Model:**
 - 0.73 × a blue at ilvl 52 (~1.1g conservative, ~1.9g anchored) + ~0.23g of greens + a few
   trash kills.
-- ~7-minute runs, 5 an hour. That's **~5–9 g/h** (5–8 while levelling, 6–9 at 60).
+- ~7-minute runs, 5 an hour. That's **~6–9 g/h** at 60.
 - **If the 88,600 HP applies,** a run takes ~12 minutes. That's still 5 an hour, so the same
   g/h, with no slack.
-- **Levelling:** "maybe" (one elite above a mid-40s character, no packs).
 - **At 60:** "reliable", but still **not worth a lockout slot**. Krol'dok earns ~8× more per
   run.
 - **If the old farm paid well,** the money was probably from skinning or the trash, not the
@@ -82,12 +77,11 @@ Wowhead Forever NPC page, read 2026-11-25; drop counts are out of 1,265 kills.
   |---|---|---|
   | Boss blues | 35.4 g/h | |
   | Trash coin | 5.8 g/h | |
-  | **Total** | **~40 g/h** levelling (~39 at 60, after consumables) | ~67–68 g/h |
+  | **Total** | **~39 g/h** at 60, after consumables (corrected to ~20 by real data) | ~67 g/h |
 - **Solo viability:**
-  - **Levelling: "unlikely".** Elite trolls 49–55 at or above your level, with Atal'ai
-    priests and witch doctors (casters give no rage), plus Nightmare dragonkin elites that
-    guides call hard to solo.
-  - **At 60: "maybe".** The mobs are 5–11 levels below you, but the casters remain. Test one
+  - **At 60: "maybe".** The elite trolls are 49–55, 5–11 levels below you, but the Atal'ai
+    priests and witch doctors are casters (no rage from blocks), and the Nightmare dragonkin
+    elites are hard to solo. Test one
     balcony first (checklist in `dungeon-farms-viability-2026-11-23.md`).
 - **Not modelled:** the Avatar of Hakkar event. It needs blood from Hakkari Bloodkeepers and
   killing Nightmare Suppressors, which is too long for a 12-minute slot.
@@ -106,19 +100,16 @@ Wowhead Forever NPC page, read 2026-11-25; drop counts are out of 1,265 kills.
 Updated with the named loops in `dungeon-loops-15min-2026-11-25.md` (the troll chunk now also counts Mageweave).
 
 
-| Band | Farm | g/h (conservative / anchored) | Tier |
-|---|---|---|---|
-| Levelling | Krol'dok Stronghold | 49 / 49 | maybe |
-| Levelling | **Sunken Temple: 6 balcony trolls** (12 min) | 42 / 70 | **unlikely** |
-| Levelling | **Sunken Temple: Spawn of Hakkar only** | 5 / 8 | maybe |
-| 60 | Krol'dok Stronghold at 60 | 50 / 50 | reliable |
-| 60 | **Sunken Temple at 60: 6 balcony trolls** (12 min) | **41** / 69 | **maybe** (best "maybe" conservatively) |
-| 60 | Dire Maul East (Pusillin + lashers + Alzzin) | 40 / 66 | maybe |
-| 60 | Alcaz Prison (full) | 29 / 48 | maybe |
-| 60 | Sunken Temple at 60: Spawn of Hakkar only | 6 / 9 | reliable |
+| Farm | g/h (conservative / anchored) | Tier |
+|---|---|---|
+| Krol'dok Stronghold at 60 | 50 / 50 | reliable |
+| **Sunken Temple at 60: 6 balcony trolls** (12 min) | **41** / 69 | **maybe** (best "maybe" conservatively) |
+| Dire Maul East (Pusillin + lashers + Alzzin) | 40 / 66 | maybe |
+| Alcaz Prison (full) | 29 / 48 | maybe |
+| Sunken Temple at 60: Spawn of Hakkar only | 6 / 9 | reliable |
 
 **Verdict:**
-- **Krol'dok stays the main farm in both bands.**
+- **Krol'dok stays the main farm at 60.**
 - **At 60,** add the Sunken Temple troll chunk to the "test one pack" list next to Dire Maul
   East. If it clears solo in ~12 minutes, it's the best 60 farm after Krol'dok.
 - **The Spawn of Hakkar farm isn't worth a lockout slot** for gold.

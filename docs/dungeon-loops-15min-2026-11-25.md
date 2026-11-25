@@ -15,27 +15,24 @@ And does it beat Krol'dok?
 
 **Short answer**
 - **No loop beats Krol'dok among farms a solo prot warrior can count on.** Krol'dok makes
-  ~49–50 g/h, using real boss prices. That's "maybe" while levelling and "reliable" at 60.
+  ~50 g/h at 60, using real boss prices, and it's "reliable" (out-levelled).
 - **Best loops:**
 
-  | Band | Loop | g/h (conservative / anchored) | Tier |
-  |---|---|---|---|
-  | Levelling | **Sunken Temple: balcony trolls (12 min)** | 42 / 70 | unlikely |
-  | Levelling | Alcaz Prison: first four bosses | 24 / 39 | unlikely |
-  | Levelling | The Drowned City | 16 / 25 | maybe |
-  | 60 | **Sunken Temple: balcony trolls (12 min)** | **41** / 69 | maybe |
-  | 60 | **Dire Maul East: Pusillin + lashers + Alzzin** | **40** / 66 | maybe |
-  | 60 | Blackrock Depths: entrance loop | 34 / 57 | maybe |
-  | 60 | **Maraudon: Princess loop** | 32 / 50 | **reliable** |
-  | 60 | Stratholme Living: Willey + Galford (15 min) | **71** / 96 | unlikely |
+  | Loop | g/h (conservative / anchored) | Tier |
+  |---|---|---|
+  | **Sunken Temple: balcony trolls (12 min)** | **41** / 69 | maybe |
+  | **Dire Maul East: Pusillin + lashers + Alzzin** | **40** / 66 | maybe |
+  | Blackrock Depths: entrance loop | 34 / 57 | maybe |
+  | **Maraudon: Princess loop** | 32 / 50 | **reliable** |
+  | Stratholme Living: Willey + Galford (15 min) | **71** / 96 | unlikely |
 
   Strat Living is the highest-value loop overall, but it's "unlikely" solo: level 57–60
   elite casters, and no documented prot solo.
 - **15 minutes vs 12 minutes:**
   - **12 wins** when the 15-minute loop only adds a low-value boss or a long walk: Sunken
-    Temple (Spawn of Hakkar is worth ~1.3g), Uldaman and Maraudon at 60, BRD, Drowned City.
+    Temple (Spawn of Hakkar is worth ~1.3g), Uldaman and Maraudon at 60, BRD.
   - **15 wins** when the extra 3 minutes buy one or two full bosses near the route:
-    Stratholme Living, Scholomance, DM West and North, LBRS, Blackmaw Hold, Alcaz Prison.
+    Stratholme Living, Scholomance, DM West, LBRS, Blackmaw Hold, Alcaz Prison.
   - **DME and Shaper's Terrace tie.** In DME, 4 runs × 5 bosses and 5 runs × 4 bosses come to
     the same 20 boss kills an hour.
 
@@ -65,7 +62,7 @@ Reproduce with `python3 scripts/dungeon_farm_model.py --reasons`. Each loop appe
   - **Boss blues:** one per boss (Forever: "every boss … drops a guaranteed Rare").
   - **Trash coin:** 0.09s × mob level per elite, 0.4× for non-elites.
   - **AH drops** per trash kill or per run.
-  - **Consumables:** −1 g/h while levelling and −2.5 g/h at 60, on "maybe" and "unlikely"
+  - **Consumables:** −2.5 g/h on "maybe" and "unlikely"
     farms.
 - **These named loops replace the old generic entries** for the same dungeons ("… chunk",
   "… partial", "Alcaz Prison (full)", "Maraudon (Princess run)", "The Drowned City (full)",
@@ -78,22 +75,7 @@ Reproduce with `python3 scripts/dungeon_farm_model.py --reasons`. Each loop appe
   - ~1–2 min of looting;
   - ~1–2 min exit and reset (Shaper's Terrace has a teleport exit).
 
-## 2. Ranked: levelling band (pre-60)
-Ranked by viability tier, then conservative g/h. "Win" is the better variant.
-
-| Tier | Loop | 15 min | 12 min | Win | Route (15 min) | Why this tier |
-|---|---|---|---|---|---|---|
-| maybe | *Krol'dok Stronghold (benchmark)* | — | **49** / 49 | — | Grox > Zarmok > Ashka > key door > Toof > Nar'gurk > Mugg | Elites 42–45, a few levels below a mid-40s character; casters, fear |
-| maybe | The Drowned City | 16 / 25 | 16 / 25 | tie | Zul'Alai > Var'Taka > Captain Dreadrise > Deathless Marrow > Primeval Elemental > Min'loth, with all trash (12 min skips Min'loth) | Elites 35–40, well below a mid-40s character |
-| maybe | Uldaman: back-door loop | 14 / 22 | 13 / 21 | 15 | Badlands back entrance > Ironaya > Obsidian Sentinel > Ancient Stone Keeper > Galgann Firehammer | Elites 41–47, mostly melee |
-| unlikely | **Sunken Temple: balcony trolls (+ Spawn of Hakkar)** | 39 / 64 | **42** / 70 | 12 | Six balcony troll minibosses > basement for Spawn of Hakkar > exit (12 min: trolls only) | Elite trolls 49–55 with caster priests and witch doctors |
-| unlikely | Alcaz Prison: first four bosses | 23 / 38 | 22 / 35 | 15 | Overseer Wrex > The Questioner > Tidemistress Ca'zass > Katerina the Cleaner | Elites 48–53, above a mid-40s character |
-| unlikely | Maraudon: Orange wing | 16 / 25 | 15 / 22 | 15 | Orange side > Noxxion > Razorlash > Lord Vyletongue | Elites 44–48 near your level; satyr casters |
-
-**Levelling verdict:** stay on **Krol'dok**. The only loop that comes close (Sunken Temple's
-trolls) is "unlikely" solo before 60.
-
-## 3. Ranked: level 60
+## 2. Ranked: level 60
 
 | Tier | Loop | 15 min | 12 min | Win | Route (15 min) | Why this tier |
 |---|---|---|---|---|---|---|
@@ -123,7 +105,7 @@ trolls) is "unlikely" solo before 60.
 - **Strat Living's 15-minute orb loop (71–96)** is the biggest prize. It only counts once a
   test pack shows a prot warrior can handle its casters, or with raid gear after 9 Dec.
 
-## 4. Route notes
+## 3. Route notes
 - **Sunken Temple:**
   - The six balcony trolls are the core.
   - Spawn of Hakkar (the old farm, confirmed) only adds ~1.3g per kill: ~0.73 blues plus a
@@ -151,7 +133,7 @@ trolls) is "unlikely" solo before 60.
 - **Blackmaw Hold:** the boss order is unconfirmed (one source lists 7 bosses). The old
   Devotee room has had no loot since 16 Nov; stay out of it.
 
-## 5. What's estimated, what's real
+## 4. What's estimated, what's real
 | Part | Status |
 |---|---|
 | Routes, boss order, kill counts, minutes | **estimated** (Classic layouts; Forever-only dungeons from guide boss lists) |
@@ -162,7 +144,7 @@ trolls) is "unlikely" solo before 60.
 | Runecloth, Mageweave, Righteous Orb, Living Essence, Heart of the Wild, Essence of Earth | **real** Horde AH prices, demand-capped |
 | Solo viability | **judgement** using Classic-era mechanics; Forever's prot rework may move melee-heavy loops up |
 
-## 6. Next tests (log in `docs/farm-log.md`)
+## 5. Next tests (log in `docs/farm-log.md`)
 1. **A timed Krol'dok run:** still the most important number.
 2. **At 60:** one test pack from Sunken Temple's balcony trolls and from DME. Pass if the loop
    fits about 12–15 minutes at under ~1 potion per pack.

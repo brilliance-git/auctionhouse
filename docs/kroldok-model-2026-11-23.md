@@ -1,6 +1,6 @@
 # Krol'dok Stronghold: farm model (2026-11-23)
 
-Theorycraft for a solo Protection Warrior farming it while levelling (and at 60). Drop rates come from Wowhead "Drops" tabs
+Theorycraft for a solo Protection Warrior farming it at level 60, where its level 42–45 mobs are trivial (reliable). Drop rates come from Wowhead "Drops" tabs
 (screenshots supplied by hand, 1,453–2,069 kills sampled per boss). Every boss blue is
 bind-on-pickup, so it's vendor income.
 
@@ -44,7 +44,7 @@ there. Equip pieces as they drop rather than vendoring them.
 
 ## Map and route
 ![Boss map](img/kroldok-map.webp)
-![Route used while leveling](img/kroldok-route-leveling.webp)
+![Route from the player's past runs](img/kroldok-route-past-runs.webp)
 
 The entrance is at the bottom left. Confirmed portraits:
 - **Slavecrusher Grox:** the first ogre, next to the entrance.
@@ -57,7 +57,7 @@ The entrance is at the bottom left. Confirmed portraits:
   Skippable: his Moulding leads to the Krol'dok Ogre Key, which the player already has. The rare Kroog isn't on this map; note where he spawns
   if you see him.
 
-The leveling route (red line): entrance → loop north → Grox → Zarmok → east along the south →
+The route from past runs (red line): entrance → loop north → Grox → Zarmok → east along the south →
 Ashka → **west to Nar'gurk and back** → Toof → loop → Mugg.
 
 What can be improved:
@@ -65,7 +65,7 @@ What can be improved:
    route reaches Toof directly and then backtracks to Nar'gurk. Exact order and timing to be
    confirmed on the timed run.
 2. **The opening loop north** before Grox may be trash you can skip. It may also have been
-   for quests while leveling.
+   for quests on earlier runs.
 3. **There's no shortcut out after Mugg: you run back from the top northeast to the entrance
    at the bottom left** (mounted). That return trip is fixed time with no loot, so it counts
    against Mugg's part of the route. Time it: if the full route goes over 12 minutes, the

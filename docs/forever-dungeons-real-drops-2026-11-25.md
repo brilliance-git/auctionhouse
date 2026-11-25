@@ -66,17 +66,14 @@ comparison.
   ~0.7–1g per green, if the market absorbs them.
 
 ## 3. Updated loops (conservative / anchored g/h)
-| Band | Loop | Before | Now | Tier |
-|---|---|---|---|---|
-| Levelling | Krol'dok Stronghold | 49 | 49 (boss 41.2 real + trash 7.9 estimate) | maybe |
-| Levelling | The Drowned City (6 bosses, now with Primeval Elemental instead of the rare Gill) | 16 / 25 | 16 / 25 | maybe |
-| Levelling | Alcaz Prison: first four bosses (15 min) | 24 / 39 | 23 / 38 | unlikely |
-| 60 | **Krol'dok at 60** | 50 | **50** | **reliable** |
-| 60 | Alcaz Prison: full clear (15 min) | 29 / 48 | 29 / 48 | maybe |
-| 60 | **Shaper's Terrace: Titanosaur + Nanaya loop (15 min)**, new | — | **72 / 113** | unlikely |
-| 60 | Shaper's Terrace: Titanosaur + Nanaya loop (12 min), new | — | 67 / 100 | unlikely |
-| 60 | Shaper's Terrace: dinosaur loop (12 min) | 46 / 82 | 54 / 95 | unlikely |
-| 60 | Blackmaw Hold: first bosses (15 min) | 35 / 59 | 33 / 55 | unlikely |
+| Loop | Before | Now | Tier |
+|---|---|---|---|
+| **Krol'dok at 60** | 50 | **50** | **reliable** |
+| Alcaz Prison: full clear (15 min) | 29 / 48 | 29 / 48 | maybe |
+| **Shaper's Terrace: Titanosaur + Nanaya loop (15 min)**, new | — | **72 / 113** | unlikely |
+| Shaper's Terrace: Titanosaur + Nanaya loop (12 min), new | — | 67 / 100 | unlikely |
+| Shaper's Terrace: dinosaur loop (12 min) | 46 / 82 | 54 / 95 | unlikely |
+| Blackmaw Hold: first bosses (15 min) | 35 / 59 | 33 / 55 | unlikely |
 
 - **The Shaper's Terrace Nanaya loop:** Mount in > Titanosaur > Venomridge > Thunderhoof >
   Direhorn Matriarch > **Nanaya** > teleport out.
@@ -86,7 +83,7 @@ comparison.
 - **Blackmaw's 12-minute variant** now skips Bloodmane, since he has the lowest blue rate.
 
 ## 4. Verdict
-- **Krol'dok stays the plan**, both while levelling and at 60.
+- **Krol'dok stays the plan** at 60.
 - **At 60, the Shaper's Terrace Nanaya loop is the highest-value target in the model.**
   - It overtakes Strat Living as the "best if it's soloable" farm, and its income doesn't
     depend on the Righteous Orb market.
