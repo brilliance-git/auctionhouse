@@ -10,4 +10,5 @@ Read `README.md` first. It has three parts:
    research. Add measured runs to `docs/farm-log.md`.
 3. **General.** API reference, data quirks, security and conventions.
 
-Never commit or print the API key. Commit as `brilliance-git <brilliance-git@users.noreply.github.com>`.
+Never commit or print the API key. Commit as `Claude <noreply@anthropic.com>`, SSH-signed, so GitHub
+shows the commit as Verified. Keep personal email addresses and names out of commits and docs.
