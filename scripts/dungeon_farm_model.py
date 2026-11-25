@@ -142,6 +142,22 @@ CLASSIC_BOSSES = {
     "Stomper Kreeg": (0.72, 60, 0.16 * G63), "Captain Kromcrush": (1.00, 62, 0.19 * G63),
     "King Gordok": (2.19, 63, 0.05 * G63),
     "Cho'Rush the Observer": (3.32, 61, 1.64 * G63 + 0.42 * 0.211 + 0.42 * 0.76),
+    # Uldaman, Zul'Farrak, Scarlet Monastery (docs/wowhead-drops-classic-3-2026-11-25.md); all boss
+    # blues BoP. Archaedas's Archaedic Stone (94%) is never listed, so it's removed from his count.
+    # Greens at the vendor median: ilvl 41-47 0.52g, ilvl 30-40 0.27g. Plans/patterns 1-2% (~0.2-1g) ~0.
+    "Archaedas": (1.03, 49, 0.01 * 0.52), "Ironaya": (1.08, 42, 0.02 * 0.52),
+    "Galgann Firehammer": (1.08, 47, 0.02 * 0.52), "Ancient Stone Keeper": (1.05, 46, 0.02 * 0.52),
+    "Grimlok": (1.04, 47, 0.02 * 0.52), "Revelosh": (1.03, 42, 0.04 * 0.52),
+    "Obsidian Sentinel": (0.99, 44, 0.03 * 0.52 + 0.09 * 0.054 + 0.08 * 0.015),
+    "Chief Ukorz Sandscalp": (1.14, 50, 0.02 * G55), "Ruuzlu": (1.04, 48, 0.02 * 0.52),
+    "Shadowpriest Sezz'ziz": (1.04, 49, 0.02 * 0.52), "Sergeant Bly": (1.03, 47, 0.07 * 0.52),
+    "Theka the Martyr": (1.01, 47, 0.02 * 0.52), "Antu'sul": (1.00, 50, 0.01 * 0.52),
+    "Nekrum Gutchewer": (0.99, 48, 0.03 * 0.52), "Witch Doctor Zum'rah": (0.94, 48, 0.09 * 0.52),
+    "Hydromancer Velratha": (0.87, 48, 0.02 * 0.52),
+    "Houndmaster Loksey": (1.27, 36, 0.10 * 0.27),
+    "Interrogator Vishas": (1.04, 34, 0.07 * 0.27 + 0.08 * 0.016),
+    # Not collected yet: estimated at ~1 blue per boss (Forever's stated rule), curve value.
+    "Arcanist Doan (est.)": (1.00, 40, 0), "Bloodmage Thalnos (est.)": (1.00, 36, 0),
 }
 FOREVER_BOSSES.update(CLASSIC_BOSSES)
 # LBRS Firebrand Pyromancer (trash): Pattern: Robe of the Archmage 19% (vendor 1.50g; ~26g on the AH but
@@ -294,6 +310,7 @@ TIERS = {
 # and minutes are ESTIMATES. Forever bosses drop a guaranteed blue (Warcraft Tavern).
 # drops: (item, units per trash kill, units per run) -> priced on the Horde AH, demand-capped.
 REPLACED = {
+    "Zul'Farrak at 60 (graveyard + 4 bosses)", "SM Library at 60 (2 bosses)", "SM Graveyard at 60",
     "Sunken Temple at 60: 6 balcony trolls (chunk)",
     "Stratholme Living, Scarlet side (chunked)", "Shaper's Terrace (4 bosses, teleport exit)",
     "Scholomance (partial, 4 bosses)", "Blackmaw Hold (partial, 4 bosses)",
@@ -318,7 +335,7 @@ def R(name, tier_, why, ilvl, mob, v15, v12, elite=True, drops=(), basis="assume
             boss_list = list(bosses)
             extra = extra + sum(FOREVER_BOSSES[b][2] for b in boss_list)
             bosses = sum(FOREVER_BOSSES[b][0] for b in boss_list)
-            basis = "real-rate"
+            basis = "partial" if any(b.endswith("(est.)") for b in boss_list) else "real-rate"
         runs = min(CAP, 60 / minutes)
         ah = tuple((item, round(runs * (kills * pk + pr))) for item, pk, pr in drops
                    if round(runs * (kills * pk + pr)) > 0)
@@ -338,8 +355,22 @@ ROUTES = [
        "Zul'Alai > Var'Taka > Captain Dreadrise > Deathless Marrow > Primeval Elemental > Min'loth, all trash"),
       None),
     R("Uldaman at 60: back-door loop", "reliable", "Elites 41-47", 44, 44,
-      (6, 30, 15, "Back entrance > Ironaya > Obsidian Sentinel > Ancient Stone Keeper > Galgann > Grimlok > Revelosh"),
-      (5, 25, 12, "Same without Revelosh")),
+      (["Ironaya", "Obsidian Sentinel", "Ancient Stone Keeper", "Galgann Firehammer", "Grimlok", "Archaedas"], 30, 15,
+       "Back entrance > Ironaya > Obsidian Sentinel > Ancient Stone Keeper > Galgann > Grimlok > Archaedas (order assumed)"),
+      (["Ironaya", "Ancient Stone Keeper", "Galgann Firehammer", "Archaedas"], 25, 12,
+       "Ironaya > Ancient Stone Keeper > Galgann > Archaedas")),
+    R("Zul'Farrak at 60: graveyard + pyramid loop", "reliable", "Elites 43-48 (gap 12+)", 48, 44,
+      (["Witch Doctor Zum'rah", "Nekrum Gutchewer", "Shadowpriest Sezz'ziz", "Sergeant Bly", "Ruuzlu",
+        "Chief Ukorz Sandscalp"], 80, 15,
+       "Graveyard (Zum'rah + ~50 zombies) > pyramid stairs event (Nekrum, Sezz'ziz, Bly's crew) > Ruuzlu + Ukorz"),
+      (["Witch Doctor Zum'rah", "Antu'sul", "Theka the Martyr"], 60, 12,
+       "Antu'sul > Theka > graveyard (Zum'rah + ~50 zombies)"), drops=(MAGEWEAVE,)),
+    R("SM Library at 60: Loksey + Doan", "reliable", "Humanoids 33-39", 38, 36,
+      (["Houndmaster Loksey", "Arcanist Doan (est.)"], 40, 10, "Library: Houndmaster Loksey > Arcanist Doan"), None,
+      drops=(("Silk Cloth", 0.4, 0),), notes="Doan not yet in Wowhead data (estimated)"),
+    R("SM Graveyard at 60: Vishas + Thalnos", "reliable", "Undead 26-36", 34, 31,
+      (["Interrogator Vishas", "Bloodmage Thalnos (est.)"], 40, 8, "Graveyard: Interrogator Vishas > Bloodmage Thalnos"),
+      None, drops=(("Wool Cloth", 0.4, 0),), notes="Thalnos not yet in Wowhead data (estimated)"),
     R("Maraudon at 60: Princess loop", "reliable",
       "Elites 44-52 (gap 8-16); Princess Theradras hits hard", 52, 50,
       (["Noxxion", "Razorlash", "Landslide", "Rotgrip", "Princess Theradras"], 30, 15,

@@ -110,12 +110,12 @@ All are out-levelled at 60, so they're "reliable" and clear faster (~8–12 min,
 | Farm | g/h | Note |
 |---|---|---|
 | Maraudon: Princess loop (12 min) | 41 / 64 | real drop tables; best reliable after Krol'dok |
-| Zul'Farrak (graveyard + 4 bosses) | 29 / 41 | |
+| Zul'Farrak: graveyard + pyramid loop (15 min) | 39 / 55 | real drop tables (`uldaman-zf-sm-real-drops-2026-11-25.md`) |
 | SM Cathedral (mass pull) | 21 / 28 | |
 | The Drowned City: full clear (10 min) | 21 / 32 | real drop tables |
-| Uldaman: back-door loop (12 min) | 21 / 33 | |
+| Uldaman: back-door loop with Archaedas (15 min) | 23 / 37 | real drop tables |
 | Razorfen Downs (full) | 18 / 27 | |
-| SM Armory / Library / Graveyard | 16 / 12 / 8 | |
+| SM Armory / Library / Graveyard | 16 / 13 / 10 | Library and Graveyard partly real (Loksey, Vishas) |
 | City of Dalaran (full) | 13 / 21 | |
 | Razorfen Kraul (full) | 11 / 16 | |
 | Ruins of Lordaeron (full) | 10 / 14 | |
