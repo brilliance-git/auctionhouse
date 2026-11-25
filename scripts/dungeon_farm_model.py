@@ -40,7 +40,7 @@ SHARE = 0.10
 # Spawn of Hakkar's world-drop BoE greens: ~22% per kill (122 items at 0.2-1% each, Wowhead Forever)
 # x ~1.04g net (median Horde AH min price 1.09g of 163 level 45-54 greens from the same name
 # families, 17-23 Nov 2026; vendor median 0.74g). Rugged/Thick Leather (3% each) ignored.
-SPAWN_GREENS = 0.22 * 1.04
+SPAWN_GREENS = 0.25 * 0.70 + 0.27 * 0.85   # Wingveil Cloak (BoP green, vendor ~0.7g) + world greens at vendor
 
 # Fallback demand-capped g/h per item at the given rate, from
 #   python3 scripts/farm_leaderboard.py --top 0 --rate "Item=N" ...
@@ -62,7 +62,7 @@ FALLBACK = {
 # Sellable extras (Horde AH fill price, demand-capped by hand at a 10% share):
 #   Blackmaw Pouch ~85s, ~330 sold/day (AH absorbs ~10%/boss): 0.10 x 0.81 = 0.08
 #   Nanaya: Maker's Spark 94% (AH absorbs ~0.1/h, rest at the 2.50g vendor price) = 2.35;
-#           green 99% x ~1.9g (lower-quartile AH price of 467 ilvl 56-63 greens, after cut) = 1.88;
+#           green 99% x 1.37g (median vendor price of ilvl 56-63 greens; AH ~1.9g is upside) = 1.36;
 #           Blueprint: Arcane Forge 5.5% x 12g vendor (AH ~90g but ~4 listed, no sales seen) = 0.66
 #   Grox: Blueprint: Expert Campfire 4.3% (2,047 kills) x ~27g x 0.95 (in KROL_REAL_BOSS)
 POUCH = 0.08
@@ -82,8 +82,57 @@ FOREVER_BOSSES = {
     # The Shaper's Terrace
     "Titanosaur": (1.52, 63, 0), "Venomridge": (0.94, 63, 0), "Thunderhoof": (0.94, 63, 0),
     "Direhorn Matriarch": (0.97, 63, 0), "Tor'Rel": (0.93, 63, 0),
-    "Nanaya": (0.95, 63, 2.35 + 1.88 + 0.66),
+    "Nanaya": (0.95, 63, 2.35 + 0.99 * 1.37 + 0.66),
 }
+
+# ---- Real Wowhead Forever data for five Classic dungeons (docs/wowhead-drops-classic-2026-11-25.md) ----
+# Same structure: (BoP gear blues per kill, mean ilvl, other value per kill in g).
+# - Ammo counted as "blues" by Wowhead (Doomshot, Rockshard Pellets, Miniature Cannon Balls) is removed:
+#   never on the Horde AH (or 50c a unit for Rockshard Pellets), so ~0.
+# - BoE blues (ever listed on the Horde AH) are moved out of the BoP count and valued at fill price x 0.95:
+#   Shadowcraft Gloves 27.0g, Devout Gloves 25.6g, Gauntlets of Valor 45.0g, Piccolo of the Flaming Fire 5.0g,
+#   Dreadmist Bracers 4.9g. Their markets are thin (8-30 listed), but these drop under 1 an hour.
+# - Recipes that drop most runs are valued at their vendor price (Plans: Dark Iron Pulverizer 30s at 96%).
+# - Boss greens are valued at the MEDIAN VENDOR price of greens in that level band: ilvl 48-55 0.85g,
+#   ilvl 56-63 1.37g (511 / 487 greens). Strat and Scholomance bosses drop up to ~2.4 greens a kill,
+#   ~20 an hour, more than the AH can absorb; selling some on the AH (lower quartile ~1.00g / ~2.00g,
+#   after the cut ~0.95g / ~1.90g) is upside.
+# The six Sunken Temple balcony trolls are NOT in Wowhead's list of mobs that drop a blue, so they drop none.
+G55, G63 = 0.85, 1.37
+CLASSIC_BOSSES = {
+    # Sunken Temple
+    "Atal'alarion": (1.02, 51, 0.05 * G55), "Jammal'an the Prophet": (1.00, 55, 0.05 * G55),
+    "Ogom the Wretched": (0.98, 54, 0.01 * G55), "Shade of Hakkar": (1.91, 54, 0.05 * G55),
+    "Shade of Eranikus": (1.74, 56, 0.56 * G55),
+    "Spawn of Hakkar": (0.48, 52, 0.25 * 0.70 + 0.27 * G55),   # Wingveil Cloak (BoP green) + world greens
+    # Lower Blackrock Spire
+    "Highlord Omokk": (0.91, 60, 0.34 * G63),
+    "Shadow Hunter Vosh'gajin": (0.70, 59, 0.17 * 27.0 * 0.95 + 0.02 * G63),
+    "War Master Voone": (0.96, 60, 0.35 * G63),
+    "Mother Smolderweb": (0.97, 60, 0.06 * G63 + 0.12 * 0.57),
+    "Halycon": (0.91, 60, 0.03 * G63), "Gizrul the Slavener": (0.93, 61, 0.01 * G63),
+    "Quartermaster Zigris": (0.94, 60, 0.11 * 4.85 * 0.95 + 0.05 * G63),
+    # Blackrock Depths
+    "Lord Roccor": (0.99, 54, 0.22 * G55), "Houndmaster Grebmar": (1.07, 53, 0.03 * G55),
+    "High Interrogator Gerstahn": (1.03, 53, 0.04 * G55),
+    "Ring of Law (random boss)": (1.00, 55, 0.06 * G55 + 0.96 / 6 * 0.30),
+    "Pyromancer Loregrain": (1.03, 53, 0.21 * G55),
+    # Stratholme Living
+    "Malor the Zealous": (0.96, 60, 0.07 * G63), "Cannon Master Willey": (1.79, 61, 0.06 * G63),
+    "Archivist Galford": (0.76, 61, 0.19 * 25.55 * 0.95 + 0.86 * G63),
+    "The Unforgiven": (0.90, 57, 0.85 * G63), "Timmy the Cruel": (0.93, 60, 0.89 * G63),
+    # Stratholme Undead
+    "Magistrate Barthilas": (0.87, 59, 1.75 * G63), "Baroness Anastari": (1.25, 60, 1.81 * G63),
+    "Nerub'enkan": (1.29, 60, 0.90 * G63), "Maleki the Pallid": (1.41, 61, 0.96 * G63),
+    "Ramstein the Gorger": (0.70, 61, 0.15 * 45.0 * 0.95 + 2.44 * G63),
+    # Scholomance
+    "Rattlegore": (1.05, 61, 0.09 * G63), "Jandice Barov": (0.92, 61, 1.76 * G63),
+    "Ras Frostwhisper": (1.86, 61, 1.84 * G63),
+}
+FOREVER_BOSSES.update(CLASSIC_BOSSES)
+# LBRS Firebrand Pyromancer (trash): Pattern: Robe of the Archmage 19% (vendor 1.50g; ~26g on the AH but
+# ~15 listed), Magister's Bindings 3% (BoE 6.4g), Cord of Elements 2% (BoE 13.5g) -> ~0.73g per kill.
+PYRO = 0.19 * 1.50 + 0.03 * 6.39 * 0.95 + 0.02 * 13.51 * 0.95
 # Krol'dok boss value per run: real Wowhead sell prices; Campfire updated 4.54% -> 4.3%.
 KROL_REAL_BOSS = 8.31 - (0.0454 - 0.043) * 27 * 0.95
 
@@ -132,13 +181,13 @@ FARMS = [
     # (Warcraft Tavern). Spawn of Hakkar (the user's old farm, confirmed): level 50-51 elite beast in
     # the basement. Wowhead Forever NPC 5708, 1,265 kills: Slitherscale Boots 48%, Wingveil Cloak 25%
     # (ilvl 52, BoP) = ~0.73 blues per kill; plus ~20-25% chance of a world-drop BoE green.
-    F("Sunken Temple: Spawn of Hakkar only", "levelling", 0.73, 52, 5, 50, 7, "low", "assumed",
+    F("Sunken Temple: Spawn of Hakkar only", "levelling", 0.48, 52, 5, 50, 7, "low", "assumed",
       "One elite in the basement, then exit and reset; Wingveil Cloak BoP, boots never on the AH",
       extra=SPAWN_GREENS),
     F("Sunken Temple: 6 balcony trolls (chunk)", "levelling", 6, 53, 25, 52, 12, "low", "assumed",
       "Six troll minibosses on the balconies plus the trash between them"),
     # ---- level 60 ----
-    F("Sunken Temple at 60: Spawn of Hakkar only", "60", 0.73, 52, 5, 50, 6, "low", "assumed",
+    F("Sunken Temple at 60: Spawn of Hakkar only", "60", 0.48, 52, 5, 50, 6, "low", "assumed",
       "One elite in the basement, then exit and reset", extra=SPAWN_GREENS),
     F("Sunken Temple at 60: 6 balcony trolls (chunk)", "60", 6, 53, 25, 52, 12, "low", "assumed",
       "Six troll minibosses, guaranteed blue each in Forever"),
@@ -322,11 +371,13 @@ ROUTES = [
       "Elites 44-48, near a levelling character's level; satyr casters", 49, 47,
       (3, 30, 15, "Orange crystal side > Noxxion > Razorlash > Lord Vyletongue"),
       (2, 25, 12, "Noxxion > Razorlash"), drops=(MAGEWEAVE,)),
-    R("Sunken Temple: balcony trolls + Spawn of Hakkar", "levelling", "unlikely",
+    R("Sunken Temple: trolls > Jammal'an + Ogom (+ Spawn)", "levelling", "unlikely",
       "Elite trolls 49-55 with priests and witch doctors (casters), Nightmare dragonkin elites",
-      53, 52, (6.73, 30, 15, "Six balcony troll minibosses > down to the basement for Spawn of Hakkar > exit"),
-      (6, 25, 12, "Six balcony trolls only"), drops=(MAGEWEAVE,), extra15=SPAWN_GREENS,
-      notes="Spawn of Hakkar (confirmed as the old farm): ~0.73 blues + ~22% BoE green per kill"),
+      55, 52, (["Jammal'an the Prophet", "Ogom the Wretched", "Spawn of Hakkar"], 35, 15,
+       "Six balcony trolls (no blues; they open the way) > Jammal'an > Ogom > basement for Spawn of Hakkar > exit"),
+      (["Jammal'an the Prophet", "Ogom the Wretched"], 30, 12, "Six balcony trolls > Jammal'an > Ogom"),
+      drops=(MAGEWEAVE,),
+      notes="Real Wowhead data: the balcony trolls drop no blues"),
     R("Alcaz Prison: first four bosses", "levelling", "unlikely",
       "Elites 48-53, above a mid-40s character; Tidemistress is a caster", 53, 51,
       (["Overseer Wrex", "The Questioner", "Tidemistress Ca'zass", "Katerina the Cleaner"], 35, 15,
@@ -342,10 +393,12 @@ ROUTES = [
       (5, 30, 15, "Orange side > Noxxion > Razorlash > Landslide > Rotgrip > Princess Theradras"),
       (4, 25, 12, "Noxxion > Landslide > Rotgrip > Princess Theradras"),
       drops=(("Essence of Earth", 0, 1), RUNECLOTH)),
-    R("Sunken Temple at 60: balcony trolls + Spawn of Hakkar", "60", "maybe",
+    R("Sunken Temple at 60: trolls > Jammal'an + Ogom (+ Spawn)", "60", "maybe",
       "Elite trolls 49-55 (gap 5-11) with casters; dragonkin elites are hard solo", 53, 52,
-      (6.73, 30, 15, "Six balcony trolls > Spawn of Hakkar in the basement > exit"),
-      (6, 25, 12, "Six balcony trolls only"), drops=(MAGEWEAVE,), extra15=SPAWN_GREENS),
+      (["Jammal'an the Prophet", "Ogom the Wretched", "Spawn of Hakkar"], 35, 15,
+       "Six balcony trolls (no blues) > Jammal'an > Ogom > Spawn of Hakkar > exit"),
+      (["Jammal'an the Prophet", "Ogom the Wretched"], 30, 12, "Six balcony trolls > Jammal'an > Ogom"),
+      drops=(MAGEWEAVE,)),
     R("Alcaz Prison at 60: full clear", "60", "maybe",
       "Elites 48-53 (gap 7-12); Tidemistress casts, Zarla Ober's dragon phase unknown", 53, 51,
       (["Overseer Wrex", "The Questioner", "Tidemistress Ca'zass", "Katerina the Cleaner", "Blazeroar"],
@@ -359,8 +412,11 @@ ROUTES = [
       elite=False, drops=(("Living Essence", 0.2, 0), ("Heart of the Wild", 0.27, 0))),
     R("Blackrock Depths: entrance loop", "60", "maybe",
       "Lower-level front wings (mobs ~50-54); Dark Iron casters in some packs", 56, 53,
-      (5, 35, 15, "Lord Roccor > Houndmaster Grebmar > High Interrogator Gerstahn > Ring of Law > Pyromancer Loregrain"),
-      (4, 30, 12, "Same without Pyromancer Loregrain")),
+      (["Lord Roccor", "Houndmaster Grebmar", "High Interrogator Gerstahn", "Ring of Law (random boss)",
+        "Pyromancer Loregrain"], 35, 15,
+       "Lord Roccor > Houndmaster Grebmar > High Interrogator Gerstahn > Ring of Law > Pyromancer Loregrain"),
+      (["Lord Roccor", "Houndmaster Grebmar", "High Interrogator Gerstahn", "Ring of Law (random boss)"], 30, 12,
+       "Same without Pyromancer Loregrain"), drops=(("Runecloth", 0.24, 0),)),
     R("Dire Maul North: kill-everything", "60", "unlikely",
       "Ogre packs 56-60 with ogre mages; killing guards forfeits most of the tribute", 58, 57,
       (4, 30, 15, "Guard Mol'dar > Stomper Kreeg > Guard Fengus > Guard Slip'kik (no King Gordok in 15 min)"),
@@ -371,19 +427,32 @@ ROUTES = [
       (2, 25, 12, "Tendris Warpwood > Illyanna Ravenoak"), drops=(RUNECLOTH,)),
     R("Stratholme Living: Willey + Galford orb loop", "60", "unlikely",
       "Elites 57-60 with Sorcerers, Battle Mages, Priests; no documented prot solo", 60, 58,
-      (4, 32, 15, "Festival Lane > Malor the Zealous > Cannon Master Willey > Archivist Galford (orbs 84%) > The Unforgiven"),
-      (2, 25, 12, "Cannon Master Willey > Archivist Galford"),
+      (["Malor the Zealous", "Cannon Master Willey", "Archivist Galford", "The Unforgiven"], 32, 15,
+       "Festival Lane > Malor the Zealous > Cannon Master Willey > Archivist Galford (orbs 84%) > The Unforgiven"),
+      (["Cannon Master Willey", "Archivist Galford"], 25, 12, "Cannon Master Willey > Archivist Galford"),
       drops=(("Righteous Orb", 0.095, 0.84), RUNECLOTH)),
     R("Stratholme Undead: side-gate loop", "60", "unlikely", "Elites 57-60; Maleki and acolytes cast",
-      60, 58, (4, 35, 15, "Magistrate Barthilas > Baroness Anastari > Nerub'enkan > Maleki the Pallid"),
-      (3, 30, 12, "Barthilas > Anastari > Nerub'enkan"), drops=(RUNECLOTH,)),
+      60, 58, (["Magistrate Barthilas", "Baroness Anastari", "Nerub'enkan", "Maleki the Pallid"], 35, 15,
+       "Magistrate Barthilas > Baroness Anastari > Nerub'enkan > Maleki the Pallid"),
+      (["Magistrate Barthilas", "Baroness Anastari", "Nerub'enkan"], 30, 12, "Barthilas > Anastari > Nerub'enkan"),
+      drops=(RUNECLOTH,)),
+    R("Stratholme Undead: ziggurats + Ramstein", "60", "unlikely",
+      "Elites 57-60; Maleki and acolytes cast; Ramstein hits very hard", 61, 58,
+      (["Baroness Anastari", "Nerub'enkan", "Maleki the Pallid", "Ramstein the Gorger"], 40, 15,
+       "Side gate > three ziggurats (Anastari, Nerub'enkan, Maleki) > Slaughterhouse > Ramstein the Gorger"),
+      None, drops=(RUNECLOTH,),
+      notes="Ramstein: Gauntlets of Valor (BoE ~45g) 15%, greens 244% per kill"),
     R("Scholomance: Rattlegore + Jandice loop", "60", "unlikely",
       "Elites 58-60, caster-heavy necromancers", 60, 59,
-      (3, 30, 15, "Viewing Room trash > Rattlegore > Jandice Barov > Ras Frostwhisper"),
-      (2, 25, 12, "Rattlegore > Jandice Barov"), drops=(RUNECLOTH,)),
+      (["Rattlegore", "Jandice Barov", "Ras Frostwhisper"], 30, 15,
+       "Viewing Room trash > Rattlegore > Jandice Barov > Ras Frostwhisper"),
+      (["Rattlegore", "Jandice Barov"], 25, 12, "Rattlegore > Jandice Barov"), drops=(RUNECLOTH,)),
     R("Lower Blackrock Spire: front loop", "60", "unlikely", "Elites 55-60 orc packs with casters",
-      58, 57, (4, 35, 15, "Highlord Omokk > Shadow Hunter Vosh'gajin > War Master Voone > Mother Smolderweb"),
-      (3, 30, 12, "Omokk > Vosh'gajin > Voone"), drops=(RUNECLOTH,)),
+      58, 57, (["Highlord Omokk", "Shadow Hunter Vosh'gajin", "War Master Voone", "Mother Smolderweb"], 35, 15,
+       "Highlord Omokk > Shadow Hunter Vosh'gajin > War Master Voone > Mother Smolderweb, incl. ~6 Firebrand Pyromancers"),
+      (["Highlord Omokk", "Shadow Hunter Vosh'gajin", "War Master Voone"], 30, 12,
+       "Omokk > Vosh'gajin > Voone, incl. ~5 Firebrand Pyromancers"),
+      drops=(RUNECLOTH,), extra15=6 * PYRO, extra12=5 * PYRO),
     R("Blackmaw Hold: first bosses", "60", "unlikely",
       "Elites 55-60; no solo reports; avoid the old Devotee room farm", 60, 58,
       (["Withermaw", "Impaan the Imprisoner", "Elder Shaman Bloodmane", "Bonesnout the Unbroken"], 30, 15,
